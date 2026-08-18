@@ -28,7 +28,7 @@ jobs:
           base64 --decode /tmp/methodbridge.tar.xz.b64 > /tmp/methodbridge.tar.xz
           echo "831c6c948331d74c221d901b605b4fab6dc108692af2b622e928b3cf660b770c  /tmp/methodbridge.tar.xz" | sha256sum --check --strict
           mkdir -p /tmp/methodbridge
-          tar -xJf /tmp/methodbridge.tar.xz -C /tmp/methodbridge
+          tar -xJf /tmp/methodbridge.tar.xz -C /tmp/methodbridge --strip-components=1
 
       - name: Expand repository tree
         shell: bash
