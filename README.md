@@ -9,7 +9,7 @@
 
 MethodBridge Local is a compact, fully offline scientific-reasoning and research-methods model intended for postgraduate students and early-career researchers who need immediate methodological guidance on ordinary laptops. The judged product is the model itself: GGUF weights, `llama.cpp`, CPU-first execution, a public credential-free download, and evidence of quality, throughput, memory use, and thermal stability.
 
-This public repository is the **authoritative populated engineering foundation**, not a trained model release. It includes governance, a draft Theory of Change, 18 architecture decisions, five candidate model families, three quantization plans, 60 held-out evaluation specifications, four safe synthetic dataset fixtures, source/licensing controls, validation scripts, CI workflows, and a fail-closed submission contract.
+This public repository is the **authoritative populated engineering foundation**, not a trained model release. It includes governance, an approved-with-conditions Theory of Change, 18 architecture decisions, five candidate model families, three quantization plans, 60 held-out evaluation specifications, four safe synthetic dataset fixtures, source/licensing controls, validation scripts, CI workflows, and a fail-closed submission contract.
 
 ## Remote baseline
 
@@ -20,8 +20,10 @@ The recovered transport has been removed. The current `main` tree contains the f
 | Area | State |
 |---|---|
 | Product and domain scope | Accepted with conditions |
-| Theory of Change | Populated draft; accountable approval pending |
-| Entrant eligibility | Unresolved |
+| Theory of Change | Approved with conditions for governed ADTC development |
+| Entrant eligibility | Unresolved hard gate |
+| Held-out benchmark | Populated; qualified human review and freeze pending |
+| Upstream toolchain | Reverification and immutable pinning pending |
 | Final base model | Requires empirical bake-off |
 | Fine-tuning | Conditional; not assumed |
 | Final GGUF | Not built |
@@ -29,12 +31,14 @@ The recovered transport has been removed. The current `main` tree contains the f
 | Public model URL and SHA-256 | Unresolved |
 | Video and final submission | Not completed |
 
+The Theory-of-Change approval does not resolve eligibility, authorize confidential-data processing, select a final model, accept challenge terms, authorize release, or authorize submission.
+
 ## Engineering sequence
 
 ```text
 eligibility and upstream recheck
         ↓
-freeze held-out benchmark
+qualified review and freeze of the held-out benchmark
         ↓
 untouched model bake-off
         ↓

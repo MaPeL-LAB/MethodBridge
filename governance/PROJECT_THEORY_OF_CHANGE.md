@@ -1,6 +1,45 @@
 # Project Theory of Change
 
-**Status:** populated draft. **Human approval not recorded.**
+**Status:** approved with conditions for ADTC 2026 governed development.  
+**Approved by:** Marothi Peter Letsoalo  
+**Approved at:** 2026-08-19T06:46:08+02:00  
+**Approval reference:** GOV-001 / GitHub issue #4
+
+## Approval scope and conditions
+
+The accountable human review found the current primary user, problem hypothesis,
+causal pathway, distinction between outputs and outcomes, contribution boundary,
+critical assumptions, risks, indicators, stopping rules, and pinned Theory of
+Change Architect dependency sufficient for governed development.
+
+This approval authorizes research, benchmark review, upstream verification,
+candidate comparison, and implementation work within the current ADTC MVP
+boundary, subject to all of the following conditions:
+
+1. The stated contribution boundary remains in force.
+2. Only licensed, synthetic, or explicitly authorized materials may be used.
+3. Accountable humans retain scientific and consequential decision authority.
+4. The held-out evaluation boundary must be preserved and training leakage is prohibited.
+5. Entrant eligibility remains a separate unresolved hard gate.
+6. Final model selection, quantization, public prompts, release, rules acceptance, and submission require separate approval.
+7. Real confidential or participant-level data must not enter the public repository or hackathon demonstration.
+
+This approval does not authorize production or institutional use, processing of
+confidential data, a final model release, acceptance of the Challenge
+Participation Agreement, or submission to Devpost. A material change to the
+primary user, causal pathway, contribution boundary, protected decisions, data
+boundary, or intended deployment reopens this approval.
+
+### Evidence reviewed
+
+- `governance/PROJECT_THEORY_OF_CHANGE.md`
+- `governance/ASSUMPTION_REGISTER.md`
+- `governance/EVIDENCE_REGISTER.md`
+- `governance/RISK_AND_UNINTENDED_EFFECTS_REGISTER.md`
+- `governance/APPROVAL_BOUNDARIES.md`
+- `governance/PROTECTED_DECISIONS.md`
+- `governance/upstream.lock.json`
+- GitHub issue `GOV-001` (#4)
 
 ## Problem hypothesis
 
