@@ -2,7 +2,7 @@
   "repository": "methodbridge-local",
   "release": "v0.1.0-bootstrap",
   "provenance_note": "The initial public bootstrap was reconstructed from retained research artifacts. The tracked Git repository is now the authoritative source.",
-  "file_count_excluding_manifest": 355,
+  "file_count_excluding_manifest": 356,
   "manifest_self_excluded": true,
   "files": [
     {
@@ -882,6 +882,15 @@
       "path": "docs/PEDAGOGICAL_BEHAVIOUR_SPECIFICATION.md",
       "size": 462,
       "sha256": "b4b4741626ec80913fc51b22afafd946ab8c4b35bc87e7f72353231879688e93",
+      "category": "docs",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/PRELOCAL_CAMPAIGN_PR_NOTE.md",
+      "size": 726,
+      "sha256": "dd976fb3188dc947a06b8d7e3db41aa693683a858e2925db30e3031640136970",
       "category": "docs",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
