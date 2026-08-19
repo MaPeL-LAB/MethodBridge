@@ -27,10 +27,10 @@
     }
   ],
   "model": {
-    "name": "Qwen/Qwen3-1.7B",
+    "name": "REQUIRES_HUMAN_MODEL_SELECTION",
     "runtime": "llama.cpp",
-    "quantization": "Q5_K_M",
-    "parameters_estimate": "1.7B",
+    "quantization": "REQUIRES_EMPIRICAL_SELECTION",
+    "parameters_estimate": "REQUIRES_HUMAN_MODEL_SELECTION",
     "packaging": "binary_bundle"
   },
   "_runtime": {

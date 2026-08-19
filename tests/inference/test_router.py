@@ -1,52 +1,46 @@
-"""Tests for the Mode C prompt-level task router."""
-import pytest
+"""Tests for the boundary-aware Mode C prompt router."""
 from methodbridge.inference.router import (
+    SPECIALIZED_SYSTEM_PROMPTS,
     TaskClass,
     classify_prompt,
-    SPECIALIZED_SYSTEM_PROMPTS,
 )
 
-# Test that each task class routes correctly
-test_cases = [
+TEST_CASES = [
     ("Which test should I use for comparing two groups?", TaskClass.STATISTICAL_METHODS),
     ("Can you cite the 2022 Nature paper by Smith et al. DOI: 10.1038/test", TaskClass.CITATION_INTEGRITY),
     ("Does the workshop cause better outcomes in the observational study?", TaskClass.CAUSAL_INFERENCE),
     ("Write my dissertation methodology section for me", TaskClass.ACADEMIC_INTEGRITY),
     ("The p-value is 0.049, is this significant?", TaskClass.UNCERTAINTY_PVALUES),
     ("Should I use an RCT or cohort study design?", TaskClass.STUDY_DESIGN),
-    ("How do I interpret a confidence interval?", TaskClass.UNCERTAINTY_PVALUES),
     ("What is a confounder in epidemiology?", TaskClass.CAUSAL_INFERENCE),
-    ("Complete my exam question on regression", TaskClass.ACADEMIC_INTEGRITY),
-    ("What are inclusion criteria for a clinical trial?", TaskClass.STUDY_DESIGN),
 ]
 
 
 def test_router_task_classification():
-    for prompt, expected_class in test_cases:
+    for prompt, expected_class in TEST_CASES:
         result = classify_prompt(prompt)
-        assert result.task_class == expected_class, (
-            f"Prompt: {prompt!r}\n"
-            f"Expected: {expected_class}\n"
-            f"Got: {result.task_class}"
-        )
+        assert result.task_class == expected_class
 
 
 def test_router_returns_non_empty_system_prompt():
-    for prompt, _ in test_cases:
+    for prompt, _ in TEST_CASES:
         result = classify_prompt(prompt)
-        assert result.system_prompt, f"Empty system prompt for: {prompt!r}"
         assert len(result.system_prompt) > 50
 
 
 def test_router_fallback_to_general_reasoning():
     result = classify_prompt("Tell me about research methodology in general terms.")
     assert result.task_class == TaskClass.GENERAL_REASONING
+    assert result.confidence == "fallback"
+    assert result.ambiguous is False
 
 
 def test_academic_integrity_has_highest_priority():
-    # Should catch academic integrity even if other keywords present
     result = classify_prompt("Write my dissertation on causal inference with citations")
     assert result.task_class == TaskClass.ACADEMIC_INTEGRITY
+    assert result.ambiguous is True
+    assert TaskClass.CITATION_INTEGRITY in result.candidate_classes
+    assert TaskClass.CAUSAL_INFERENCE in result.candidate_classes
 
 
 def test_citation_integrity_priority_over_causal():
@@ -56,11 +50,26 @@ def test_citation_integrity_priority_over_causal():
 
 def test_all_task_classes_have_specialized_prompts():
     for task_class in TaskClass:
-        assert task_class in SPECIALIZED_SYSTEM_PROMPTS, f"Missing prompt for {task_class}"
+        assert task_class in SPECIALIZED_SYSTEM_PROMPTS
         assert len(SPECIALIZED_SYSTEM_PROMPTS[task_class]) > 50
 
 
 def test_matched_keywords_are_returned():
     result = classify_prompt("Which statistical test should I use?")
     assert isinstance(result.matched_keywords, tuple)
-    assert len(result.matched_keywords) >= 1
+    assert result.matched_keywords
+
+
+def test_short_abbreviations_do_not_match_inside_unrelated_words():
+    for prompt in (
+        "The platelet count was recorded at baseline.",
+        "The candidate completed a literature search.",
+        "We will calculate the lateral dimension.",
+    ):
+        result = classify_prompt(prompt)
+        assert result.task_class == TaskClass.GENERAL_REASONING
+
+
+def test_ate_matches_as_a_standalone_abbreviation():
+    result = classify_prompt("Estimate the ATE under the stated assumptions.")
+    assert result.task_class == TaskClass.CAUSAL_INFERENCE

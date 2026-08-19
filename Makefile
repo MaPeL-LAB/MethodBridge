@@ -1,4 +1,4 @@
-.PHONY: validate test dry-run readiness integrity hardware-contract gate
+.PHONY: validate test dry-run readiness integrity hardware-contract evidence gate
 
 validate:
 	python scripts/validate_repository.py
@@ -16,6 +16,10 @@ hardware-contract:
 	bash -n scripts/run_adtc_reference_profile.sh
 	bash -n scripts/capture_adtc_hardware_evidence.sh
 
+evidence:
+	python scripts/validate_model_evidence_boundary.py
+	python -m pytest -q tests/inference tests/governance/test_model_evidence_status.py
+
 test:
 	python -m pytest -q
 
@@ -25,4 +29,4 @@ dry-run:
 readiness:
 	python scripts/verify_submission_readiness.py
 
-gate: validate integrity hardware-contract dry-run test
+gate: validate integrity hardware-contract evidence dry-run test

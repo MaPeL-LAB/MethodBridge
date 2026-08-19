@@ -1,0 +1,87 @@
+policy_version: 1
+status: active
+purpose: Prevent simulation, smoke, or proxy outputs from being promoted into empirical model, performance, quantization, or submission claims.
+
+evidence_classes:
+  simulation_proxy:
+    model_executed: false
+    measured: false
+    eligible_as_model_output_evidence: false
+    eligible_for_model_selection: false
+    eligible_for_submission_score: false
+    permitted_uses:
+      - plumbing tests
+      - schema tests
+      - prompt-contract regression tests
+      - CI without model weights
+    prohibited_uses:
+      - candidate ranking
+      - quality or accuracy claims
+      - throughput, latency, memory, or thermal claims
+      - quantization comparison
+      - Devpost or profiler evidence
+
+  local_real_model_output:
+    model_executed: true
+    measured: true
+    eligible_as_model_output_evidence: true
+    eligible_for_model_selection: false
+    eligible_for_submission_score: false
+    required_evidence:
+      - exact source model and immutable revision
+      - exact GGUF SHA-256
+      - pinned llama.cpp commit
+      - complete runtime configuration
+      - frozen benchmark identity
+      - raw outputs retained locally
+      - qualified semantic adjudication before selection
+    limitations:
+      - local wall time is not official ADTC throughput
+      - official profiler is required for scoreable memory, TTFT, throughput, and thermals
+
+  official_reference_profile:
+    model_executed: true
+    measured: true
+    eligible_as_model_output_evidence: true
+    eligible_for_model_selection: true
+    eligible_for_submission_score: true
+    required_evidence:
+      - qualifying x86 Ubuntu reference host attestation
+      - exact GGUF SHA-256
+      - pinned llama.cpp and ADTC profiler commits
+      - one warm-up and three complete measured runs
+      - full participant-mode accuracy stage
+      - no OOM, crash, throttling, or network dependency
+      - qualified semantic review
+      - attributable human approval
+
+automated_scorers:
+  keyword_overlap_v1:
+    label: automated_keyword_proxy
+    authoritative: false
+    semantic_review_required: true
+    permitted_uses:
+      - smoke testing
+      - coarse regression detection
+      - preparation of human review packets
+    prohibited_labels:
+      - accuracy
+      - reasoning quality
+      - reasoning retention
+      - expert score
+      - hidden-prompt readiness
+
+final_model_gate:
+  required_selection_status: human_approved_finalist
+  required_evidence_categories:
+    - real_model_output
+    - qualified_semantic_review
+    - quantization_comparison
+    - official_reference_profile
+    - licence_and_redistribution_review
+  protected_human_decisions:
+    - final model
+    - final quantization
+    - final public prompts
+    - release
+    - submission

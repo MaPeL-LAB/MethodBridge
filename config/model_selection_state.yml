@@ -1,0 +1,32 @@
+state_version: 1
+status: no_empirical_selection
+updated_at: 2026-08-19T17:45:00+02:00
+updated_by: evidence-boundary-restoration
+
+provisional_hypothesis:
+  candidate_id: qwen3_1_7b
+  source_model: Qwen/Qwen3-1.7B
+  quantization_to_test: Q5_K_M
+  status: documentary_hypothesis_only
+  rationale: Compact size and documentary compatibility make this a useful first real candidate, but no remote evidence currently establishes superiority or final suitability.
+
+final_selection:
+  candidate_id: null
+  source_model: null
+  source_revision: null
+  gguf_sha256: null
+  quantization: null
+  runtime_configuration: null
+  evidence_references: []
+  human_approval:
+    status: not_recorded
+    actor: null
+    timestamp: null
+    decision_reference: null
+
+prohibited_inferences:
+  - simulation proxy results are not empirical model results
+  - automated keyword-proxy rates are not accuracy
+  - documentary estimates are not measurements
+  - local Apple Silicon results are not official ADTC reference scores
+  - a provisional hypothesis is not a final model selection
