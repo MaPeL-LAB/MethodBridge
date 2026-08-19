@@ -1,0 +1,10 @@
+# Default accountable owner for the initial MethodBridge sprint.
+* @MaPeL-LAB
+
+# Governance and public claims require explicit review.
+/GOVERNANCE.md @MaPeL-LAB
+/governance/ @MaPeL-LAB
+/metadata.json @MaPeL-LAB
+/REPORT.md @MaPeL-LAB
+/download_model.sh @MaPeL-LAB
+/.github/ @MaPeL-LAB

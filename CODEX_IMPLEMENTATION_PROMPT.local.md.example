@@ -1,0 +1,19 @@
+# Local Codex override example
+
+This optional file is machine-specific and must be copied to
+`CODEX_IMPLEMENTATION_PROMPT.local.md`, which is ignored by Git.
+It is subordinate to `AGENTS.md`, `GOVERNANCE.md`, protected decisions,
+accepted ADRs, `BUILD_CHECKLIST.md`, and `CODEX_IMPLEMENTATION_PROMPT.md`.
+
+- Repository path: /absolute/path/to/MethodBridge
+- Operating system: macOS or Linux
+- Python executable: python3.12
+- Virtual environment: .venv
+- Container runtime: none or Docker
+- Available tools: git, gh, cmake, llama.cpp, adtc-profiler, codex
+- Approved local model/cache path: /absolute/local/path
+- Target test machine: describe CPU, RAM, OS, and thermal tooling
+
+Local overrides may change paths and commands only. They may not change the
+primary user, challenge domain, contribution boundary, held-out split,
+human authority, quality gates, or submission-readiness rules.

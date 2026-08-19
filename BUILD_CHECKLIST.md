@@ -2,6 +2,8 @@
 
 Each phase must produce evidence, acceptance criteria, and a rollback path.
 
+- [x] **0. Remote foundation** — full repository published, transport removed, integrity checks and local handoff added.
+
 - [ ] **1. Eligibility gate** — resolve entrant identity, team age, funding, product stage, and Participation Agreement.
 - [ ] **2. Upstream freeze** — reverify and pin ADTC template, profiler, `llama.cpp`, and governance commits.
 - [ ] **3. Benchmark review** — qualified human review of all 60 cases and final held-out freeze.
