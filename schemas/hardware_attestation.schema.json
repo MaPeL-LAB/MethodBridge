@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MethodBridge ADTC hardware attestation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile_id",
+    "captured_at",
+    "measurement_class",
+    "eligible_for_submission_score",
+    "host",
+    "runtime",
+    "reasons",
+    "warnings",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "profile_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "measurement_class": {
+      "enum": [
+        "reference_match",
+        "simulation_only",
+        "invalid_environment"
+      ]
+    },
+    "eligible_for_submission_score": {
+      "type": "boolean"
+    },
+    "host": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "architecture",
+        "cpu_model",
+        "physical_cores",
+        "logical_cores",
+        "memory_gib",
+        "os_id",
+        "os_version",
+        "kernel",
+        "gpu_names",
+        "discrete_gpu_present",
+        "swap_enabled",
+        "storage_gb",
+        "power_profile",
+        "thermal_monitor_available"
+      ],
+      "properties": {
+        "architecture": {
+          "type": "string"
+        },
+        "cpu_model": {
+          "type": "string"
+        },
+        "physical_cores": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "logical_cores": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "memory_gib": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "os_id": {
+          "type": "string"
+        },
+        "os_version": {
+          "type": "string"
+        },
+        "kernel": {
+          "type": "string"
+        },
+        "gpu_names": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discrete_gpu_present": {
+          "type": "boolean"
+        },
+        "swap_enabled": {
+          "type": "boolean"
+        },
+        "storage_gb": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "power_profile": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "thermal_monitor_available": {
+          "type": "boolean"
+        }
+      }
+    },
+    "runtime": {
+      "type": "object"
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
