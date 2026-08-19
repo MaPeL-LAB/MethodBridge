@@ -2,7 +2,7 @@
   "repository": "methodbridge-local",
   "release": "v0.1.0-bootstrap",
   "provenance_note": "The initial public bootstrap was reconstructed from retained research artifacts. The tracked Git repository is now the authoritative source.",
-  "file_count_excluding_manifest": 356,
+  "file_count_excluding_manifest": 357,
   "manifest_self_excluded": true,
   "files": [
     {
@@ -577,6 +577,15 @@
       "size": 153,
       "sha256": "43a0956668d4161e9c84e4bd0988fdc3b36a7402d17cb936e37c6f611df98fa5",
       "category": "data",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/.prelocal-pr-marker",
+      "size": 17,
+      "sha256": "30323186851745fa1d07cdc148323cac645cf3bd38c05bb9a129f037040f9d25",
+      "category": "docs",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
       "sensitivity": "public_synthetic_or_documentation"
