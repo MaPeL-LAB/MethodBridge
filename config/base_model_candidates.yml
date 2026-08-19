@@ -1,43 +1,77 @@
-version: 0.1.0
-selection_rule: No final ranking until same-device GGUF MethodBridge and ADTC profiler
-  bake-off.
+version: 1.0.0
+reviewed_at: '2026-08-19T08:38:00+02:00'
+selection_rule: No final ranking until exact-revision GGUF candidates are compared on the same target-class device, frozen public benchmark, local-only challenger set, response contract, and official profiler path.
 quantizations:
 - Q4_K_M
 - Q5_K_M
 - Q6_K
 candidates:
+- id: qwen25_1_5b_instruct
+  model: Qwen/Qwen2.5-1.5B-Instruct
+  revision: 8ee93c2720648b8ffbb4942ceed829eb72978c29
+  parameters: 1.54B
+  architecture: qwen2
+  context_length: 32768
+  license: Apache-2.0
+  access: public_no_credentials
+  admission: empirical_primary
+  role: mature_compatibility_and_speed_baseline
+  priority: 1
 - id: qwen3_1_7b
   model: Qwen/Qwen3-1.7B
-  band: small_1_to_lt2B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
   parameters: 1.7B
+  architecture: qwen3_dense
+  context_length: 32768
   license: Apache-2.0
-  priority: 1
-  status: requires_empirical_test
-- id: qwen35_2b
-  model: Qwen/Qwen3.5-2B
-  band: medium_2_to_3B
-  parameters: 2B
-  license: Apache-2.0
+  access: public_no_credentials
+  admission: empirical_primary
+  role: primary_compact_reasoning_candidate
   priority: 2
-  status: requires_empirical_test
 - id: smollm3_3b
   model: HuggingFaceTB/SmolLM3-3B
-  band: medium_2_to_3B
+  revision: 0a27da171a4ef1e26230ac2b43c9dbf037957625
   parameters: 3B
+  architecture: smollm3_dense_gqa_nope
+  context_length: 65536
   license: Apache-2.0
+  access: public_no_credentials
+  admission: empirical_primary
+  role: middle_quality_candidate
   priority: 3
-  status: requires_empirical_test
 - id: phi4mini_3_8b
   model: microsoft/Phi-4-mini-instruct
-  band: upper_3_to_4B
+  revision: cfbefacb99257ffa30c83adab238a50856ac3083
   parameters: 3.8B
+  architecture: phi4_mini_dense
+  context_length: 128000
   license: MIT
+  access: public_no_credentials
+  admission: empirical_conditional
+  role: reasoning_quality_upper_boundary
   priority: 4
-  status: requires_empirical_test
+  condition: Admit only after Q4_K_M load, memory-headroom, and thermal smoke checks.
 - id: qwen3_4b_2507
   model: Qwen/Qwen3-4B-Instruct-2507
-  band: upper_3_to_4B
+  revision: f5d253c7173262c9fbfd68aee1eda21bdc375fb5
   parameters: 4B
+  architecture: qwen3_dense_non_thinking
+  context_length: 262144
   license: Apache-2.0
+  access: public_no_credentials
+  admission: empirical_conditional
+  role: upper_bound_non_thinking_candidate
   priority: 5
-  status: requires_empirical_test
+  condition: Quantized artifact must retain safe RAM headroom below the effective 7 GB ceiling.
+- id: qwen35_2b
+  model: Qwen/Qwen3.5-2B
+  revision: 5a34b97e5d68ab0de17d0df8e8fd30802fd9ec53
+  parameters: 2B
+  architecture: qwen3_5_hybrid_multimodal
+  context_length: 262144
+  license: Apache-2.0
+  access: public_no_credentials
+  admission: documentary_watch
+  role: architecture_watch_only
+  priority: 6
+  condition: Do not enter scored bake-off until the pinned llama.cpp build loads this exact revision reliably on CPU and integrated-graphics target classes; current upstream issue history shows backend and multi-turn risks.

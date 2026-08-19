@@ -1,36 +1,14 @@
 {
-  "generated_at": "2026-08-18T00:00:00+02:00",
-  "status": "recovered_from_retained_report_reverify_before_use",
+  "generated_at": "2026-08-19T08:38:00+02:00",
+  "status": "reviewed_and_frozen_for_pre_local_development",
+  "reviewed_by": "Marothi Peter Letsoalo",
+  "change_policy": "No submission-critical upstream may move without a reviewed diff, decision-log entry, tests, and accountable human approval.",
   "upstreams": [
-    {
-      "name": "ADTC submission template",
-      "repository": "Africa-Deep-Tech-Foundation/adtc-2026-submission-template",
-      "commit": "63ddc5422404f8ee112fc74d28e29764acd40a50"
-    },
-    {
-      "name": "ADTC profiler",
-      "repository": "Africa-Deep-Tech-Foundation/adtc-profiler",
-      "commit": "ac2e137dca65ea3b09d997774f17dd8907b489fb"
-    },
-    {
-      "name": "Theory of Change Architect",
-      "repository": "MaPeL-LAB/theory-of-change-architect",
-      "commit": "93c29f1236a77d9a2f3710ba75cf46e76d8bba8b"
-    },
-    {
-      "name": "llama.cpp",
-      "repository": "ggml-org/llama.cpp",
-      "commit": "8b86400975fbbe29fca7f196ee208ab246a7c29f"
-    },
-    {
-      "name": "Transformers",
-      "repository": "huggingface/transformers",
-      "commit": "64f30450dbfd1d02f610ad7080535cb906637fb9"
-    },
-    {
-      "name": "PEFT",
-      "repository": "huggingface/peft",
-      "commit": "b68870eadc8b51ae6b6807de2a85ff0d36b3313c"
-    }
+    {"name":"ADTC submission template","repository":"Africa-Deep-Tech-Foundation/adtc-2026-submission-template","ref":"main","commit":"63ddc5422404f8ee112fc74d28e29764acd40a50","use":"official repository shape and metadata contract","status":"frozen"},
+    {"name":"ADTC profiler","repository":"Africa-Deep-Tech-Foundation/adtc-profiler","ref":"main","commit":"ac2e137dca65ea3b09d997774f17dd8907b489fb","use":"participant and audit profiling","status":"frozen"},
+    {"name":"Theory of Change Architect","repository":"MaPeL-LAB/theory-of-change-architect","ref":"main","commit":"93c29f1236a77d9a2f3710ba75cf46e76d8bba8b","use":"project governance method","status":"frozen"},
+    {"name":"llama.cpp","repository":"ggml-org/llama.cpp","ref":"master","commit":"0329fcdac8c2477c2dda1d5e43fd2e3616b99655","use":"official inference, GGUF conversion, quantization, and validation","status":"frozen_for_bakeoff","review_note":"Includes GGUF reader size guards; every candidate must still pass architecture-specific load and inference tests."},
+    {"name":"Transformers","repository":"huggingface/transformers","ref":"main","commit":"f9b76f2dfc44fdc6109468925bf0e1856fd34278","use":"documentary source-model loading and optional adaptation","status":"frozen_for_reproduction"},
+    {"name":"PEFT","repository":"huggingface/peft","ref":"main","commit":"a9d039ab503b9509a79c2770746b188a9d3f179d","use":"conditional LoRA or QLoRA only after prompt-only evidence","status":"frozen_for_reproduction"}
   ]
 }

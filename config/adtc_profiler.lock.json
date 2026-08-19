@@ -1,5 +1,7 @@
 {
   "repository": "Africa-Deep-Tech-Foundation/adtc-profiler",
   "commit": "ac2e137dca65ea3b09d997774f17dd8907b489fb",
-  "status": "reverify_before_final_profile"
+  "reviewed_at": "2026-08-19T08:38:00+02:00",
+  "status": "frozen_for_pre_local_development",
+  "final_profile_requirement": "Recheck the official branch and rules immediately before the final profiler run; a change requires a reviewed compatibility decision."
 }

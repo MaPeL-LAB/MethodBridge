@@ -1,9 +1,21 @@
 # Official evaluation contract
 
-**Status:** populated bootstrap decision; reverify before final submission.
+**Status:** frozen for pre-local engineering; final rules recheck still mandatory.
 
-The final candidate must use GGUF and llama.cpp, run offline, expose exactly two public prompts, remain within the target laptop budget, and survive public plus hidden domain evaluation. Live rules must be rechecked before submission.
+The submission-critical path is:
 
-## Verification
+```text
+public credential-free model download
+        ↓
+exact GGUF at metadata runtime path
+        ↓
+pinned llama.cpp load
+        ↓
+two declared public prompts + organizer hidden prompts
+        ↓
+quality, throughput, memory, crash, and thermal assessment
+```
 
-The controlling evidence, implementation artifact, acceptance test, and review trigger must be recorded in `research/RESEARCH_TO_DECISION_MATRIX.md`. No unmeasured result may be promoted to fact.
+MethodBridge may use richer development tooling, but the scored artifact must stand alone in the official offline runtime. Retrieval, cloud APIs, private services, and alternate inference engines cannot be required for judged answers.
+
+No unmeasured value may enter `REPORT.md` or `metadata.json`. Any official rules, schema, or profiler change reopens this contract.
