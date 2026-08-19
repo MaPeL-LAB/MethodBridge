@@ -13,14 +13,20 @@
 
 - populated documentation and governance structure;
 - attributable and bounded Theory-of-Change approval record;
-- 18 ADRs;
-- five base-model candidate records;
+- 19 ADRs, including the native-reference-versus-simulation hardware boundary;
+- exact base-model candidate records and pinned upstream toolchain;
 - Q4_K_M, Q5_K_M, and Q6_K experiment configurations;
 - 16-entry source registry;
 - four project-authored synthetic training fixtures;
-- 60 held-out evaluation specifications, of which 40 are bootstrap-executable structural checks;
+- 60 training-excluded evaluation specifications, of which 40 are bootstrap-executable structural checks;
 - ten public-prompt candidates;
 - repository, source, dataset, leakage, evaluation, packaging, and readiness validators;
+- machine-readable ADTC Standard Laptop profile;
+- host classification as `reference_match`, `simulation_only`, or `invalid_environment`;
+- fail-closed reference-run validation for model, toolchain, memory, thermal, network, swap, crash, and accuracy boundaries;
+- constrained `linux/amd64` simulation wrapper that cannot be promoted to final score evidence;
+- native reference-laptop evidence capture and three-run profiling wrapper;
+- hardware-contract tests and a dedicated GitHub Actions workflow;
 - governance regression tests for the approved scope and retained human authority;
 - fail-closed `download_model.sh`.
 
@@ -30,8 +36,13 @@
 - any LoRA or QLoRA training;
 - GGUF conversion and `llama.cpp` load tests;
 - quantization quality comparison;
+- constrained Mac simulation with real candidate GGUFs;
+- native ADTC-class x86 laptop profiling;
 - ADTC profiler throughput, TTFT, RAM, and thermal measurements;
 - public model hosting and repeated credential-free download.
+
+The hardware contract is implemented, but no Mac simulation result or native
+reference-laptop measurement is claimed by this repository change.
 
 ## Requires accountable human decision
 
