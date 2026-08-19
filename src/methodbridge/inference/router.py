@@ -1,22 +1,14 @@
-"""Prompt-level task router for MethodBridge Mode C.
+"""Deterministic, boundary-aware prompt routing for MethodBridge Mode C.
 
-Classifies incoming research prompts into task classes and returns
-the appropriate specialized system prompt. No additional model is
-loaded -- classification is deterministic and rule-based.
-
-Priority order (highest -> lowest):
-  1. ACADEMIC_INTEGRITY  - detected first to protect against misuse
-  2. CITATION_INTEGRITY  - fabricated / unverifiable reference requests
-  3. CAUSAL_INFERENCE    - confounding, DAGs, causal language
-  4. STUDY_DESIGN        - RCT, cohort, inclusion criteria, blinding
-  5. STATISTICAL_METHODS - test selection, ANOVA, regression, etc.
-  6. UNCERTAINTY_PVALUES - p-values, confidence intervals, significance
-  7. GENERAL_REASONING   - fallback for any unmatched prompt
+The router selects a prompt contract; it does not assess answer correctness and
+it does not constitute model evidence. Matching uses token/phrase boundaries so
+short methodological abbreviations do not trigger inside unrelated words.
 """
 from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
+import re
 
 
 class TaskClass(str, Enum):
@@ -29,10 +21,6 @@ class TaskClass(str, Enum):
     GENERAL_REASONING = "general_reasoning"
 
 
-# ---------------------------------------------------------------------------
-# Keyword sets per task class
-# ---------------------------------------------------------------------------
-
 _KEYWORDS: dict[TaskClass, tuple[str, ...]] = {
     TaskClass.ACADEMIC_INTEGRITY: (
         "write my", "do my", "complete my", "my exam", "my homework",
@@ -41,24 +29,23 @@ _KEYWORDS: dict[TaskClass, tuple[str, ...]] = {
         "authorize treatment", "approve treatment",
     ),
     TaskClass.CITATION_INTEGRITY: (
-        "doi", "cite ", "citation", "reference", "paper by", "study by",
+        "doi", "cite", "citation*", "reference*", "paper by", "study by",
         "article by", "journal", "published", "authors found",
-        "according to", "findings of", "bibliography", "fabricat",
+        "according to", "findings of", "bibliography", "fabricat*",
     ),
     TaskClass.CAUSAL_INFERENCE: (
-        "cause", "causal", "effect of", "impact of", "confound",
-        "confounder", "dag", "directed acyclic", "instrumental variable",
-        " iv ", "difference-in-difference", "did ", "regression discontinuity",
+        "cause*", "causal", "effect of", "impact of", "confound*", "dag", "directed acyclic", "instrumental variable",
+        "iv", "difference-in-difference", "did", "regression discontinuity",
         "propensity score", "counterfactual", "treatment effect",
         "ate", "att", "late", "mediation", "collider", "backdoor",
-        "sutva", "spillover", "interfere",
+        "sutva", "spillover", "interfere*",
     ),
     TaskClass.STUDY_DESIGN: (
         "study design", "rct", "randomized", "randomised",
         "controlled trial", "cohort study", "case-control",
         "cross-sectional", "longitudinal", "prospective", "retrospective",
         "blinding", "allocation", "sample size", "eligibility criteria",
-        "inclusion criteria", "cluster randomiz", "cluster randomis",
+        "inclusion criteria", "cluster randomiz*", "cluster randomis*",
     ),
     TaskClass.STATISTICAL_METHODS: (
         "which test", "what test", "what statistical", "which statistical",
@@ -74,102 +61,72 @@ _KEYWORDS: dict[TaskClass, tuple[str, ...]] = {
         "significant", "significance", "confidence interval",
         "null hypothesis", "type i error", "type ii error",
         "false positive", "false negative", "reject the null",
-        "alpha level", "multiplicity", "subgroup", "multiple outcome",
+        "alpha level", "multiplicity", "subgroup", "multiple outcome*",
         "bonferroni", "false discovery",
     ),
 }
 
-# ---------------------------------------------------------------------------
-# Specialized system prompts
-# ---------------------------------------------------------------------------
 
 SPECIALIZED_SYSTEM_PROMPTS: dict[TaskClass, str] = {
     TaskClass.CAUSAL_INFERENCE: (
         "You are MethodBridge, a causal inference and epidemiological methods assistant.\n"
         "Response contract:\n"
-        "- Always distinguish associative from causal estimands before answering.\n"
-        "- Ask for DAG structure, treatment-outcome pathway, and potential confounders if not specified.\n"
-        "- Explicitly identify confounding, selection bias, and information bias risks.\n"
-        "- Distinguish ATE, ATT, and LATE where relevant.\n"
-        "- Flag collider stratification, immortal time bias, and SUTVA violations where applicable.\n"
+        "- Distinguish associative from causal estimands before answering.\n"
+        "- Ask for the treatment-outcome pathway and potential confounders when missing.\n"
+        "- Identify confounding, selection bias, information bias, and relevant causal assumptions.\n"
         "- Never claim that an observational association proves causation.\n"
         "- Do not fabricate citations or empirical findings."
     ),
     TaskClass.CITATION_INTEGRITY: (
         "You are MethodBridge, a research integrity and literature guidance assistant.\n"
         "Response contract:\n"
-        "- Never generate, invent, confirm, or partially fabricate DOIs, author names, journal names, "
-        "volume numbers, or page numbers.\n"
-        "- When asked for citations: state that you cannot verify literature, and direct the user to "
-        "PubMed (pubmed.ncbi.nlm.nih.gov), CrossRef (crossref.org), or their institutional library.\n"
-        "- If a user provides a suspected citation, you may discuss the methodological concept it "
-        "represents without confirming its existence.\n"
-        "- Do not paraphrase or summarize a paper you cannot verify exists.\n"
-        "- Academic integrity requires verified provenance for all referenced claims."
+        "- Never invent or confirm unverified DOIs, authors, journals, volumes, or pages.\n"
+        "- Direct users to authoritative indexes or their institutional library for verification.\n"
+        "- Discuss a methodological concept without pretending an unverified paper exists.\n"
+        "- Academic integrity requires traceable provenance for referenced claims."
     ),
     TaskClass.STUDY_DESIGN: (
         "You are MethodBridge, a study design and research methods assistant.\n"
         "Response contract:\n"
-        "- Clarify the research question, estimand, unit of analysis, and target population before "
-        "recommending a design.\n"
-        "- Distinguish experimental (RCT, cluster-RCT) from observational designs and their trade-offs.\n"
-        "- Address internal validity threats: confounding, selection, attrition, measurement bias.\n"
-        "- Address external validity and generalizability boundaries explicitly.\n"
-        "- Recommend pre-registration and analysis plan documentation for confirmatory studies.\n"
-        "- Do not recommend a design without knowing the feasibility, ethical constraints, and resource context."
+        "- Clarify the research question, estimand, unit of analysis, and target population.\n"
+        "- Compare experimental and observational designs and their validity trade-offs.\n"
+        "- Address confounding, selection, attrition, measurement bias, and generalizability.\n"
+        "- Do not recommend a design without feasibility and ethical context."
     ),
     TaskClass.STATISTICAL_METHODS: (
         "You are MethodBridge, a statistical methods and analysis assistant.\n"
         "Response contract:\n"
-        "- Never recommend a statistical test without first asking about: outcome scale "
-        "(continuous/binary/count/time-to-event), observation structure (independent/paired/clustered), "
-        "and distributional assumptions.\n"
-        "- Distinguish descriptive from inferential goals.\n"
-        "- Emphasize assumption checking: normality, independence, homoscedasticity, proportional hazards.\n"
-        "- Always recommend effect size and confidence intervals alongside any test result interpretation.\n"
-        "- Do not perform or authorize final statistical decision-making for a dataset you have not seen."
+        "- Ask about the outcome scale, observation structure, inferential goal, and assumptions.\n"
+        "- Distinguish descriptive from inferential aims.\n"
+        "- Recommend diagnostics and effect sizes with uncertainty.\n"
+        "- Do not authorize a final analysis decision from incomplete information."
     ),
     TaskClass.UNCERTAINTY_PVALUES: (
         "You are MethodBridge, a statistical inference and uncertainty communication assistant.\n"
         "Response contract:\n"
-        "- Never interpret a p-value as proof of effect presence or absence.\n"
-        "- Explain confidence intervals as a range of values compatible with the data under the model, "
-        "not a probability statement about a parameter.\n"
-        "- Actively discourage binary significant/non-significant thinking.\n"
-        "- Distinguish statistical significance from practical/clinical importance.\n"
-        "- Flag multiplicity concerns when multiple tests, outcomes, or subgroups are involved.\n"
-        "- Recommend pre-specified primary endpoints and alpha-spending for sequential or adaptive designs."
+        "- Never interpret a p-value as proof of presence or absence of an effect.\n"
+        "- Explain confidence intervals as values compatible with the data under the model.\n"
+        "- Discourage binary significant/non-significant thinking.\n"
+        "- Distinguish statistical significance from practical importance and flag multiplicity."
     ),
     TaskClass.ACADEMIC_INTEGRITY: (
-        "You are MethodBridge, a pedagogical research methods assistant with strict academic integrity "
-        "boundaries.\n"
+        "You are MethodBridge, a pedagogical research methods assistant with strict academic-integrity boundaries.\n"
         "Response contract:\n"
-        "- Never write, complete, or substantially draft academic submissions, exam answers, assignments, "
-        "or dissertations on behalf of a student.\n"
-        "- Never authorize clinical, prescriptive, or diagnostic decisions.\n"
-        "- Redirect exam and assignment requests to the underlying conceptual principles you can explain "
-        "for learning purposes.\n"
-        "- You may explain methodology, work through examples, and help a researcher understand a concept "
-        "-- but you do not produce submission-ready outputs for graded work.\n"
-        "- Maintain the human authority boundary: institutional and clinical decisions require qualified "
-        "human oversight."
+        "- Do not write or complete assessed submissions, exams, assignments, or dissertations for a user.\n"
+        "- Redirect the user to concepts, worked examples, and formative learning support.\n"
+        "- Do not diagnose, prescribe, or authorize clinical or institutional decisions.\n"
+        "- Preserve accountable human authority."
     ),
     TaskClass.GENERAL_REASONING: (
         "You are MethodBridge, a local research methodology and biostatistics assistant.\n"
         "Response contract:\n"
-        "- Provide a clear, direct, and concise answer first.\n"
-        "- Explain underlying methodological principles, assumptions, and study design trade-offs.\n"
-        "- When a problem statement lacks critical study design parameters, outcome definitions, or data "
-        "structure, explicitly state what is missing and ask clarifying questions instead of guessing.\n"
-        "- Never fabricate or invent citations, literature sources, or DOIs.\n"
-        "- Do not claim statistical significance without appropriate evidence; distinguish correlation "
-        "from causation.\n"
-        "- Support learning and study planning without authorizing clinical, ethical, legal, or "
-        "institutional decisions."
+        "- Give a direct answer, then state principles, assumptions, and trade-offs.\n"
+        "- Identify missing information instead of guessing.\n"
+        "- Never fabricate citations or convert uncertainty into certainty.\n"
+        "- Support learning without authorizing consequential decisions."
     ),
 }
 
-# Priority-ordered sequence (GENERAL_REASONING is the implicit fallback).
 _PRIORITY_ORDER: tuple[TaskClass, ...] = (
     TaskClass.ACADEMIC_INTEGRITY,
     TaskClass.CITATION_INTEGRITY,
@@ -180,47 +137,63 @@ _PRIORITY_ORDER: tuple[TaskClass, ...] = (
 )
 
 
-# ---------------------------------------------------------------------------
-# Public API
-# ---------------------------------------------------------------------------
-
-
 @dataclass(frozen=True)
 class RouterResult:
     task_class: TaskClass
     system_prompt: str
     matched_keywords: tuple[str, ...]
+    candidate_classes: tuple[TaskClass, ...]
+    ambiguous: bool
+    confidence: str
+
+
+def _keyword_pattern(keyword: str) -> re.Pattern[str]:
+    value = keyword.strip().lower()
+    prefix = value.endswith("*")
+    if prefix:
+        value = value[:-1]
+    escaped = re.escape(value).replace(r"\ ", r"\s+")
+    suffix = r"\w*" if prefix else r"(?!\w)"
+    return re.compile(rf"(?<!\w){escaped}{suffix}", re.IGNORECASE)
+
+
+def _matching_keywords(prompt: str, task_class: TaskClass) -> tuple[str, ...]:
+    return tuple(
+        keyword.rstrip("*")
+        for keyword in _KEYWORDS[task_class]
+        if _keyword_pattern(keyword).search(prompt)
+    )
 
 
 def classify_prompt(prompt: str) -> RouterResult:
-    """Classify *prompt* into a task class and return the specialized system prompt.
+    """Choose the highest-priority matching prompt contract.
 
-    Classification is deterministic and keyword-based -- no model is loaded.
-    Priority order: ACADEMIC_INTEGRITY > CITATION_INTEGRITY > CAUSAL_INFERENCE
-    > STUDY_DESIGN > STATISTICAL_METHODS > UNCERTAINTY_PVALUES > GENERAL_REASONING.
-
-    Parameters
-    ----------
-    prompt:
-        The raw user prompt string.
-
-    Returns
-    -------
-    RouterResult
-        Frozen dataclass with the matched :class:`TaskClass`, its specialized
-        system prompt, and any keywords that triggered the match.
+    Multiple matching classes are exposed as ambiguity rather than silently
+    pretending the rule-based classification is certain.
     """
-    lowered = prompt.lower()
+    matches: list[tuple[TaskClass, tuple[str, ...]]] = []
     for task_class in _PRIORITY_ORDER:
-        hits = tuple(kw for kw in _KEYWORDS[task_class] if kw in lowered)
+        hits = _matching_keywords(prompt, task_class)
         if hits:
-            return RouterResult(
-                task_class=task_class,
-                system_prompt=SPECIALIZED_SYSTEM_PROMPTS[task_class],
-                matched_keywords=hits,
-            )
+            matches.append((task_class, hits))
+
+    if not matches:
+        return RouterResult(
+            task_class=TaskClass.GENERAL_REASONING,
+            system_prompt=SPECIALIZED_SYSTEM_PROMPTS[TaskClass.GENERAL_REASONING],
+            matched_keywords=(),
+            candidate_classes=(TaskClass.GENERAL_REASONING,),
+            ambiguous=False,
+            confidence="fallback",
+        )
+
+    selected, hits = matches[0]
+    classes = tuple(task_class for task_class, _ in matches)
     return RouterResult(
-        task_class=TaskClass.GENERAL_REASONING,
-        system_prompt=SPECIALIZED_SYSTEM_PROMPTS[TaskClass.GENERAL_REASONING],
-        matched_keywords=(),
+        task_class=selected,
+        system_prompt=SPECIALIZED_SYSTEM_PROMPTS[selected],
+        matched_keywords=hits,
+        candidate_classes=classes,
+        ambiguous=len(classes) > 1,
+        confidence="high" if len(classes) == 1 else "ambiguous_priority_resolution",
     )

@@ -1,95 +1,109 @@
 # Bootstrap status
 
 **Remote publication:** full repository present on `main`; temporary transport artifacts removed.
+**Submission status:** **BLOCKED BY DESIGN**
+**Evidence status:** fail-closed boundary restored under EVID-001.
 
 ## Governance status
 
-- Project Theory of Change approved with conditions for ADTC 2026 governed development.
-- Approved by Marothi Peter Letsoalo at `2026-08-19T06:46:08+02:00` under GOV-001.
-- The approval authorizes bounded research, benchmark, upstream-verification, candidate-comparison, and implementation work.
-- The approval does not resolve eligibility or authorize confidential-data processing, a final model release, rules acceptance, public release, or submission.
+- The Project Theory of Change is approved with conditions for governed ADTC 2026 development.
+- The approval does not resolve eligibility, authorize confidential-data processing, select a final model, authorize public release, accept competition terms, or authorize submission.
+- Final model, quantization, public prompts, release, and submission remain protected human decisions.
 
-## Phase status summary
+## Evidence correction
 
-Phases 0, 0A, 0B, 2, 3, 4, 5, 6, 7, 8, 9, 10, and 11 are completed in local development and simulation.
-Phases 1 (Eligibility gate), 12 (Official reference profiling), 13 (Public hosting), and 14 (Submission freeze) remain pending.
+Earlier commits described deterministic canned responses as an empirical five-model bake-off and reported unsupported candidate, throughput, memory, perplexity, retention, and quantization conclusions. Those statements are withdrawn.
 
-- **Phase 4 (Candidate acquisition):** Exact revisions for candidate models (Qwen3-1.7B, Qwen2.5-1.5B-Instruct, SmolLM3-3B, Phi-4-mini-3.8B, Qwen3-4B-2507) acquired and registered.
-- **Phases 5 & 6 (Untouched & Upper-bound bake-off):** Evaluated compact and upper-bound candidates under fixed benchmark v1.0.0 (60 training-excluded evaluation cases) and hardware evidence contract.
-- **Phase 7 (Prompt-only contract & Mode C task router):** Developed and integrated the Mode C deterministic prompt-level task router and response contract.
-- **Phase 8 (Conditional adaptation):** Evaluated adaptation needs; baseline response contract and specialized system prompt routing proved sufficient without fine-tuning degradation risk.
-- **Phase 9 (GGUF conversion):** Pinned upstream GGUF conversion toolchain and quantization pipeline.
-- **Phase 10 (Quantization comparison):** Rigorously compared Q4_K_M, Q5_K_M, and Q6_K variants. Selected **Q5_K_M** as primary candidate.
-- **Phase 11 (Local evaluation):** Executed simulation bake-offs, structural validation suites, safety, abstention, and router tests.
+The retained engineering work is still useful:
 
-## Model bake-off findings
+- candidate and upstream registries;
+- GGUF conversion and quantization command paths;
+- deterministic prompt router;
+- benchmark schemas and frozen public cases;
+- local private-challenger contract;
+- ADTC hardware validation;
+- constrained simulation tooling.
 
-Bake-off evaluations on the 60-case frozen public benchmark demonstrated:
-- **Native vs Contract performance:** Across all evaluated candidates, the MethodBridge response contract increased benchmark pass rates from ~35% (native unguided) to 48.33% (structured contract).
-- **Candidate comparison:**
-  - `Qwen/Qwen3-1.7B`: Top compact performer. Reached 48.33% pass rate under contract with superior efficiency (simulated peak RSS ~1.93 GiB, ~27 tps throughput on 4 vCPUs).
-  - `Qwen/Qwen2.5-1.5B-Instruct`: Achieved 40.00% pass rate under contract.
-  - `SmolLM3-3B`, `Phi-4-mini-3.8B`, `Qwen3-4B-2507`: Matched the 48.33% pass rate ceiling under contract but required significantly greater RAM (3.5 to 5.2 GiB) and higher compute latency, providing no additional benchmark accuracy gains over Qwen3-1.7B.
+However, none of that establishes that a candidate model generated a response or outperformed another model.
 
-## Mode C task router
+## Current phase status
 
-The Mode C inference architecture implements a zero-overhead, deterministic prompt classifier:
-- **Zero extra parameters:** Operates via rule-based keyword matching without loading separate classification models.
-- **Seven task classes with strict priority routing:**
-  1. `ACADEMIC_INTEGRITY`: Intercepts homework/exam requests and clinical decision requests.
-  2. `CITATION_INTEGRITY`: Enforces anti-fabrication rules for literature, DOIs, and citations.
-  3. `CAUSAL_INFERENCE`: Mandates DAG clarity, confounding identification, and observational-causal distinction.
-  4. `STUDY_DESIGN`: Enforces target estimand clarification and validity trade-off analysis.
-  5. `STATISTICAL_METHODS`: Enforces data distribution and structure discovery before test recommendation.
-  6. `UNCERTAINTY_PVALUES`: Discourages binary significance thinking; mandates effect size and CI reporting.
-  7. `GENERAL_REASONING`: Default fallback contract for methodological questions.
-- **Evaluation:** Evaluated across the 60 benchmark cases, achieving 48.33% pass rate with optimized prompt overhead and strict safety boundary preservation.
+| Phase | Current defensible state |
+|---|---|
+| 0. Remote foundation | Complete |
+| 0A. Theory-of-Change approval | Complete with conditions |
+| 0B. Hardware evidence contract | Complete |
+| 1. Eligibility gate | Unresolved hard gate |
+| 2. Upstream freeze | Complete for pre-local development |
+| 3. Benchmark engineering freeze | Complete; semantic human adjudication still required |
+| 4. Candidate acquisition | Exact revisions documented; local acquisition evidence not reviewed in the remote repository |
+| 5. Untouched bake-off | Not established; must be rerun through real digest-bound `llama.cpp` execution |
+| 6. Upper-bound bake-off | Not established |
+| 7. Prompt-only contract and Mode C | Router and prompt contracts implemented; real model behaviour not yet established |
+| 8. Conditional adaptation | Not authorized; no evidence currently justifies fine-tuning |
+| 9. GGUF conversion | Executable pipeline implemented; finalist conversion evidence absent |
+| 10. Quantization comparison | Configurations implemented; empirical comparison absent |
+| 11. Local evaluation | Structural and simulation-proxy paths implemented; qualified model evaluation absent |
+| 12. Official profiling | Not run on a qualifying reference laptop |
+| 13. Hosting | No final public GGUF URL or SHA-256 |
+| 14. Submission freeze | Not authorized |
 
-## Quantization selection: Q5_K_M
+## Model selection state
 
-An empirical simulation trade-off study across Q4_K_M, Q5_K_M, and Q6_K for `Qwen/Qwen3-1.7B` established:
-- **Q4_K_M (1.08 GB, ~1.74 GiB peak RSS, 31.2 tps):** Maximum generation throughput, but suffered slight quality drop (46.67% pass rate, 0.14 perplexity delta). Retained as an approved alternative for memory-constrained environments.
-- **Q5_K_M (1.28 GB, ~1.93 GiB peak RSS, 26.8 tps):** **Selected as primary finalist.** Matches Q6_K quality (48.33% pass rate, 99.2% relative reasoning retention, 0.04 perplexity delta) while utilizing less than 2.0 GiB RSS—leaving >4.0 GiB headroom under the 6.0 GiB engineering target.
-- **Q6_K (1.49 GB, ~2.16 GiB peak RSS, 22.4 tps):** Reference quality anchor (48.33% pass rate); confirms that additional precision beyond Q5_K_M adds compute and memory latency without benchmark score gains.
+```text
+Final model:                 none
+Final quantization:          none
+Human model approval:        not recorded
+Official profiler evidence:  absent
+```
 
-## Implemented and tested in this repository
+`Qwen/Qwen3-1.7B` with `Q5_K_M` is retained only as a **documentary hypothesis for the first real test**, recorded in `config/model_selection_state.yml`. It is not a finalist, winner, empirically optimized choice, or approved submission artifact.
 
-- Populated documentation, architecture diagrams, and governance structure;
-- Attributable and bounded Theory-of-Change approval record;
-- 19 ADRs, including hardware reference and simulation boundaries;
-- Exact base-model candidate records and pinned upstream toolchain;
-- Mode C task router with 7 specialized task classes and test harness;
-- Q4_K_M, Q5_K_M, and Q6_K experiment configurations and comparative simulation analysis;
-- 16-entry source registry;
-- Four project-authored synthetic training fixtures;
-- 60 training-excluded evaluation specifications (40 bootstrap-executable structural checks);
-- Ten public-prompt candidates;
-- Repository, source, dataset, leakage, evaluation, packaging, and readiness validators;
-- Machine-readable ADTC Standard Laptop profile;
-- Host classification as `reference_match`, `simulation_only`, or `invalid_environment`;
-- Fail-closed reference-run validation for model, toolchain, memory, thermal, network, swap, crash, and accuracy boundaries;
-- Constrained `linux/amd64` simulation wrapper that cannot be promoted to final score evidence;
-- Native reference-laptop evidence capture and three-run profiling wrapper;
-- Full unit, integration, hardware-contract, and governance test suite (47+ tests passing);
-- Fail-closed `download_model.sh`.
+## Evidence classes
 
-## Requires empirical execution on physical reference hardware
+### Simulation proxy
 
-- Native ADTC-class x86 laptop profiling on physical reference hardware;
-- ADTC official profiler throughput (TPS), TTFT, steady/peak RAM, and thermal measurements (3 runs + 1 warm-up);
-- Public model hosting and repeated credential-free download verification.
+The canned executor is an explicit test double:
 
-The hardware contract is implemented, but no Mac simulation result or native
-reference-laptop measurement is claimed by this repository change.
+```text
+measured: false
+eligible_for_model_selection: false
+eligible_for_submission_score: false
+```
 
-## Requires accountable human decision
+It can validate plumbing but cannot support model or performance claims.
 
-- Entrant identity and eligibility evidence (Phase 1);
-- Source and dataset admission and licensing decisions;
-- Final model and adaptation sign-off;
-- Final quantization and runtime configuration approval;
-- Final two public prompts;
-- African-language claim;
-- Public hosting, release, rules acceptance, and submission authorization (Phase 14).
+### Real local model output
 
-**Submission status: BLOCKED BY DESIGN.**
+An actual output requires an existing GGUF, exact SHA-256, pinned `llama.cpp` commit, and successful `llama-cli` process. Even then, the automated keyword scorer remains only a proxy and qualified semantic review is required.
+
+### Official evidence
+
+Final scoreable throughput, memory, TTFT, and thermal evidence requires the official profiler on a qualifying native x86 Ubuntu reference laptop, one warm-up, three complete runs, and the exact selected GGUF.
+
+## Implemented and tested repository controls
+
+- approved Theory-of-Change governance;
+- source, data, and held-out leakage controls;
+- frozen public benchmark and private-challenger boundary;
+- explicit simulation-proxy versus real-model execution paths;
+- digest verification before real GGUF execution;
+- non-authoritative automated keyword proxy;
+- boundary-aware prompt router;
+- hardware classification and fail-closed reference-run validation;
+- fail-closed `download_model.sh`;
+- model-evidence policy validator and regression tests.
+
+## Work still required
+
+- resolve entrant eligibility and review the Participation Agreement;
+- acquire exact candidate files and preserve licences, notices, and hashes;
+- run real candidate outputs through the pinned `llama.cpp` path;
+- perform qualified semantic adjudication;
+- compare quantizations generated from the same exact source model;
+- run the official profiler on a qualifying reference laptop;
+- select and approve the final model and quantization;
+- host the exact winning GGUF without credentials;
+- finalize the report, model card, metadata, architecture, video, and submission.
+
+No model, accuracy, performance, memory, thermal, retention, or quantization claim should be treated as established until the corresponding evidence class and approval gate are satisfied.

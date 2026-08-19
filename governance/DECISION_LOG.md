@@ -7,6 +7,7 @@
 | 2026-08-18 | Defer retrieval and African-language claim | bootstrap accepted | review after Gate 1 |
 | 2026-08-18 | Run empirical bake-off before tuning | bootstrap accepted | technical evidence required |
 | 2026-08-19 | Approve the current MethodBridge Theory of Change for governed ADTC development | approved with conditions | Marothi Peter Letsoalo |
+| 2026-08-19 | Restore the fail-closed model evidence boundary and withdraw unsupported model claims | approved correction | Marothi Peter Letsoalo |
 
 ## GOV-001 — Theory of Change approval
 
@@ -39,3 +40,32 @@
 - **Review trigger:** a material change to the primary user, causal pathway,
   contribution boundary, protected decisions, data boundary, or intended
   deployment reopens GOV-001.
+
+## EVID-001 — Fail-closed model evidence restoration
+
+- **Decision:** `approved_correction`
+- **Actor:** Marothi Peter Letsoalo
+- **Recorded at:** `2026-08-19T19:56:27+02:00`
+- **Scope:** restore truthful evidence classifications; separate simulation from
+  real `llama.cpp` execution; withdraw unsupported candidate, performance,
+  retention, perplexity, and quantization claims; and reconcile status and
+  submission metadata.
+- **Rationale:** the prior canned runner loaded no model and populated static or
+  process-construction values, so its outputs could not support empirical model
+  comparisons. Retaining those claims would conflict with the approved
+  evidence, uncertainty, and human-authority boundaries.
+- **Decision:** preserve the simulation proxy as an explicit CI test double;
+  require digest-bound GGUF execution for real model-output evidence; classify
+  the keyword scorer as non-authoritative; require qualified semantic review;
+  and reserve official performance evidence for the pinned profiler on a
+  qualifying reference host.
+- **Withdrawn claims:** the previously reported multi-model pass rates,
+  candidate ranking, static RSS/TPS values, perplexity deltas, reasoning
+  retention, and Q5_K_M optimum/finalist wording.
+- **Not authorized:** final model selection, final quantization, adaptation,
+  public hosting, release, challenge-rule acceptance, or submission.
+- **Evidence:** GitHub issue #15, ADR-020,
+  `docs/MODEL_EVIDENCE_BOUNDARY.md`,
+  `config/model_evidence_policy.yml`, and the model-evidence CI tests.
+- **Review trigger:** any attempt to use simulation, documentary estimates, or
+  automated proxy results as model-selection or submission evidence.
