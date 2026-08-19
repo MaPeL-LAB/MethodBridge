@@ -160,8 +160,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "size": 2560,
-      "sha256": "19af07c7e320af29cf814aeff5632b53688e47b6cf3f540087425d1254b10dcf",
+      "size": 2698,
+      "sha256": "07337b8b3c5adc441737cd63481c2986e5d0427edeae2a94a8e7ede1cf5b5e8e",
       "category": "root",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
