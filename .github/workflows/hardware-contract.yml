@@ -1,0 +1,25 @@
+name: Hardware contract
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e '.[dev]'
+      - run: python scripts/check_adtc_host.py --output /tmp/hardware-attestation.json
+      - run: python -m pytest -q tests/hardware
+      - run: bash -n scripts/run_adtc_simulated_profile.sh
+      - run: bash -n scripts/run_adtc_reference_profile.sh
+      - run: bash -n scripts/capture_adtc_hardware_evidence.sh
+      - run: python scripts/validate_repository.py

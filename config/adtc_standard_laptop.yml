@@ -1,0 +1,57 @@
+schema_version: 1.0.0
+profile_id: adtc-standard-laptop-2026
+status: official_reference_reverified_2026-08-19
+source_notes:
+- Africa Deep Tech Challenge 2026 submission requirements
+- Official ADTC profiler documentation and scoring contract
+- Reverify immediately before final profiling and submission
+architecture:
+  accepted_values:
+  - x86_64
+  - amd64
+  development_simulation_platform: linux/amd64
+cpu:
+  allowed_model_patterns:
+  - \bIntel(?:\(R\))?\s+Core(?:\(TM\))?\s+i5-10\d{2,3}[A-Z0-9-]*\b
+  - \bIntel(?:\(R\))?\s+Core(?:\(TM\))?\s+i5-11\d{2,3}[A-Z0-9-]*\b
+  - \bIntel(?:\(R\))?\s+Core(?:\(TM\))?\s+i5-12\d{2,3}[A-Z0-9-]*\b
+  - \bAMD\s+Ryzen\s+5\s+3\d{3}[A-Z0-9-]*\b
+  - \bAMD\s+Ryzen\s+5\s+4\d{3}[A-Z0-9-]*\b
+  - \bAMD\s+Ryzen\s+5\s+5\d{3}[A-Z0-9-]*\b
+  simulation_vcpus: 4
+memory:
+  installed_gib_min: 7.5
+  installed_gib_max: 8.5
+  simulation_limit_gib: 7.5
+  official_peak_rss_limit_gib: 7.0
+  engineering_target_peak_rss_gib: 6.0
+graphics:
+  integrated_only: true
+  discrete_gpu_allowed: false
+  gpu_offload_allowed_for_reference_baseline: false
+storage:
+  minimum_gb: 256
+  reference_medium: SSD
+operating_system:
+  id: ubuntu
+  version: '22.04'
+  development_container_image: ubuntu:22.04
+execution:
+  runtime: llama.cpp
+  model_format: GGUF
+  network_disabled_during_inference: true
+  strict_run_swap_allowed: false
+  simulation_network_mode: none
+  simulation_pids_limit: 512
+thermal:
+  official_limit_celsius: 85.0
+  engineering_target_celsius: 80.0
+  throttling_allowed: false
+repetition:
+  warmup_runs: 1
+  measured_runs: 3
+  use_conservative_summary: true
+submission_boundary:
+  simulation_results_eligible: false
+  native_reference_results_required: true
+  organizer_audit_controls_final_evaluation: true

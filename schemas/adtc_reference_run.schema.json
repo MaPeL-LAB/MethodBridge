@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MethodBridge ADTC reference-run record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile_id",
+    "measurement_class",
+    "eligible_for_submission_score",
+    "host",
+    "runtime",
+    "warmup_runs",
+    "measured_runs",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "profile_id": {
+      "const": "adtc-standard-laptop-2026"
+    },
+    "measurement_class": {
+      "const": "reference_match"
+    },
+    "eligible_for_submission_score": {
+      "const": true
+    },
+    "host": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "architecture",
+        "cpu_model",
+        "physical_cores",
+        "logical_cores",
+        "memory_gib",
+        "os_id",
+        "os_version",
+        "kernel",
+        "gpu_names",
+        "discrete_gpu_present",
+        "swap_enabled",
+        "storage_gb",
+        "power_profile",
+        "thermal_monitor_available"
+      ],
+      "properties": {
+        "architecture": {"type": "string"},
+        "cpu_model": {"type": "string"},
+        "physical_cores": {"type": ["integer", "null"], "minimum": 1},
+        "logical_cores": {"type": ["integer", "null"], "minimum": 1},
+        "memory_gib": {"type": "number", "exclusiveMinimum": 0},
+        "os_id": {"type": "string"},
+        "os_version": {"type": "string"},
+        "kernel": {"type": "string"},
+        "gpu_names": {"type": "array", "items": {"type": "string"}},
+        "discrete_gpu_present": {"type": "boolean"},
+        "swap_enabled": {"type": "boolean"},
+        "storage_gb": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "power_profile": {"type": ["string", "null"]},
+        "thermal_monitor_available": {"type": "boolean"}
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_format",
+        "model_sha256",
+        "llama_cpp_commit",
+        "profiler_commit",
+        "gpu_layers",
+        "network_disabled",
+        "accuracy_skipped",
+        "runtime_args"
+      ],
+      "properties": {
+        "model_format": {"const": "GGUF"},
+        "model_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "llama_cpp_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "profiler_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "gpu_layers": {"const": 0},
+        "network_disabled": {"const": true},
+        "accuracy_skipped": {"const": false},
+        "runtime_args": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "warmup_runs": {"type": "integer", "minimum": 1},
+    "measured_runs": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "run_id",
+          "completed",
+          "crashed",
+          "oom",
+          "peak_rss_gib",
+          "steady_state_rss_gib",
+          "tokens_per_second",
+          "first_token_latency_ms",
+          "max_temperature_celsius",
+          "thermal_throttled",
+          "model_sha256",
+          "llama_cpp_commit",
+          "profiler_commit",
+          "gpu_layers",
+          "network_disabled",
+          "accuracy_skipped"
+        ],
+        "properties": {
+          "run_id": {"type": "string", "minLength": 1},
+          "completed": {"const": true},
+          "crashed": {"const": false},
+          "oom": {"const": false},
+          "peak_rss_gib": {"type": "number", "minimum": 0},
+          "steady_state_rss_gib": {"type": "number", "minimum": 0},
+          "tokens_per_second": {"type": "number", "exclusiveMinimum": 0},
+          "first_token_latency_ms": {"type": "number", "minimum": 0},
+          "max_temperature_celsius": {"type": "number"},
+          "thermal_throttled": {"const": false},
+          "model_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "llama_cpp_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "profiler_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "gpu_layers": {"const": 0},
+          "network_disabled": {"const": true},
+          "accuracy_skipped": {"const": false}
+        }
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

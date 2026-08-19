@@ -6,6 +6,10 @@
 - Preserved the contribution boundary, licensed/synthetic data policy, human-authority controls, held-out evaluation boundary, and separate eligibility, release, rules, and submission gates.
 - Updated repository status, approval boundaries, decision records, README, and build checklist to distinguish governed-development approval from final release or submission authorization.
 - Replaced the obsolete "approval not recorded" regression test with checks for attributable, conditional, and bounded approval.
+- Added the machine-readable ADTC Standard Laptop profile and ADR-019.
+- Added host classification, hardware attestation, constrained simulation, native reference-run wrappers, and fail-closed reference evidence validation.
+- Added hardware JSON Schemas, 21 focused tests, documentation, Make target, repository validation, and a dedicated hardware-contract workflow.
+- Preserved the truth boundary that Apple Silicon and container results are development evidence only; final performance, efficiency, and thermal claims require a native qualifying x86 Ubuntu laptop and organizer audit.
 
 ## v0.1.0-bootstrap — 2026-08-19
 
