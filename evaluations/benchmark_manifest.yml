@@ -1,8 +1,13 @@
-version: 0.1.0
+version: 1.0.0
+freeze_id: methodbridge-public-benchmark-v1.0.0
+benchmark_sha256: 4d3a38889c1db2ec87714661aa8757923d70c074795300144f6c9eacbfffe9d6
 case_count: 60
 bootstrap_executable_count: 40
-held_out: true
+visibility: public
 training_excluded: true
+semantic_review_required: true
+private_challenger_required_before_tuning: true
+case_level_public_status_field: deprecated
 families:
 - general_scientific_reasoning
 - research_questions_estimands

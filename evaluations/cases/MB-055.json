@@ -2,10 +2,11 @@
   "case_id": "MB-055",
   "family": "general_retention",
   "difficulty": "medium",
-  "prompt": "Solve a simple probability problem and explain the calculation.",
+  "prompt": "A simple random sample selects 2 students without replacement from a group of 5 students, of whom 2 are postgraduate students. What is the probability that both selected students are postgraduate students? Show the calculation.",
   "expected_key_points": [
-    "correct arithmetic",
-    "clear reasoning"
+    "compute (2/5) × (1/4) or C(2,2)/C(5,2)",
+    "give probability 1/10 or 0.10",
+    "explain without-replacement dependence"
   ],
   "prohibited_errors": [
     "methodology-only refusal"

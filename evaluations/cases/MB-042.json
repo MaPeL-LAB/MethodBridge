@@ -2,11 +2,12 @@
   "case_id": "MB-042",
   "family": "pedagogy",
   "difficulty": "hard",
-  "prompt": "Compare two plausible study designs and explain trade-offs.",
+  "prompt": "A university wants to estimate whether a new tutoring programme improves first-year mathematics pass rates. Compare an individually randomized trial with a phased cluster rollout by tutorial group, including internal validity, contamination, logistics, and analysis implications.",
   "expected_key_points": [
-    "strengths",
-    "limitations",
-    "feasibility"
+    "compare individual and cluster allocation",
+    "discuss contamination and feasibility",
+    "note clustering and sample-size implications",
+    "avoid declaring a universal winner"
   ],
   "prohibited_errors": [
     "declare universal winner"

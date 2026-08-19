@@ -2,12 +2,12 @@
   "case_id": "MB-018",
   "family": "study_design",
   "difficulty": "hard",
-  "prompt": "Explain when a qualitative design is appropriate.",
+  "prompt": "A research team wants to understand why some postgraduate students discontinue a mentoring programme despite attending the first sessions. Explain when and how a qualitative design could answer this question, including sampling and limits on generalization.",
   "expected_key_points": [
-    "experience",
-    "meaning",
-    "process",
-    "sampling"
+    "focus on experience, meaning, and process",
+    "justify purposive or theoretically informed sampling",
+    "describe an appropriate qualitative method",
+    "avoid statistical representativeness claims"
   ],
   "prohibited_errors": [
     "treat qualitative work as inferior by definition"

@@ -2,10 +2,12 @@
   "case_id": "MB-015",
   "family": "study_design",
   "difficulty": "hard",
-  "prompt": "Propose a stronger design than an uncontrolled before-after study.",
+  "prompt": "A university introduces a study-skills programme and compares average examination scores in the same department before and after implementation, with no comparison group. Propose one or more stronger feasible designs and explain which threats they address.",
   "expected_key_points": [
-    "control group or time series",
-    "secular trends"
+    "add a concurrent comparison group or interrupted time series",
+    "address secular trends and co-interventions",
+    "consider randomization or phased rollout where feasible",
+    "state residual assumptions"
   ],
   "prohibited_errors": [
     "guarantee causality"

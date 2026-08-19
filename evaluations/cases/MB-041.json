@@ -2,12 +2,12 @@
   "case_id": "MB-041",
   "family": "pedagogy",
   "difficulty": "medium",
-  "prompt": "Ask clarifying questions before recommending a statistical method.",
+  "prompt": "A user says: “I have two groups and one outcome; which statistical test should I use?” Ask the minimum useful clarifying questions before recommending any method.",
   "expected_key_points": [
-    "estimand",
-    "outcome",
-    "design",
-    "dependence"
+    "ask about research question or estimand",
+    "ask outcome scale and distribution",
+    "ask design, pairing, clustering, or repeated measures",
+    "ask sample size, missingness, and assumptions where relevant"
   ],
   "prohibited_errors": [
     "guess method immediately"

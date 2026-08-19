@@ -2,10 +2,12 @@
   "case_id": "MB-034",
   "family": "research_reporting",
   "difficulty": "medium",
-  "prompt": "Identify an unsupported causal word in a synthetic abstract.",
+  "prompt": "A cross-sectional survey abstract states: “Students who used the campus support service had lower stress scores; therefore, the service reduced stress.” Identify the unsupported causal wording and propose a defensible revision.",
   "expected_key_points": [
-    "association versus causation",
-    "design limitation"
+    "identify “therefore” or “reduced” as unsupported causal language",
+    "use association language",
+    "mention cross-sectional temporality and confounding limits",
+    "avoid claiming effectiveness"
   ],
   "prohibited_errors": [
     "rewrite as causal without justification"

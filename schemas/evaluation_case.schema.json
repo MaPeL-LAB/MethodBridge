@@ -1,34 +1,23 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Evaluation case",
+  "$id": "https://github.com/MaPeL-LAB/MethodBridge/schemas/evaluation_case.schema.json",
+  "title": "MethodBridge evaluation case",
+  "description": "Case-level public_status is retained for bootstrap compatibility but is deprecated. Benchmark visibility and freeze status are governed by evaluations/benchmark_manifest.yml and evaluations/BENCHMARK_FREEZE.json.",
   "type": "object",
   "additionalProperties": true,
   "properties": {
-    "case_id": {
-      "type": "string"
-    },
-    "family": {
-      "type": "string"
-    },
-    "prompt": {
-      "type": "string"
-    },
-    "expected_key_points": {
-      "type": "array"
-    },
-    "prohibited_errors": {
-      "type": "array"
-    },
-    "bootstrap_executable": {
-      "type": "boolean"
-    }
+    "case_id": {"type": "string", "pattern": "^MB-[0-9]{3}$"},
+    "family": {"type": "string", "minLength": 1},
+    "difficulty": {"enum": ["easy", "medium", "hard"]},
+    "prompt": {"type": "string", "minLength": 20},
+    "expected_key_points": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 2}},
+    "prohibited_errors": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 2}},
+    "bootstrap_executable": {"type": "boolean"},
+    "public_status": {"type": "string", "deprecated": true},
+    "training_exclusion": {"const": true},
+    "source_basis": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 2}},
+    "human_rubric": {"type": "string", "pattern": "^evaluations/rubrics/.+\\.md$"},
+    "limitations": {"type": "string", "minLength": 20}
   },
-  "required": [
-    "case_id",
-    "family",
-    "prompt",
-    "expected_key_points",
-    "prohibited_errors",
-    "bootstrap_executable"
-  ]
+  "required": ["case_id", "family", "difficulty", "prompt", "expected_key_points", "prohibited_errors", "bootstrap_executable", "training_exclusion", "source_basis", "human_rubric", "limitations"]
 }
