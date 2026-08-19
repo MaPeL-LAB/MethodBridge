@@ -1,0 +1,31 @@
+version: 1.0.0
+reviewed_at: '2026-08-19T08:38:00+02:00'
+accountable_owner: Marothi Peter Letsoalo
+required_revision_length: 40
+allowed_licenses:
+- Apache-2.0
+- MIT
+admission_states:
+- empirical_primary
+- empirical_conditional
+- documentary_watch
+- rejected
+bakeoff_admitted_states:
+- empirical_primary
+- empirical_conditional
+requirements:
+  public_without_credentials: true
+  exact_revision: true
+  license_reviewed: true
+  official_llama_cpp_load_required: true
+  gguf_required_for_scored_comparison: true
+  same_hardware_required: true
+  frozen_public_benchmark_required: true
+  local_private_challenger_required_before_tuning: true
+  no_training_before_untouched_comparison: true
+stopping_conditions:
+- license or redistribution uncertainty
+- unsupported conversion or load path
+- crash, out-of-memory, or unsafe thermals
+- unacceptable fabricated-citation or authority-boundary behavior
+- material general-reasoning regression

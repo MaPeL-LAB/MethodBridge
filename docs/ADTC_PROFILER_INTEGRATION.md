@@ -1,9 +1,18 @@
 # ADTC profiler integration
 
-**Status:** populated bootstrap decision; reverify before final submission.
+## Frozen contract
 
-Pin the profiler, inspect its source, retain raw measurements, run participant mode against the exact final GGUF, and reconcile local versus audit variance.
+Profiler commit: `ac2e137dca65ea3b09d997774f17dd8907b489fb`  
+llama.cpp commit: `0329fcdac8c2477c2dda1d5e43fd2e3616b99655`
 
-## Verification
+The local bake-off must not invent an alternative score. It must:
 
-The controlling evidence, implementation artifact, acceptance test, and review trigger must be recorded in `research/RESEARCH_TO_DECISION_MATRIX.md`. No unmeasured result may be promoted to fact.
+1. verify the exact model SHA-256 and GGUF header;
+2. invoke the pinned official profiler in participant mode;
+3. preserve stdout, stderr, return code and machine declaration;
+4. retain raw quality responses separately from performance measurements;
+5. distinguish local diagnostics from official profiler results;
+6. stop on crash, OOM, malformed output, unsupported architecture, or unsafe thermal behavior;
+7. rerun the exact finalist from a clean checkout and clean model download.
+
+Audit-mode behavior remains organizer-controlled. Final profiler results are unavailable until local candidate execution.
