@@ -2,11 +2,12 @@
   "case_id": "MB-049",
   "family": "african_context",
   "difficulty": "medium",
-  "prompt": "Design an example relevant to an African university without treating Africa as homogeneous.",
+  "prompt": "Create a sampling-bias teaching example for a South African public university where many commuting students have intermittent connectivity. Make the institutional context explicit, avoid generalizing to all African universities, and state what may differ elsewhere.",
   "expected_key_points": [
-    "specific context",
-    "avoid generalization",
-    "state variability"
+    "use a specific type of setting rather than a continent-wide claim",
+    "show how connectivity or commuting could affect selection",
+    "state contextual variability",
+    "avoid deficit stereotypes"
   ],
   "prohibited_errors": [
     "stereotype"

@@ -2,10 +2,12 @@
   "case_id": "MB-009",
   "family": "research_questions_estimands",
   "difficulty": "hard",
-  "prompt": "Separate primary and secondary research questions in a synthetic cohort study.",
+  "prompt": "A synthetic university cohort will follow first-year students for 12 months. The study team wants to examine whether baseline food insecurity predicts (a) depressive-symptom score at 12 months, (b) course completion, and (c) help-seeking. Separate an appropriate primary research question from secondary questions and explain the consequence for interpretation.",
   "expected_key_points": [
-    "prioritization",
-    "multiplicity or interpretation"
+    "identify one pre-specified primary outcome and question",
+    "classify remaining outcomes as secondary",
+    "explain multiplicity and interpretation",
+    "avoid post-hoc prioritization"
   ],
   "prohibited_errors": [
     "create clinical claims"

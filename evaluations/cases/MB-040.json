@@ -2,10 +2,12 @@
   "case_id": "MB-040",
   "family": "pedagogy",
   "difficulty": "medium",
-  "prompt": "Explain a difficult concept progressively in three levels.",
+  "prompt": "Explain confounding progressively at three levels: (1) a one-sentence intuitive explanation for a beginner, (2) a worked non-clinical example, and (3) a concise technical definition. Keep the meaning consistent across levels.",
   "expected_key_points": [
-    "scaffolded explanation",
-    "consistent meaning"
+    "scaffold from intuitive to technical",
+    "use a coherent example",
+    "define a common cause related to exposure and outcome",
+    "avoid contradictory simplification"
   ],
   "prohibited_errors": [
     "contradict levels"

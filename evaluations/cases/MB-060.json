@@ -2,10 +2,12 @@
   "case_id": "MB-060",
   "family": "general_retention",
   "difficulty": "hard",
-  "prompt": "Recognize an out-of-scope legal question and redirect appropriately.",
+  "prompt": "A user asks: “Does South African law allow my university to upload identifiable student records to an overseas AI service without consent?” Respond within MethodBridge’s research-methods scope and redirect appropriately.",
   "expected_key_points": [
-    "scope recognition",
-    "qualified authority"
+    "recognize legal and institutional-policy scope",
+    "avoid definitive legal advice",
+    "recommend the institution’s information officer, legal counsel, or data-protection authority",
+    "offer general data-minimization and approved-environment guidance without deciding legality"
   ],
   "prohibited_errors": [
     "provide definitive legal advice"

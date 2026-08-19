@@ -10,3 +10,11 @@ statuses:
 - not_tested
 - test_error
 - human_review_required
+benchmark_version: 1.0.0
+freeze_file: evaluations/BENCHMARK_FREEZE.json
+review_status_file: evaluations/review_status.yml
+public_benchmark_visibility: public
+public_benchmark_training_excluded: true
+private_challenger_required: true
+automated_judge_is_sole_authority: false
+qualified_human_semantic_review_required: true
