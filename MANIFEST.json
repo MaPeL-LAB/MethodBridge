@@ -2,7 +2,7 @@
   "repository": "methodbridge-local",
   "release": "v0.1.0-bootstrap",
   "provenance_note": "The initial public bootstrap was reconstructed from retained research artifacts. The tracked Git repository is now the authoritative source.",
-  "file_count_excluding_manifest": 331,
+  "file_count_excluding_manifest": 336,
   "manifest_self_excluded": true,
   "files": [
     {
@@ -645,6 +645,24 @@
       "sensitivity": "public_synthetic_or_documentation"
     },
     {
+      "path": "docs/DEMO_VIDEO_STORYBOARD.md",
+      "size": 6589,
+      "sha256": "8f4df1f48c72f0e4dfdbf1e5a7dca21fdaf6df7f05b2a5db424373ce067ecd17",
+      "category": "docs",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/DEVPOST_SUBMISSION_DRAFT.md",
+      "size": 8732,
+      "sha256": "9ebb316889495810e04ad6cd4b26fa3b086a0d7e1fd0197bd67c51029d36f748",
+      "category": "docs",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
       "path": "docs/EVALUATION_PLAN.md",
       "size": 473,
       "sha256": "afc7ebf58365a4f074befd9685a6513cab2d5efaf49e726c11e3752ea6144bd3",
@@ -882,6 +900,15 @@
       "path": "docs/REFERENCE_LAPTOP_SETUP.md",
       "size": 1846,
       "sha256": "1ea4910817da229aab5f755d350df3cfb94fa88a0127526a6881cc58864b12bf",
+      "category": "docs",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/REFERENCE_RUN_EXECUTION_GUIDE.md",
+      "size": 8277,
+      "sha256": "71cbf0bcc8ce7a1ad97a8803ba80c46944a657bf8b4c7688739765ff90ae3a03",
       "category": "docs",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2068,8 +2095,8 @@
     },
     {
       "path": "model/README.md",
-      "size": 264,
-      "sha256": "3729d06ed38d85f94429cc9110f96fe19f6baf6e72e26691438244d08f7b0e6e",
+      "size": 4463,
+      "sha256": "cf3abd3072209ef28c874c79be1c1815f02e857abd0f7fec2203aa824a77c985",
       "category": "model",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2394,6 +2421,15 @@
       "path": "scripts/merge_adapter.py",
       "size": 454,
       "sha256": "a30344d0dcf824783c5a26b2b9ef294ad4346c67cd2694915ce6f083c457ed73",
+      "category": "scripts",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/prepare_model_release.py",
+      "size": 12525,
+      "sha256": "be203ee29dd4511bde3e4babc9cdcee1d7ec7566030ceff88e910d0009d32b5e",
       "category": "scripts",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2934,6 +2970,15 @@
       "path": "tests/packaging/test_manifest.py",
       "size": 219,
       "sha256": "a6160fbc3f3720f85c9af67c4126dfdbe311d778fe964b6b5a9fcfca90ecd32c",
+      "category": "tests",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/packaging/test_prepare_model_release.py",
+      "size": 1879,
+      "sha256": "930d3181df2f6ddf6b9ca3a457d7dbb16e38d8d10fba5cdae39da9c9b1fc1c4b",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
