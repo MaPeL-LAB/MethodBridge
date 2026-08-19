@@ -2,7 +2,7 @@ from pathlib import Path
 import re
 from typing import Any, Mapping
 from .data import load_json
-from .inference.runner import run_candidate_inference
+from .inference.runner import run_candidate_inference, run_candidate_inference_mode_c
 
 
 def load_cases(root: Path) -> list[dict]:
@@ -60,7 +60,7 @@ def run_benchmark_evaluation(
     candidate_id: str = "qwen25_1_5b_instruct",
     mode: str = "native",
 ) -> dict[str, Any]:
-    """Run full evaluation suite for a candidate in native or contract mode."""
+    """Run full evaluation suite for a candidate in native, contract, or mode_c."""
     cases = load_cases(root)
     case_results = []
     total_tokens_prompt = 0
@@ -68,7 +68,10 @@ def run_benchmark_evaluation(
     total_time_ms = 0.0
     
     for case in cases:
-        inf = run_candidate_inference(case["prompt"], candidate_id=candidate_id, mode=mode)
+        if mode == "mode_c":
+            inf = run_candidate_inference_mode_c(case["prompt"], candidate_id=candidate_id)
+        else:
+            inf = run_candidate_inference(case["prompt"], candidate_id=candidate_id, mode=mode)
         eval_res = evaluate_case_response(case, inf.response)
         eval_res["response_preview"] = inf.response[:120] + "..." if len(inf.response) > 120 else inf.response
         case_results.append(eval_res)

@@ -18,7 +18,18 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Run benchmark evaluation suite")
     parser.add_argument("--dry-run", action="store_true", help="Perform structural check without model execution")
     parser.add_argument("--candidate", type=str, default="qwen25_1_5b_instruct", help="Candidate identifier")
-    parser.add_argument("--mode", choices=["native", "contract", "both"], default="both", help="Prompt contract mode")
+    parser.add_argument(
+        "--mode",
+        choices=["native", "contract", "mode_c", "both", "all"],
+        default="both",
+        help=(
+            "Prompt contract mode: "
+            "native=Mode A (untouched), "
+            "contract=Mode B (MethodBridge contract), "
+            "mode_c=Mode C (task-level prompt router), "
+            "both=A+B, all=A+B+C"
+        ),
+    )
     parser.add_argument("--output", type=str, default=None, help="Optional output artifact path")
     args = parser.parse_args()
 
@@ -46,7 +57,14 @@ def main() -> int:
     classification = classify_host(facts, profile)
     attestation = make_attestation(facts, classification, profile)
 
-    eval_modes = ["native", "contract"] if args.mode == "both" else [args.mode]
+    # Determine which modes to run
+    if args.mode == "both":
+        eval_modes = ["native", "contract"]
+    elif args.mode == "all":
+        eval_modes = ["native", "contract", "mode_c"]
+    else:
+        eval_modes = [args.mode]
+
     results_by_mode = {}
     for m in eval_modes:
         results_by_mode[m] = run_benchmark_evaluation(ROOT, candidate_id=args.candidate, mode=m)
@@ -63,6 +81,7 @@ def main() -> int:
             "eligible_for_submission_score": classification.eligible_for_submission_score,
             "native_mode_pass_rate": results_by_mode.get("native", {}).get("pass_rate"),
             "contract_mode_pass_rate": results_by_mode.get("contract", {}).get("pass_rate"),
+            "mode_c_pass_rate": results_by_mode.get("mode_c", {}).get("pass_rate"),
         },
     }
 

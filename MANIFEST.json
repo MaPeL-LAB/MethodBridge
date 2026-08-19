@@ -2,7 +2,7 @@
   "repository": "methodbridge-local",
   "release": "v0.1.0-bootstrap",
   "provenance_note": "The initial public bootstrap was reconstructed from retained research artifacts. The tracked Git repository is now the authoritative source.",
-  "file_count_excluding_manifest": 316,
+  "file_count_excluding_manifest": 319,
   "manifest_self_excluded": true,
   "files": [
     {
@@ -1986,6 +1986,15 @@
       "sensitivity": "public_synthetic_or_documentation"
     },
     {
+      "path": "infra/container/Dockerfile",
+      "size": 1835,
+      "sha256": "68cc3010f99906bf57457f1b1dcc2cbb33d4b3f4b3c96f4518571a14443fa39e",
+      "category": "infra",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
       "path": "infra/container/README.md",
       "size": 150,
       "sha256": "fec94cf73ebda9715e05502238663c549ecad740a0c40dbd07a5f21400093d99",
@@ -2283,6 +2292,15 @@
       "sensitivity": "public_synthetic_or_documentation"
     },
     {
+      "path": "scripts/build_profiler_container.sh",
+      "size": 815,
+      "sha256": "73dba6cd451b83d7303bb76ffbe375bd518bfee61397d2285d5b65456ad11061",
+      "category": "scripts",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
       "path": "scripts/build_training_dataset.py",
       "size": 405,
       "sha256": "5c95d962396bbe8129cb79af396928106f71d2d988ad6ac47da8cb622eff6a0a",
@@ -2365,8 +2383,8 @@
     },
     {
       "path": "scripts/run_evaluation.py",
-      "size": 3208,
-      "sha256": "a3ec8874ab732b3a2cea42699359323e682db1237534fe7a5b846ca1708c7e0f",
+      "size": 3717,
+      "sha256": "e9a86860ec3a5e8f80646c5cf85aced25cf4049027a64154c9b1bf66f5cecb77",
       "category": "scripts",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2554,8 +2572,8 @@
     },
     {
       "path": "src/methodbridge/evaluation.py",
-      "size": 3434,
-      "sha256": "168b51861d18a874005c0bc5362fbdc6a008595105e48e5b91dd666070c053d0",
+      "size": 3609,
+      "sha256": "2a31c2751944e4c6d003416f96007037579277def362816806dfde71a717f928",
       "category": "src",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2592,6 +2610,15 @@
       "path": "src/methodbridge/inference/config.py",
       "size": 164,
       "sha256": "a505aa4f786e095757da62ce6c84671707105d45896dda3e0bc95f775e3035bc",
+      "category": "src",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/inference/runner.py",
+      "size": 12595,
+      "sha256": "08eea7d3d675907274564b66cb4c5419f79cb94b8d0d6e4756be3e7fb2510472",
       "category": "src",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",

@@ -1,13 +1,16 @@
 """MethodBridge candidate inference runner.
 
-Supports Mode A (Native Untouched) and Mode B (MethodBridge Response Contract)
-for model evaluation and bake-off benchmarking.
+Supports Mode A (Native Untouched), Mode B (MethodBridge Response Contract),
+and Mode C (Prompt-Level Task Router) for model evaluation and bake-off
+benchmarking.
 """
 from __future__ import annotations
 
 from dataclasses import dataclass
 import time
 from typing import Any, Mapping
+
+from .router import RouterResult, classify_prompt  # noqa: F401 – re-exported for callers
 
 METHODBRIDGE_SYSTEM_PROMPT = (
     "You are MethodBridge, a local research methodology and biostatistics assistant.\n"
@@ -45,11 +48,14 @@ class InferenceResult:
 
 def format_chatml_prompt(prompt: str, mode: str = "native", system_prompt: str | None = None) -> str:
     """Format input prompt into ChatML format.
-    
+
     Mode 'native': Standard user prompt without system prompt modifications.
     Mode 'contract': Prompts wrapped with the MethodBridge pedagogical response contract.
+    Mode 'routed': Prompts wrapped with a task-specific system prompt supplied by the
+        Mode C router (``classify_prompt``). The *system_prompt* argument must be
+        provided; if omitted it falls back to ``METHODBRIDGE_SYSTEM_PROMPT``.
     """
-    if mode in ("contract", "methodbridge_contract"):
+    if mode in ("contract", "methodbridge_contract", "routed"):
         sys = system_prompt or METHODBRIDGE_SYSTEM_PROMPT
         return f"<|im_start|>system\n{sys}<|im_end|>\n<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n"
     return f"<|im_start|>user\n{prompt}<|im_end|>\n<|im_start|>assistant\n"
@@ -178,4 +184,64 @@ def run_candidate_inference(
         total_time_ms=gen_time * 1000.0,
         throughput_tps=round(tps, 2),
         peak_rss_mb=peak_rss_mb,
+    )
+
+
+def run_candidate_inference_mode_c(
+    prompt: str,
+    *,
+    candidate_id: str = "smollm3_3b",
+    context_size: int = 2048,
+    temperature: float = 0.0,
+) -> InferenceResult:
+    """Run candidate inference under Mode C (Prompt-Level Task Router).
+
+    Classifies *prompt* via :func:`classify_prompt` and selects the
+    task-specific system prompt without loading any additional model.
+    The underlying inference is delegated to :func:`run_candidate_inference`
+    in ``'contract'`` mode with the routed system prompt injected.
+
+    The returned :class:`InferenceResult` has its ``mode`` field set to
+    ``'mode_c:<task_class_value>'`` (e.g. ``'mode_c:statistical_methods'``)
+    so that downstream evaluation pipelines can distinguish Mode C responses
+    from plain Mode B responses.
+
+    Parameters
+    ----------
+    prompt:
+        The raw user prompt string.
+    candidate_id:
+        Identifier for the candidate model (used for memory profiling).
+    context_size:
+        Token context window size passed to the underlying runner.
+    temperature:
+        Sampling temperature passed to the underlying runner.
+
+    Returns
+    -------
+    InferenceResult
+        Inference result with ``mode`` set to ``'mode_c:<task_class>'``.
+    """
+    router_result = classify_prompt(prompt)
+
+    base_result = run_candidate_inference(
+        prompt,
+        candidate_id=candidate_id,
+        mode="contract",
+        context_size=context_size,
+        temperature=temperature,
+        system_prompt=router_result.system_prompt,
+    )
+
+    # Return an updated InferenceResult with the Mode C mode tag.
+    return InferenceResult(
+        prompt=base_result.prompt,
+        mode=f"mode_c:{router_result.task_class.value}",
+        response=base_result.response,
+        tokens_prompt=base_result.tokens_prompt,
+        tokens_generated=base_result.tokens_generated,
+        time_to_first_token_ms=base_result.time_to_first_token_ms,
+        total_time_ms=base_result.total_time_ms,
+        throughput_tps=base_result.throughput_tps,
+        peak_rss_mb=base_result.peak_rss_mb,
     )
