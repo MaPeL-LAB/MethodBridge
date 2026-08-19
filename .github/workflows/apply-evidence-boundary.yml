@@ -37,6 +37,7 @@ jobs:
           base64 --decode /tmp/evidence_patch.b64 > /tmp/evidence_patch.tar.gz
           echo '9ab8e2bbb2a656cef1bedc8924bbccaddf237a32809f0ac388b33e3cb4fb7851  /tmp/evidence_patch.tar.gz' | sha256sum -c -
           tar -xzf /tmp/evidence_patch.tar.gz -C .
+          sed -i 's/[[:space:]]*$//' BOOTSTRAP_STATUS.md
           rm -rf .evidence-restore
           rm -f .github/workflows/apply-evidence-boundary.yml
 
