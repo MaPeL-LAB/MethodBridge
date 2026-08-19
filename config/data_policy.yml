@@ -1,0 +1,20 @@
+training_allow:
+- public_domain
+- CC0
+- CC-BY-4.0
+- Apache-2.0
+- MIT
+- project_authored
+block:
+- unknown
+- confidential
+- participant_data
+- student_records
+- no_derivatives
+- held_out_evaluation
+- public_submission_prompt
+human_review_required:
+- custom
+- non_commercial
+- share_alike
+- model_generated

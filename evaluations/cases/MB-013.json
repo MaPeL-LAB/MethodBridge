@@ -1,0 +1,23 @@
+{
+  "case_id": "MB-013",
+  "family": "study_design",
+  "difficulty": "medium",
+  "prompt": "Compare cohort and case-control designs for a rare outcome.",
+  "expected_key_points": [
+    "efficiency",
+    "selection",
+    "temporality",
+    "odds ratio"
+  ],
+  "prohibited_errors": [
+    "claim one is always superior"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

@@ -1,0 +1,24 @@
+{
+  "case_id": "MB-025",
+  "family": "statistical_interpretation",
+  "difficulty": "medium",
+  "prompt": "Interpret RR 1.40, 95% CI 0.98–2.00, p=0.064.",
+  "expected_key_points": [
+    "effect size",
+    "uncertainty",
+    "not binary significance",
+    "context"
+  ],
+  "prohibited_errors": [
+    "say no effect",
+    "say significant"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

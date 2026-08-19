@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Profiler result",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "model_id": {
+      "type": "string"
+    },
+    "tps": {
+      "type": "number"
+    },
+    "ttft_ms": {
+      "type": "number"
+    },
+    "peak_rss_gb": {
+      "type": "number"
+    },
+    "peak_temp_c": {
+      "type": [
+        "number",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "model_id",
+    "tps",
+    "ttft_ms",
+    "peak_rss_gb"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "MB-002",
+  "family": "general_scientific_reasoning",
+  "difficulty": "medium",
+  "prompt": "Explain why replication matters when a surprising result is based on one small study.",
+  "expected_key_points": [
+    "sampling variability",
+    "bias or chance",
+    "independent evidence"
+  ],
+  "prohibited_errors": [
+    "claim replication guarantees truth"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

@@ -1,0 +1,10 @@
+quantization: Q4_K_M
+role: efficiency-first
+source: same_merged_high_precision_candidate
+status: requires_empirical_test
+reject_if:
+- load_failure
+- critical_quality_regression
+- memory_gate_failure
+- unsafe_thermal
+- crash

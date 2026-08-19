@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-004",
+  "family": "general_scientific_reasoning",
+  "difficulty": "medium",
+  "prompt": "Explain the difference between a hypothesis and an objective.",
+  "expected_key_points": [
+    "testable proposition",
+    "action or aim"
+  ],
+  "prohibited_errors": [
+    "treat them as identical"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

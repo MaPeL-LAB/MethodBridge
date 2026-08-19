@@ -1,0 +1,43 @@
+version: 0.1.0
+selection_rule: No final ranking until same-device GGUF MethodBridge and ADTC profiler
+  bake-off.
+quantizations:
+- Q4_K_M
+- Q5_K_M
+- Q6_K
+candidates:
+- id: qwen3_1_7b
+  model: Qwen/Qwen3-1.7B
+  band: small_1_to_lt2B
+  parameters: 1.7B
+  license: Apache-2.0
+  priority: 1
+  status: requires_empirical_test
+- id: qwen35_2b
+  model: Qwen/Qwen3.5-2B
+  band: medium_2_to_3B
+  parameters: 2B
+  license: Apache-2.0
+  priority: 2
+  status: requires_empirical_test
+- id: smollm3_3b
+  model: HuggingFaceTB/SmolLM3-3B
+  band: medium_2_to_3B
+  parameters: 3B
+  license: Apache-2.0
+  priority: 3
+  status: requires_empirical_test
+- id: phi4mini_3_8b
+  model: microsoft/Phi-4-mini-instruct
+  band: upper_3_to_4B
+  parameters: 3.8B
+  license: MIT
+  priority: 4
+  status: requires_empirical_test
+- id: qwen3_4b_2507
+  model: Qwen/Qwen3-4B-Instruct-2507
+  band: upper_3_to_4B
+  parameters: 4B
+  license: Apache-2.0
+  priority: 5
+  status: requires_empirical_test

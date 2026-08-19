@@ -1,0 +1,28 @@
+{
+  "record_id": "train_syn_002",
+  "task_type": "statistical_interpretation",
+  "competency_ids": [
+    "uncertainty",
+    "effect_size"
+  ],
+  "prompt": "Explain why a p-value just above 0.05 does not prove there is no effect.",
+  "response": "A p-value is not the probability that the null hypothesis is true and the 0.05 threshold is not a scientific cliff. Interpret the effect estimate, uncertainty interval, design quality, assumptions, and practical importance.",
+  "source_ids": [
+    "project_authored"
+  ],
+  "source_authority": "synthetic_project_authored",
+  "source_licence": "project_authored",
+  "generation_method": "human_authored_bootstrap",
+  "human_review_status": "bootstrap_reviewed",
+  "difficulty": "easy",
+  "language": "en",
+  "african_context_tag": "not_applicable",
+  "safety_tags": [
+    "no_real_data"
+  ],
+  "split": "train_fixture",
+  "deduplication_key": "syn002",
+  "created_at": "2026-08-18",
+  "version": "1",
+  "limitations": "illustrative only"
+}

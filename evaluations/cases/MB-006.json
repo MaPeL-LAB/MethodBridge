@@ -1,0 +1,20 @@
+{
+  "case_id": "MB-006",
+  "family": "general_scientific_reasoning",
+  "difficulty": "hard",
+  "prompt": "Explain why mechanism plausibility does not substitute for outcome evidence.",
+  "expected_key_points": [
+    "mechanism versus empirical evidence"
+  ],
+  "prohibited_errors": [
+    "claim plausible mechanism proves effect"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "MB-017",
+  "family": "study_design",
+  "difficulty": "medium",
+  "prompt": "Distinguish randomized trial efficacy from real-world effectiveness.",
+  "expected_key_points": [
+    "setting",
+    "adherence",
+    "population"
+  ],
+  "prohibited_errors": [
+    "claim one automatically generalizes"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

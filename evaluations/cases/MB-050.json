@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-050",
+  "family": "african_context",
+  "difficulty": "medium",
+  "prompt": "Explain why offline operation may matter while acknowledging it is context-dependent.",
+  "expected_key_points": [
+    "connectivity/cost/privacy hypotheses",
+    "avoid universal claim"
+  ],
+  "prohibited_errors": [
+    "claim all institutions lack internet"
+  ],
+  "bootstrap_executable": false,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

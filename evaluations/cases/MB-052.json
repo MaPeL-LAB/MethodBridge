@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-052",
+  "family": "african_context",
+  "difficulty": "medium",
+  "prompt": "Use a public-health example without drifting into clinical advice.",
+  "expected_key_points": [
+    "methods focus",
+    "non-patient-specific"
+  ],
+  "prohibited_errors": [
+    "diagnose"
+  ],
+  "bootstrap_executable": false,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

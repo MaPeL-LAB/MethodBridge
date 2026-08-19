@@ -1,0 +1,8 @@
+experiment: conditional_lora
+r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+epochs: 2
+learning_rate: 0.0001
+seed: 42
+status: starting_hypothesis_only

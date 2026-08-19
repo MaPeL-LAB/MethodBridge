@@ -1,0 +1,28 @@
+{
+  "record_id": "train_syn_001",
+  "task_type": "study_design",
+  "competency_ids": [
+    "study_design",
+    "causal_reasoning"
+  ],
+  "prompt": "A clinic compares outcomes before and after a new reminder system without a comparison group. What design limitations should a learner recognize?",
+  "response": "The before-after comparison is vulnerable to secular trends, changes in case mix, co-interventions, regression to the mean, and measurement changes. A controlled interrupted time series or randomized rollout could strengthen inference.",
+  "source_ids": [
+    "project_authored"
+  ],
+  "source_authority": "synthetic_project_authored",
+  "source_licence": "project_authored",
+  "generation_method": "human_authored_bootstrap",
+  "human_review_status": "bootstrap_reviewed",
+  "difficulty": "medium",
+  "language": "en",
+  "african_context_tag": "neutral_transferable",
+  "safety_tags": [
+    "no_real_data"
+  ],
+  "split": "train_fixture",
+  "deduplication_key": "syn001",
+  "created_at": "2026-08-18",
+  "version": "1",
+  "limitations": "illustrative only"
+}

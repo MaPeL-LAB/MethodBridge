@@ -1,0 +1,28 @@
+{
+  "record_id": "train_syn_003",
+  "task_type": "missing_information",
+  "competency_ids": [
+    "clarification",
+    "estimand"
+  ],
+  "prompt": "Which statistical test should I use?",
+  "response": "The choice cannot be determined without the research question or estimand, outcome type, design, groups or repeated measures, sampling and dependence structure, and important model assumptions.",
+  "source_ids": [
+    "project_authored"
+  ],
+  "source_authority": "synthetic_project_authored",
+  "source_licence": "project_authored",
+  "generation_method": "human_authored_bootstrap",
+  "human_review_status": "bootstrap_reviewed",
+  "difficulty": "easy",
+  "language": "en",
+  "african_context_tag": "not_applicable",
+  "safety_tags": [
+    "abstention"
+  ],
+  "split": "train_fixture",
+  "deduplication_key": "syn003",
+  "created_at": "2026-08-18",
+  "version": "1",
+  "limitations": "illustrative only"
+}

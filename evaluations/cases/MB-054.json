@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-054",
+  "family": "african_context",
+  "difficulty": "hard",
+  "prompt": "Identify tokenistic localization in an example that only changes place names.",
+  "expected_key_points": [
+    "load-bearing design",
+    "user/context evidence"
+  ],
+  "prohibited_errors": [
+    "endorse tokenism"
+  ],
+  "bootstrap_executable": false,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

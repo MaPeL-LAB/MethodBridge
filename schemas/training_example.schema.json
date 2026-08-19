@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Training example",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "record_id": {
+      "type": "string"
+    },
+    "prompt": {
+      "type": "string"
+    },
+    "response": {
+      "type": "string"
+    },
+    "source_ids": {
+      "type": "array"
+    },
+    "split": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "record_id",
+    "prompt",
+    "response",
+    "source_ids",
+    "split"
+  ]
+}

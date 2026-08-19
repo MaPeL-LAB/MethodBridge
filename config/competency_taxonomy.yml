@@ -1,0 +1,12 @@
+version: 0.1.0
+families:
+- general_scientific_reasoning
+- research_questions_estimands
+- study_design
+- bias_causal_reasoning
+- statistical_interpretation
+- research_reporting
+- pedagogy
+- safety_governance
+- african_context
+- general_retention

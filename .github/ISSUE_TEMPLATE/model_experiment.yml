@@ -1,0 +1,10 @@
+name: Model experiment
+description: Propose a bounded candidate or quantization run
+title: "[EXP] "
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis and acceptance criteria
+    validations:
+      required: true

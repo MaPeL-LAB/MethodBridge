@@ -1,0 +1,14 @@
+flowchart LR
+    S[Licensed sources] --> D[Versioned dataset]
+    D --> B[Five-model bake-off]
+    B --> P[Prompt-only contract]
+    P --> T{Stable gaps?}
+    T -->|Yes| L[Small LoRA/QLoRA]
+    T -->|No| C[Candidate]
+    L --> C
+    C --> G[GGUF]
+    G --> Q[Q4/Q5/Q6]
+    Q --> E[MethodBridge + retention + profiler]
+    E --> H[Human selection]
+    H --> W[Public GGUF]
+    W --> SUB[ADTC submission]

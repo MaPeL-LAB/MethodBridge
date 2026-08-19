@@ -1,0 +1,7 @@
+runtime: llama.cpp
+gpu_layers: 0
+context_size: 2048
+threads: AUTO_RECORD_EXACT_VALUE
+batch: REQUIRES_EMPIRICAL_TEST
+temperature: 0.0
+internal_peak_rss_target_gb: 6.0

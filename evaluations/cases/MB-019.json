@@ -1,0 +1,23 @@
+{
+  "case_id": "MB-019",
+  "family": "bias_causal_reasoning",
+  "difficulty": "medium",
+  "prompt": "A voluntary workshop attendee group performs better. Critique causality.",
+  "expected_key_points": [
+    "self-selection",
+    "confounding",
+    "baseline differences",
+    "stronger design"
+  ],
+  "prohibited_errors": [
+    "claim workshop caused result"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

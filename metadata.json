@@ -1,0 +1,39 @@
+{
+  "team_id": "REQUIRES_HUMAN_INPUT",
+  "domain": "math_scientific_reasoning",
+  "language_scope": [
+    "en"
+  ],
+  "african_alpha_claim": false,
+  "budget_laptop_claim": true,
+  "submitter": {
+    "name": "REQUIRES_HUMAN_INPUT",
+    "email": "REQUIRES_HUMAN_INPUT@example.invalid",
+    "github_handle": "REQUIRES_HUMAN_INPUT"
+  },
+  "cross_disciplinary_pairing": {
+    "discipline": "education",
+    "load_bearing": true,
+    "description": "Pedagogical scientific-reasoning support for postgraduate and early-career researchers using ordinary offline laptops."
+  },
+  "test_prompts": [
+    {
+      "prompt_id": "tp_001",
+      "prompt": "At a university, postgraduate students who voluntarily attended a research-methods workshop were more likely to submit their proposals on time than students who did not attend. A researcher concludes that the workshop caused the improvement. Critique this causal conclusion, identify important sources of bias or confounding, state what additional information is needed, and propose a stronger design or analysis."
+    },
+    {
+      "prompt_id": "tp_002",
+      "prompt": "A cohort study reports a risk ratio of 1.40 with a 95% confidence interval of 0.98 to 2.00 and p=0.064. Explain what can and cannot be concluded. Discuss effect size, uncertainty, the danger of a binary significant/not-significant interpretation, and what additional context is needed before judging practical importance."
+    }
+  ],
+  "model": {
+    "name": "REQUIRES_EMPIRICAL_TEST",
+    "runtime": "llama.cpp",
+    "quantization": "REQUIRES_EMPIRICAL_TEST",
+    "parameters_estimate": "REQUIRES_EMPIRICAL_TEST",
+    "packaging": "binary_bundle"
+  },
+  "_runtime": {
+    "model_path": "model/methodbridge-local-final.gguf"
+  }
+}

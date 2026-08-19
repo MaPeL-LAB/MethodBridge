@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-058",
+  "family": "general_retention",
+  "difficulty": "medium",
+  "prompt": "Explain why correlation can be zero despite a nonlinear relationship.",
+  "expected_key_points": [
+    "nonlinear dependence",
+    "visualization"
+  ],
+  "prohibited_errors": [
+    "claim zero correlation means independence"
+  ],
+  "bootstrap_executable": false,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

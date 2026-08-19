@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-026",
+  "family": "statistical_interpretation",
+  "difficulty": "medium",
+  "prompt": "Explain why confidence intervals are not probability statements about a fixed parameter in the frequentist sense.",
+  "expected_key_points": [
+    "repeated-sampling interpretation",
+    "avoid overclaim"
+  ],
+  "prohibited_errors": [
+    "say 95% probability parameter lies inside"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

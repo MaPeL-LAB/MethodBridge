@@ -1,0 +1,22 @@
+{
+  "case_id": "MB-027",
+  "family": "statistical_interpretation",
+  "difficulty": "hard",
+  "prompt": "Distinguish statistical and practical importance.",
+  "expected_key_points": [
+    "magnitude",
+    "context",
+    "costs or consequences"
+  ],
+  "prohibited_errors": [
+    "equate p-value with importance"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

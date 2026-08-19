@@ -1,0 +1,22 @@
+{
+  "case_id": "MB-042",
+  "family": "pedagogy",
+  "difficulty": "hard",
+  "prompt": "Compare two plausible study designs and explain trade-offs.",
+  "expected_key_points": [
+    "strengths",
+    "limitations",
+    "feasibility"
+  ],
+  "prohibited_errors": [
+    "declare universal winner"
+  ],
+  "bootstrap_executable": false,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

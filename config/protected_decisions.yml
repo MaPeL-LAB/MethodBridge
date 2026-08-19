@@ -1,0 +1,11 @@
+protected:
+- primary_user
+- adtc_domain
+- cross_disciplinary_pairing
+- contribution_boundary
+- held_out_split
+- human_authority
+- final_model
+- final_quantization
+- public_prompts
+- submission_authorization

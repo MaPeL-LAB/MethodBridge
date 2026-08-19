@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Submission readiness",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "ready": {
+      "type": "boolean"
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "evidence": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "ready",
+    "blockers",
+    "evidence"
+  ]
+}

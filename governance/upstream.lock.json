@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-08-18T00:00:00+02:00",
+  "status": "recovered_from_retained_report_reverify_before_use",
+  "upstreams": [
+    {
+      "name": "ADTC submission template",
+      "repository": "Africa-Deep-Tech-Foundation/adtc-2026-submission-template",
+      "commit": "63ddc5422404f8ee112fc74d28e29764acd40a50"
+    },
+    {
+      "name": "ADTC profiler",
+      "repository": "Africa-Deep-Tech-Foundation/adtc-profiler",
+      "commit": "ac2e137dca65ea3b09d997774f17dd8907b489fb"
+    },
+    {
+      "name": "Theory of Change Architect",
+      "repository": "MaPeL-LAB/theory-of-change-architect",
+      "commit": "93c29f1236a77d9a2f3710ba75cf46e76d8bba8b"
+    },
+    {
+      "name": "llama.cpp",
+      "repository": "ggml-org/llama.cpp",
+      "commit": "8b86400975fbbe29fca7f196ee208ab246a7c29f"
+    },
+    {
+      "name": "Transformers",
+      "repository": "huggingface/transformers",
+      "commit": "64f30450dbfd1d02f610ad7080535cb906637fb9"
+    },
+    {
+      "name": "PEFT",
+      "repository": "huggingface/peft",
+      "commit": "b68870eadc8b51ae6b6807de2a85ff0d36b3313c"
+    }
+  ]
+}

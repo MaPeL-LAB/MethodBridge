@@ -1,0 +1,22 @@
+{
+  "case_id": "MB-003",
+  "family": "general_scientific_reasoning",
+  "difficulty": "hard",
+  "prompt": "A measurement changes halfway through a study. Explain the threat to comparability.",
+  "expected_key_points": [
+    "measurement change",
+    "information bias",
+    "calibration or sensitivity"
+  ],
+  "prohibited_errors": [
+    "ignore the change"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

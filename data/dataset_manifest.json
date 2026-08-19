@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "records": [
+    "train_syn_001",
+    "train_syn_002",
+    "train_syn_003",
+    "train_syn_004"
+  ],
+  "licence_gate": "all included records are project-authored synthetic fixtures",
+  "held_out_excluded": true
+}

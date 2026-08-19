@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dataset manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "records": {
+      "type": "array"
+    },
+    "licence_gate": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "records",
+    "licence_gate"
+  ]
+}

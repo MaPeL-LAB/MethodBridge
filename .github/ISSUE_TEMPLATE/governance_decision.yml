@@ -1,0 +1,9 @@
+name: Governance decision
+description: Record a protected human decision
+body:
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision, evidence, scope, and review trigger
+    validations:
+      required: true

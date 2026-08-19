@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-005",
+  "family": "general_scientific_reasoning",
+  "difficulty": "medium",
+  "prompt": "A result is statistically precise but based on a biased sample. Discuss validity.",
+  "expected_key_points": [
+    "precision is not validity",
+    "selection bias"
+  ],
+  "prohibited_errors": [
+    "equate narrow interval with truth"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

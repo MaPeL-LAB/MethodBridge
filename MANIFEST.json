@@ -1,0 +1,2511 @@
+{
+  "repository": "methodbridge-local",
+  "release": "v0.1.0-recovered",
+  "recovery_note": "Recreated from the retained Deep Research report and controlling prompt; not byte-identical to the inaccessible original sandbox artifact.",
+  "file_count_excluding_manifest": 278,
+  "manifest_self_excluded": true,
+  "files": [
+    {
+      "path": ".env.example",
+      "size": 181,
+      "sha256": "dd2b9c66db8440641e541f508eb5928850b15541a9cfe2bbf7262757727d7141",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "size": 201,
+      "sha256": "e0c2fe0fcb1df8c36f220ba66ee3ad3155b6e61c22e5ebf49f4f9cb46e7868cc",
+      "category": ".github",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/governance_decision.yml",
+      "size": 228,
+      "sha256": "0d311322c30a3e2647257af8ee4fa6354a60649d97890896f3bb5fde837ea0e0",
+      "category": ".github",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/model_experiment.yml",
+      "size": 246,
+      "sha256": "6011c50483fc765ec31787b0638ad0681486c212cc64a98cdf0cabc184ee9af9",
+      "category": ".github",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "size": 238,
+      "sha256": "1ef72b5ba10a31f36fb9d0e69c8be1eac7933730f9c76d74e8e10f84f86b191e",
+      "category": ".github",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "size": 343,
+      "sha256": "2bcf121eb90b0e87e62571c675e84e8c2cbb3a593132d5474395ce5bab67513d",
+      "category": ".github",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": ".github/workflows/data-governance.yml",
+      "size": 456,
+      "sha256": "73f2e450c77f8d8d2b932a711a93feef2f18dec713e53a837fd40b78b2bcb4fc",
+      "category": ".github",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": ".github/workflows/schema-validation.yml",
+      "size": 376,
+      "sha256": "3d0ac54f09ffb95af0a0c06b69949820ec701cff0a289c9bf9381019cebf837b",
+      "category": ".github",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": ".github/workflows/submission-readiness.yml",
+      "size": 404,
+      "sha256": "3c0196a64e11a05280eda4030f9ccaa59bd3ce0ab2804597862ac6a8cb200862",
+      "category": ".github",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": ".gitignore",
+      "size": 239,
+      "sha256": "2c49e32db78be8e0c2181d886614d4eb2588fc3ddefacc0b4ef2d4bcae13b423",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "AGENTS.md",
+      "size": 1159,
+      "sha256": "48e63ae8f221f26de8a12ec266702ceda553cce749eee6f043494b456742cca4",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "BOOTSTRAP_STATUS.md",
+      "size": 1249,
+      "sha256": "21164edb827ee4c6b260b3d407aac4fbc8c4b494db172cf8e673a9fb338c234a",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "BUILD_CHECKLIST.md",
+      "size": 1627,
+      "sha256": "a2eb6f04c0856e3ae41ac1bd447834d866819be67e844f4ada29dbed19a0de72",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size": 470,
+      "sha256": "eca1c56822bee3718ca57bceb9422a2cc4cf21ff61bed2c6de31fdb7912c1fb0",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "CODEX_IMPLEMENTATION_PROMPT.md",
+      "size": 642,
+      "sha256": "d7e30498a07b66f93b99d4baa7dcb2643d3cbd72daec5ad67f36d99da6d2e13c",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "size": 540,
+      "sha256": "9014826349e435027070a5c1312e66089f599da272666a967b62b6e590544da7",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "DATA_CARD.md",
+      "size": 480,
+      "sha256": "f61e4fbb0a4a3b343d72d4799ce3c41ffcf86706b0cdb839de8c76756cde1dcc",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "GOVERNANCE.md",
+      "size": 1157,
+      "sha256": "ce1f64d38b36c80735a2d78184bbed9d2fa84091d792041f207c1a09846d6a35",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "LICENSE_DECISION.md",
+      "size": 349,
+      "sha256": "a43607c523fe1c28850619f6b27621851b13316c30bdb19f7484167cc97a16eb",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "MODEL_CARD.md",
+      "size": 557,
+      "sha256": "3d14274a8a0edefa4521d4ed480a660a59113203ecc529154ebfa3de280ee1a4",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "Makefile",
+      "size": 348,
+      "sha256": "bde4d67895de2887363b13304d94fde9ce700d440dd4fd7dfbd025aa0015e0b8",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "NAME_STATUS.md",
+      "size": 327,
+      "sha256": "b62ab2c65f9b61284522afea4c7ace1892c3dd79a62eefeeb863b9e6b5ee87bd",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "PREEXISTING_ASSETS.md",
+      "size": 1266,
+      "sha256": "4c1517836256e228e8362d53d58c3abe965f4f1f36669f0ad9b525859a751fff",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "README.md",
+      "size": 3114,
+      "sha256": "692796cc4b89e7b6d6d198bbfd99a4c17af22d73d87322fdbec5857c1c6ad5d9",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "REPORT.md",
+      "size": 1421,
+      "sha256": "031037acf0429b7b340532f81b86fd330445feaea1b3ff728faccb01c0de8e0b",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "ROADMAP.md",
+      "size": 521,
+      "sha256": "45a9a09cade1a87e4496951b93b0e8ad8a0fd71769c2cae678e477e08849a195",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "SECURITY.md",
+      "size": 509,
+      "sha256": "1fb398ccc3ea6c64ada1ce5d051cea39e0b617de8b07f6686f9cfc1502a4144d",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "size": 311,
+      "sha256": "1359d9024c5d4076774d565140d4a852e151e7aa2d406c43513383e3bc7bbb62",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "assets/architecture/methodbridge.mmd",
+      "size": 403,
+      "sha256": "74519517453428e215bec61c78804e76616b4d07ee4141b4871ada2e684df824",
+      "category": "assets",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "assets/demo/README.md",
+      "size": 163,
+      "sha256": "0744743e61a44752ac5d655b0812df9ca93a247b232ad10ed31746bee04e6354",
+      "category": "assets",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/adtc_profiler.lock.json",
+      "size": 165,
+      "sha256": "2350c77ccbced33dd220ca6887a0f6d65c2fe8c49d0a8f3f8437f8e17382c8cc",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/base_model_candidates.yml",
+      "size": 962,
+      "sha256": "dc253ba5c63bd374890995feedbeb71a54dbaea0e4d4bd82fb8e9c052a3e1aba",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/competency_taxonomy.yml",
+      "size": 245,
+      "sha256": "636d6aeed503a5094859760d9bf248b18300ccf137c36da2bd6e10d9f4d01fda",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/data_policy.yml",
+      "size": 304,
+      "sha256": "c29f7f9c9e299875d5942fe064c7ab70745d0fd2e285c83e9fdb4c586dec74b0",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/evaluation_policy.yml",
+      "size": 235,
+      "sha256": "e2373a1530a285cb37330ebbe9cf1fd29b9a74d1efbf5690139ff5aca4e3f33b",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/inference/cpu.yml",
+      "size": 166,
+      "sha256": "b99f6ac56183147096f264f7a956195dfdfcda3fdfe8fcd1fe9e5ab0086cc214",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/protected_decisions.yml",
+      "size": 207,
+      "sha256": "b278dc137387fd241723f0e5d4912f0788724327b8d16644f334e19867d14ff5",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/quantization/Q4_K_M.yml",
+      "size": 224,
+      "sha256": "752410e885ef1a690a9620867616099c37b50d395deaf9522b2a4a76d2da7b17",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/quantization/Q5_K_M.yml",
+      "size": 216,
+      "sha256": "95c9027e5b8b24faae1c64c08c3184653592b74f33974a065fffef3e8c74ad39",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/quantization/Q6_K.yml",
+      "size": 222,
+      "sha256": "31d950bf08857c40ef789aa9a848488c1363da819bb00ef00ea5dbfaee72d60e",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/source_authority.yml",
+      "size": 309,
+      "sha256": "c1d14d06ebbf8f81369d2cc262fbf5dbd8faf10bbec3e6c4b7d3440cf48426c6",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/training/baseline.yml",
+      "size": 126,
+      "sha256": "3e651f74f3ab8d32d1293d32e68edbe1145c7c79cdfd4211f566a86ef64809d6",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/training/lora.yml",
+      "size": 143,
+      "sha256": "013c64c691663d600d37c869392cf43d8a380967d4f13bf97561812b8da8324d",
+      "category": "config",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "data/README.md",
+      "size": 285,
+      "sha256": "1b53d80c407d50a1204493523838b7345de90a55ccef052513d41ff32719bd01",
+      "category": "data",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "data/dataset_manifest.json",
+      "size": 239,
+      "sha256": "a4fd530a6d42a3761266bae2c16103393f78d28dd2d444327e4158f0e7ae52f8",
+      "category": "data",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "data/fixtures/train_001.json",
+      "size": 1071,
+      "sha256": "33c084be9d13d24c2a00688a0a8d3dadc71b1c8e93649ca576d5c1ea774d552d",
+      "category": "data",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "data/fixtures/train_002.json",
+      "size": 986,
+      "sha256": "85aa617db87114ab31793e3f021bf4b210f77fd61c7c036cf9c9121110f2af24",
+      "category": "data",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "data/fixtures/train_003.json",
+      "size": 910,
+      "sha256": "058a583a0f5671bbc332cab348543afa1fc4a187b457e7a8e42edbd050b35733",
+      "category": "data",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "data/fixtures/train_004.json",
+      "size": 932,
+      "sha256": "22a92b872b86a7c7bd2fa259f4e3418c0daf155f9234a8bc0b9a2d0cf659a64d",
+      "category": "data",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "data/samples/README.md",
+      "size": 78,
+      "sha256": "da9234a9b36f862e753a3a2a345bcfda9a6b5c1992e63ab38dcd0668dbefcafd",
+      "category": "data",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "data/samples/sample_input.json",
+      "size": 160,
+      "sha256": "7ec51e6660a3604387618e35fc616cc2b31eec61065f7560b1e41d59111ff2b4",
+      "category": "data",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "data/source_registry.yml",
+      "size": 3082,
+      "sha256": "50b20d144ec5c7126a2f1b60091e0cd6e7b7c9c8813f14bd6ebbaf3c936be409",
+      "category": "data",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "data/synthetic/README.md",
+      "size": 153,
+      "sha256": "43a0956668d4161e9c84e4bd0988fdc3b36a7402d17cb936e37c6f611df98fa5",
+      "category": "data",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/ACADEMIC_INTEGRITY_POLICY.md",
+      "size": 445,
+      "sha256": "aec4381fa36d9f4087ed5945625c037b193675d2fc9d4849ae094267eb7ab0a2",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/ADTC_PROFILER_INTEGRATION.md",
+      "size": 477,
+      "sha256": "2c9b6515df609281bb9fd704fa26f556d3c638a1fcf4208153a8449712d7b1e7",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/AFRICAN_CONTEXT_INTEGRATION.md",
+      "size": 515,
+      "sha256": "898f979b528db813f74a250540b1be1b778bb6810f1c9d9d015de5adb8eaecc5",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/CITATION_POLICY.md",
+      "size": 467,
+      "sha256": "1e77c9891f48f71e0d237448ac46253d0509219a0d2061294a4f6957e974bdc9",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/DATASET_STRATEGY.md",
+      "size": 472,
+      "sha256": "a8b7e0ac18a17ad7ffdc120763e958ebc1b4770ce90f5a8ceefb56758f649ebc",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/DEMO_CONTRACT.md",
+      "size": 493,
+      "sha256": "10e490cf2ec011222ad978f7de1ebdc4b3c5128acad4b6858e6a884946fa6916",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/DEMO_SCRIPT.md",
+      "size": 489,
+      "sha256": "20c14c02913b01507099c698514694de9dd3b659d44b90f5d675e7e884b12c03",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/EVALUATION_PLAN.md",
+      "size": 473,
+      "sha256": "afc7ebf58365a4f074befd9685a6513cab2d5efaf49e726c11e3752ea6144bd3",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/EXPERIMENT_TRACKING.md",
+      "size": 466,
+      "sha256": "c88e7b14f06d84e5652f189272c2b87237722de76094d553f759c3e30604b564",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/FINE_TUNING_AND_ADAPTER_PIPELINE.md",
+      "size": 456,
+      "sha256": "61e981173349d6e816df26c5bce0d8502a025036e6c411661b89a253ff43bbfa",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/HACKATHON_COMPLIANCE_MATRIX.md",
+      "size": 473,
+      "sha256": "15d9bd8c8d0b0a74eba4116134db9ee7258416f5932cada70b553e17fa10fdce",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/HACKATHON_SCOPE.md",
+      "size": 513,
+      "sha256": "ea2bfea4c9d50066984f8ed8c5d8d8e4af46ede8339e71207f221d67b744d4c5",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/HARDWARE_AND_MEMORY_BUDGET.md",
+      "size": 494,
+      "sha256": "096129de0a634c832d6afbf544caefc6a30863d2860787a645a6986bbd135727",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/JUDGING_CRITERIA_TRACEABILITY.md",
+      "size": 499,
+      "sha256": "ec8bd940cd3a0d39ac366a074332e003c2ea9c98359cb4e869ff561103c8ddaf",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/LANGUAGE_SUPPORT_STATUS.md",
+      "size": 509,
+      "sha256": "625adae43c3f2911ab91c2b5608743ec961a63d9aaa1c7523a3147f029ef60d7",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/LLAMA_CPP_RUNTIME_CONFIGURATION.md",
+      "size": 452,
+      "sha256": "16d056137f0a6262c3d6d3b4812566605b6d06c86f468b56de988b1b08abd26c",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/LOCAL_DEVELOPMENT.md",
+      "size": 479,
+      "sha256": "191253eb0ec61cd652e1d56b2d649be036f0e1069973a26fdf7ee19313d8d33c",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/LOCAL_RETRIEVAL_DECISION.md",
+      "size": 479,
+      "sha256": "99035a0a92f041c96fef218bfe152d42430193f6bb153bb6bbaa7e75681a0a76",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/METHODBRIDGE_COMPETENCY_FRAMEWORK.md",
+      "size": 495,
+      "sha256": "b8046dc26ca61ba25248603230c49a89abbc796f58a124c7907540f57d3b522e",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/MODEL_ARCHITECTURE.md",
+      "size": 503,
+      "sha256": "b60bbf2eecaeeec60127c0d09265b62498470ccc3540eb864a3da2ce2b18d792",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/MODEL_RELEASE_AND_HOSTING.md",
+      "size": 461,
+      "sha256": "29ab7db9ae45b7855d19c82bb9673e7a51de540eaf2b610c8d23e6712ab903cd",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/MODEL_SELECTION_AND_ROLLBACK.md",
+      "size": 478,
+      "sha256": "550d571e0e5f987be8edfb0af22b464fac298e4c5e373dd0c3cc5057812db83a",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/OFFICIAL_EVALUATION_CONTRACT.md",
+      "size": 558,
+      "sha256": "cdbf250cfb42219b3af8d84eef9408d5c1ec7c861cc69a44e805dc1bb8395d25",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/OFFLINE_KNOWLEDGE_PACK_SPECIFICATION.md",
+      "size": 464,
+      "sha256": "342af61fa498928ef2227384325280ff69eb31cdb13314da24bd8b33a7691a02",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/ORGANIZER_CLARIFICATION_REQUEST.md",
+      "size": 531,
+      "sha256": "4d3007dcd06467b0759c1d4b52dd688a6ab7b144c0ae3a9f8e6f212525c9bbcb",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/PEDAGOGICAL_BEHAVIOUR_SPECIFICATION.md",
+      "size": 462,
+      "sha256": "b4b4741626ec80913fc51b22afafd946ab8c4b35bc87e7f72353231879688e93",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/PRIVACY_AND_DATA_BOUNDARY.md",
+      "size": 510,
+      "sha256": "71af3981b3bc53f9142313d721933c9cec3c3b3d5d8ed355c805d3a64c4fb5ba",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/PRODUCT_REQUIREMENTS.md",
+      "size": 498,
+      "sha256": "0a1777f82c5e744507d5479d939ecaac3c4790ae564af9603b3c211d4f329ecd",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/PRODUCT_VISION.md",
+      "size": 527,
+      "sha256": "6830d8706f82864970cf24e6cac5e65a0586268ccfacf68d8a904f890bb75df4",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/QUANTIZATION_STRATEGY.md",
+      "size": 454,
+      "sha256": "87de639f1a891352acb0c0bfc1e2d871c50275121b6e7f91ab9b65f348a3a357",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/REPRODUCIBILITY.md",
+      "size": 457,
+      "sha256": "384bee2f44c0711f5620cfc5461640a6ea17ef935717869056dbfa72ee142e5d",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/RESPONSE_CONTRACT.md",
+      "size": 482,
+      "sha256": "f4c5f4957dfba9ac93a010bbaeadb5318988069422cbef9e5c34e79f2655443f",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/SECURITY_THREAT_MODEL.md",
+      "size": 490,
+      "sha256": "b8522c1e145c27091c0d91479f9b53cf70477d9e20a87d89445f1f92bca3e1d1",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/SUBMISSION_READINESS_CHECKLIST.md",
+      "size": 489,
+      "sha256": "a446c6f891681a7eef76af082bf196f1703038fe5fdbeb13fb480338470c2c23",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/SUBMISSION_REQUIREMENTS.md",
+      "size": 476,
+      "sha256": "45fb0eaff0a128910455e8ace569ecf287b0544c0303e852e8da4ead0418188f",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/SYSTEM_REQUIREMENTS.md",
+      "size": 485,
+      "sha256": "1d91d608a98a4fb9be0ec1721be1024f80ba74d2278a98757cb036c25d0b2026",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/TESTING_STRATEGY.md",
+      "size": 478,
+      "sha256": "f9d5a8126529f2ec377c9c8544d5563b308961fa4e9703e8dc6b4529c87ad0e3",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/THERMAL_TESTING.md",
+      "size": 460,
+      "sha256": "5304cb97f6c08b6c70d787b7bdb38469ddb0d3fa5d632de5f3d06571745892b0",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/TRAINING_STRATEGY.md",
+      "size": 483,
+      "sha256": "c3151148837f825d5ae2bfc168cbcec9b73a52577fa7741b0f8a79b043eb94bb",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/UNCERTAINTY_AND_ABSTENTION_POLICY.md",
+      "size": 501,
+      "sha256": "2f3017890b976b112443b49f9c4542b022f3bb82e351e8321688469b969dc656",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-001-primary-user-and-domain-boundary.md",
+      "size": 921,
+      "sha256": "d40cb12fb2988c6703fab48150975fe5a469d1b412a5bf8375662fe623155a82",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-002-math-scientific-reasoning-track.md",
+      "size": 889,
+      "sha256": "0ed007267689573f860de6ccecc0dacda5f5d274851a5e80645c0ae69e98e879",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-003-cross-disciplinary-education-pairing.md",
+      "size": 850,
+      "sha256": "416b21f470ea917dcf55a8db36811835d6a496d0bbf12f68d223997f90a6b902",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-004-base-model-selection.md",
+      "size": 849,
+      "sha256": "2ee7ecaf8a31d58d3ce89f0ced24caf8db7ef0124fe09b70c08cb02f0c6a58d3",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-005-training-and-adaptation-strategy.md",
+      "size": 862,
+      "sha256": "e0677a8ca15fab1ded66e278b30e774b9e96f665b14c3ed582ad42dc3b12af03",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-006-data-source-and-licensing-policy.md",
+      "size": 898,
+      "sha256": "13cacf8068878c51c64f8e0f5b0d9f56d3176a485c6f90087a2662f7f8ef3560",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-007-general-reasoning-retention.md",
+      "size": 896,
+      "sha256": "791d52a55ec71ae93145047d0eb1f4d65fcd3d4bbbe0a3e3ee9a16ca7625cc46",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-008-response-and-abstention-contract.md",
+      "size": 845,
+      "sha256": "a345875f196d9a21739ce9e1a5d13e3a3a636d07f8dc17c929a402ccdbd74859",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-009-local-retrieval-decision.md",
+      "size": 828,
+      "sha256": "32d3bb4788188c01659fcb60a9132f094e239a8022c069715cbcfdd00d7e7583",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-010-llama-cpp-official-runtime.md",
+      "size": 878,
+      "sha256": "bbd39dcc3aa80c5477b519975b65e16dd213aaa254d7f3025dc2fccee072f489",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-011-gguf-conversion-and-quantization.md",
+      "size": 856,
+      "sha256": "c42862a80306932acf532855de7d3e5e2c4c46ffb4b4939aced765930d0cd8cb",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-012-memory-and-context-budget.md",
+      "size": 867,
+      "sha256": "4b5a4827aef2d2061448af17fb0853b07217e3fc75d742a4bc30423aa0290a5b",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-013-evaluation-and-hidden-prompt-robustness.md",
+      "size": 887,
+      "sha256": "b32fea4d6ea6714a4fece804b92e9e7168758b850874c6f4fa94b5437d05b8da",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-014-public-weight-hosting.md",
+      "size": 843,
+      "sha256": "3e1bb99768dacd4aeaf55e49ab3ec4fa3f62bd6182907d05db749db8baef17a0",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-015-official-template-and-profiler-pinning.md",
+      "size": 867,
+      "sha256": "adf7d38937706ee1436dee588dbe3e7fb8383787932509ab68bfa67696e330eb",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-016-african-context-and-language-scope.md",
+      "size": 888,
+      "sha256": "821609e36a31ef6a5d74786d704a88d65d5ce96e3acc3ebc84e323991e40471f",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-017-human-authority-and-academic-integrity.md",
+      "size": 851,
+      "sha256": "1f1a596a8ee82f25ca4594740caee75ae3d07d6e6329177b43581a5e3873e807",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-018-release-and-staleness-policy.md",
+      "size": 940,
+      "sha256": "1b68a2002b18bff84d1fe24d3f47a1df7487f858fc7399ea7e204186870c9d98",
+      "category": "docs",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "download_model.sh",
+      "size": 1051,
+      "sha256": "5a421f1e36549e896b6e2e0bae8a103de07565fc1890f3caa8b88f182224339e",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/PUBLIC_PROMPT_CANDIDATES.md",
+      "size": 1046,
+      "sha256": "191f384aa2b8277d1c71ddc7c4140c089c7cf6ec7d01a4d073dca24573e2dc76",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/README.md",
+      "size": 259,
+      "sha256": "b923d6ebfe3c7574faf41902e5d77631a4d47fb74a1649575bac32db1f225c08",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/benchmark_manifest.yml",
+      "size": 877,
+      "sha256": "e74e1ebb29d6a62626c03df69de45e23b3581684a15f65e71a3055d4e8ba3358",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-001.json",
+      "size": 663,
+      "sha256": "c3ffa4518385ff4c4aca8810a777e853424519549514a165437a3c9414659452",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-002.json",
+      "size": 690,
+      "sha256": "24397e7886530054944ef9c1c1de76f41422f82693eadb80d2a30b2cce2f771e",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-003.json",
+      "size": 675,
+      "sha256": "6f862189019f129f2b0d95d8baee7ab47725be4c81b80341d75d9808997f9e93",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-004.json",
+      "size": 626,
+      "sha256": "3d45c9a9fee200e684507cb1cd4ecbc9bdbf0310773c3617e09fa5d92acb51d5",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-005.json",
+      "size": 662,
+      "sha256": "6b20de25548da4457efef0d75a15711ee5f18c5a857abf5be41adafd476fd7cb",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-006.json",
+      "size": 649,
+      "sha256": "9896fab076717ddb967a8512de3e999295e7be85bee4dd01cb067599d3244f0e",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-007.json",
+      "size": 672,
+      "sha256": "e8ce464707b9eb1b5703b27ce5292ec425f99525f53e237a670f5aa98ec8444a",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-008.json",
+      "size": 686,
+      "sha256": "64fb1090871fd6fa23bd5b755c7df1375963c406311fd32e43846edbf22bcbb6",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-009.json",
+      "size": 651,
+      "sha256": "fb40ebfe8ce6fea5a06962fa3a984efc1daa5f1fe5dfbeae8a6fc9df31acf095",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-010.json",
+      "size": 665,
+      "sha256": "4af2da1fb26a479e3449d3fa8f4bce56243f5783e6ee057ec6089d6a60e08514",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-011.json",
+      "size": 641,
+      "sha256": "d25a471e1ae7be403cd8030ca43083650fdd40c3e3b36c55d3918d7c0ab4ed9a",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-012.json",
+      "size": 628,
+      "sha256": "c144fa50f2ded4ad77cd49a4d2a1b7ee6a58af9fc3106de98f179ed02db328ae",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-013.json",
+      "size": 636,
+      "sha256": "723d0f03a943940a815f9b864d9a96ba1656ca9a02e2f68f7ea10bc0256a8c10",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-014.json",
+      "size": 623,
+      "sha256": "5fb8159cc38b0a916a10182c4f0f40e351f0da514474712e26d19e00c3ba1e66",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-015.json",
+      "size": 618,
+      "sha256": "e371467c8475a985d59a453cd95c284fc8464cc162da1085f8328d73cdc1ff62",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-016.json",
+      "size": 637,
+      "sha256": "28bd25185d1e07a5f5b1ae96f0e939048efb73b0d66cca4b2021a1c464cb6a22",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-017.json",
+      "size": 630,
+      "sha256": "5efbf6a68f11be784d00b02c556a8e937f5aa7ba3d1b0f56ef2adca28be0c084",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-018.json",
+      "size": 636,
+      "sha256": "b99a31b4481ae426a883813b64676bc5ca69e69e28b9ce96a9c968aa39a46f69",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-019.json",
+      "size": 678,
+      "sha256": "1c3a6e51c012fc1ef563495ec8b436f2ded42dfd126a6c66bf36f4c7d91410e0",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-020.json",
+      "size": 622,
+      "sha256": "39c37c3a5959327737cd08f5b128c67c6be83aa77e3572a722a7da4bce737474",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-021.json",
+      "size": 600,
+      "sha256": "aa5ffb0067df0aedd990cd0ccbc6919b12823717030df6a1694f11ab89a1efcb",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-022.json",
+      "size": 605,
+      "sha256": "19c12f4a2e40077d7197b2c35cb3ef5e20f33f7fd17c977f5c159973de026c67",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-023.json",
+      "size": 665,
+      "sha256": "7cb2e059a8b57d7b879008b6e61786f48c066c84645a637a70f19317848c569d",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-024.json",
+      "size": 645,
+      "sha256": "134e5c9bc1bf2e1173e189c20ae9e70fe7a71491235bbd3884bfe5b11e2ffa1a",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-025.json",
+      "size": 658,
+      "sha256": "fa1b8c073eeadbbf8e9fa09bb5362aee6c31917eb95c8a9746b81da0ac62a13f",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-026.json",
+      "size": 708,
+      "sha256": "1b38d1e0ca17eba01c464d806410ce1bd204fbfe4369429c9e6fef19301fd84d",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-027.json",
+      "size": 629,
+      "sha256": "c9008d6a02eae3a9e916e92498fdad878d0f032d6c57feeec6d3aa06db1601e6",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-028.json",
+      "size": 622,
+      "sha256": "f1f4c26a98157453dc73c21b43e66ffdd44efadc7c92b7efd52aa6795923fa9e",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-029.json",
+      "size": 632,
+      "sha256": "93c44bb8f6ba9b80d3ea5e0df9b77655e8da44f688ad4af0f6a7348a3153bed5",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-030.json",
+      "size": 635,
+      "sha256": "0298a82766e1b1577f657c12b0356b736be1c1db6ee5271bdb11b0f95501b0a4",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-031.json",
+      "size": 608,
+      "sha256": "8d6a9e3f8b9831299571ffe3992e9273597cae901916f5c3909cf5589b52d99f",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-032.json",
+      "size": 619,
+      "sha256": "03066d80f3ec01b5ab497cc29d762cc6d207c33f8498eeb129a3ce459f51cb1f",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-033.json",
+      "size": 629,
+      "sha256": "24967035303b7fd3f4f06499ac9da451efd99d877becb77b0d3f0f3ab8ee3ae7",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-034.json",
+      "size": 643,
+      "sha256": "25d0e0c0366a1932881edfad57f5573eb4a1fd647526a716d3b5ed276522759a",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-035.json",
+      "size": 620,
+      "sha256": "227d320db1b28e2904f40d17d7420b071f395218371b0222b2e4f24e0840f954",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-036.json",
+      "size": 655,
+      "sha256": "57c1952e2d733a033c6dea117389a43c3a9e5c76b670b91d9b993e161523ef6e",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-037.json",
+      "size": 628,
+      "sha256": "2c5f6991b2b839ce6916239ef09193e7ab79e0eb7131befe1d98e4a368243d3f",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-038.json",
+      "size": 610,
+      "sha256": "24fe9e09638f92da2bdae493a2d902808bd4aa431adf0c54bce3705bf8ee8361",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-039.json",
+      "size": 638,
+      "sha256": "0b9240c54d3cf9b5afafc3e1cbf5f6d38c1481cd6a68b67efab0c6ad0948aa9e",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-040.json",
+      "size": 604,
+      "sha256": "8cb0bbe3bd8979626268910ae3bc61611954192a1acee5044993b735bbdf512c",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-041.json",
+      "size": 627,
+      "sha256": "494e1284aa5ebf3cb1ee4d2129d778b326b89bf56037574f25c9148f8260e25b",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-042.json",
+      "size": 610,
+      "sha256": "2af6c70508c03ac2c1dfb528f04dfc237cc70c6220e9380d6942395bd24cc630",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-043.json",
+      "size": 635,
+      "sha256": "fe2d20f4a3514c7b386a7ceaca5a9bb209df986c248ceefba2cced8e33087c45",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-044.json",
+      "size": 645,
+      "sha256": "7431471a6ccb2d14493ca2222260fa4531973dcdc92e4b3fe598b920afbdff29",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-045.json",
+      "size": 579,
+      "sha256": "115f90fba6f04a0d3470b6024864fcb1915d1382360f7f7c63751e16fd1bfb9e",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-046.json",
+      "size": 624,
+      "sha256": "7327781ae6313ca1f8ce60e48f318b8dc0df01485d5effddb6734a06824b150d",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-047.json",
+      "size": 644,
+      "sha256": "a588abefaabe9485bc7af2a63d4e75c7d3045b9f0b3b7758bf6d36139964d197",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-048.json",
+      "size": 619,
+      "sha256": "0574ed3e270ba146c44995175ef1028d5067e22b84821da14c43edecc7dfcde5",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-049.json",
+      "size": 659,
+      "sha256": "aa203e86fcbd8b4f34c07a587b08b35500d9ebeb96c4181f09f59fe9d3f85b20",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-050.json",
+      "size": 675,
+      "sha256": "f5fcb317fa774cbf8fea925fa47ae754a3dcb7408ccb4d7a486d1934fde76297",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-051.json",
+      "size": 640,
+      "sha256": "53bdd7731025c939266651bdf94a750be9698e6b196f224e6b89cb6ba5865ccc",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-052.json",
+      "size": 604,
+      "sha256": "cd836fab4616a8c02a130ca21bba159da204e387f149433c988593f7084a34b6",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-053.json",
+      "size": 628,
+      "sha256": "86a5164c51d3cba724addfc706ac57c60cab4a2a711c33b24eac610412bc2340",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-054.json",
+      "size": 628,
+      "sha256": "11b1100e531931b44837ff75c9637a01ce6979d93716d969059040249ca30949",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-055.json",
+      "size": 619,
+      "sha256": "915d27e52c53787799e1027be1bd8e8b15f73dd670bcbf7df7670f62e38f2b12",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-056.json",
+      "size": 620,
+      "sha256": "4f4b4f8a292398d4b647670a42b99472fc22ed1e17c3b2422e16fe83312309af",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-057.json",
+      "size": 598,
+      "sha256": "e468ff1a713ffe51ecfd2165a0d9ac4775fe99a4a37b254773bf0e81137575e6",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-058.json",
+      "size": 642,
+      "sha256": "afe8cf2d9d7b638545ff91c5c0a725fd9ded3d513b6a93be23d04fef18d6e911",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-059.json",
+      "size": 597,
+      "sha256": "abdd4e4ca86640b37f775e727c6014bea6384dffa3d51c273f1239f2cab90051",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/cases/MB-060.json",
+      "size": 632,
+      "sha256": "6e237f9133e00440f23cca8ace1d87eac3e23d9fc8ece05b24c22030f2333bea",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/expected/expected_01.json",
+      "size": 130,
+      "sha256": "83130deb74900ff3b44e64a9776d33570ade4d6373b49ff88c1bad3cc3e16a93",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/expected/expected_02.json",
+      "size": 129,
+      "sha256": "bc7e9c13f6210583d1708754910919da398bd444c5436534c445c09d1ebd8443",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/expected/expected_03.json",
+      "size": 133,
+      "sha256": "fe9d44a11e3a192dbafe4ba01ae23b2812cc1b039253ff452c876c2b648d6534",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/expected/expected_04.json",
+      "size": 131,
+      "sha256": "ce54e9a6830f25bac868d69bf3dc0baaf78632c8d8fc4573198c849e632801ac",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/expected/expected_05.json",
+      "size": 129,
+      "sha256": "b591bc787c878e0d213261a8a69d5ed2c847862d7cf62c988e74668d1517d31c",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/expected/expected_06.json",
+      "size": 130,
+      "sha256": "08f8f8cb0a3ad150f9c65ebe6812007a8450958e4f33ed96669bf205f6dd6f47",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/rubrics/african_context.md",
+      "size": 194,
+      "sha256": "aeb154bbf06cc868df05ddcacb010c069cd2a82611cf2e1c08e09657f0d59db9",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/rubrics/design_and_causality.md",
+      "size": 207,
+      "sha256": "16b58a8dbf1386a5e8b60527a6f20669d8a0afe61b3cfd5dc35f933071e67908",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/rubrics/general.md",
+      "size": 173,
+      "sha256": "0b13caf0fc898dd77df807857d320301b16302d0d3c234109dc8965e2a0171a1",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/rubrics/pedagogy.md",
+      "size": 194,
+      "sha256": "fdbbd61001133c544d5d3d368b09d966885b44e2010ac470948cd77ab088b5b2",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/rubrics/safety.md",
+      "size": 191,
+      "sha256": "a3666042794e6bc138320ca1c65e82562ca3e0b07a8334c7c9f8889b4964ed57",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "evaluations/rubrics/statistics.md",
+      "size": 194,
+      "sha256": "e86a0b552dfde2902fcc1afa7076c5e249add23d8bb69e91ac0f7eb4403bd55d",
+      "category": "evaluations",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/APPROVAL_BOUNDARIES.md",
+      "size": 315,
+      "sha256": "2b92ae8937f8c98f9f370356a155e11ae1377e24d5b5e24bfb67d6307deb08c1",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/ASSUMPTION_REGISTER.md",
+      "size": 741,
+      "sha256": "a723bf7969a812e7a7d677599761b347d79c970ca63c134f749b68b7422737c7",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/CAUSAL_PATHWAY_TABLE.md",
+      "size": 662,
+      "sha256": "cde17f54a16e18f9c9d28cd57769b2d0ee30b7b93bcecebbf5300e05f3483ba2",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/CHANGE_CONTROL.md",
+      "size": 341,
+      "sha256": "24fd3374d1b09353bb62e7a4aa465fd81b67e266345590a6169916d390a76f97",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/DECISION_LOG.md",
+      "size": 519,
+      "sha256": "150ce7663b3189ff7ad0835327fd18e2b50e39a31f9bf90cf0a342fbaf125220",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/ELIGIBILITY_AND_ENTRANT_GATE.md",
+      "size": 537,
+      "sha256": "7ee1d6bb9fc6beabcefe92e8b659c9bb8ca3ec8f150d59c8ce8ef3a9c7c207b6",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/EVALUATION_AND_LEARNING_PLAN.md",
+      "size": 297,
+      "sha256": "49dc319ce8caabe5036e2473cc7ef8925d5a5d60ea7a57ee2f14d34d23c3dac9",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/EVIDENCE_REGISTER.md",
+      "size": 287,
+      "sha256": "48ed867e7e9082ac430867dda75d629b5295430fce1af52158425ef6720c0cbf",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/INDICATOR_MATRIX.md",
+      "size": 503,
+      "sha256": "8de3df4c0e0bb1983ef7e9bc76d0f49b19a6c4c6fe382267553e30d7a36f7bc5",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/PROJECT_THEORY_OF_CHANGE.md",
+      "size": 1190,
+      "sha256": "a7ccf6a97a9519af967b81210bdda883f32eef34c6c3e9bb7966519226a211d9",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/PROTECTED_DECISIONS.md",
+      "size": 338,
+      "sha256": "0d40b8321b30a07af308077daa20a33f71917198bedb7da994dced95642316b2",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/RISK_AND_UNINTENDED_EFFECTS_REGISTER.md",
+      "size": 755,
+      "sha256": "62797d7836a5a19b84c0edc5765dedb30baff9fe44433571ca75645f4f90afb3",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "governance/upstream.lock.json",
+      "size": 1101,
+      "sha256": "6cfef4b9c6a60ba0f0c0a782ffab049457c47a60639fe31a30e3b0438b37769b",
+      "category": "governance",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "infra/README.md",
+      "size": 137,
+      "sha256": "bb27529a008c3548dcd0cad0eabe2eb5d2477f82ade6d6e994371cc9c662be4e",
+      "category": "infra",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "infra/container/README.md",
+      "size": 150,
+      "sha256": "fec94cf73ebda9715e05502238663c549ecad740a0c40dbd07a5f21400093d99",
+      "category": "infra",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "infra/release/README.md",
+      "size": 149,
+      "sha256": "ea77064041998e6b2601f95f0353e2ce567f667519b4e642a4d72cc896aae328",
+      "category": "infra",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "metadata.json",
+      "size": 1747,
+      "sha256": "01ba381985193fb913b02ff9ffec8e6406d396759049f5ff6b5462beeec00fc9",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "model/README.md",
+      "size": 264,
+      "sha256": "3729d06ed38d85f94429cc9110f96fe19f6baf6e72e26691438244d08f7b0e6e",
+      "category": "model",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "pyproject.toml",
+      "size": 546,
+      "sha256": "cdd4887b8c794f6d867e5943583d2aa934b176c5ba4259a79324b374826da6f1",
+      "category": "root",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/AFRICAN_CONTEXT_AND_NEED.md",
+      "size": 548,
+      "sha256": "690ee49fb02eaf176fa6d403ce9e2e98daa479c3dfb9eccd7f7f9de440442632",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/BASE_MODEL_SHORTLIST.md",
+      "size": 536,
+      "sha256": "4cc447b5f0ce8eda05406f870ed9907d2c1a5590563838c074e0bf49b9a3d249",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/CLAIMS_REGISTER.md",
+      "size": 593,
+      "sha256": "c0f4a7efc60e56a7a2d51555dc43f3c43e11c703aa04e71b599c8a4ef0ca2cc1",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/COMPETITIVE_LANDSCAPE.md",
+      "size": 552,
+      "sha256": "4e48b95cfd6059ff555513138631bc407c230f76805fa68c85759fa4aa97e788",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/CURRENT_WORKFLOWS_AND_GAPS.md",
+      "size": 504,
+      "sha256": "6c40778686edf723a2fa5f29d37470860f2ecc9918dba546272d09d957acaa77",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/DATA_SOURCE_AND_LICENSING_REVIEW.md",
+      "size": 496,
+      "sha256": "1adc5d5cc1af96f10c177ccf4c01b3cef710882c74655f0969add4f953fcaefc",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/DIFFERENTIATION_AND_POSITIONING.md",
+      "size": 461,
+      "sha256": "db2bb5aa500ca76784a0c0c3851f67f51a2c99838c0c205df53d0798aef91459",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/LLAMA_CPP_COMPATIBILITY_MATRIX.md",
+      "size": 439,
+      "sha256": "e300aa53f1db36b6ffc5685204d079d2c90b6fc97d28d93f49a7cc41d333c35c",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/MODEL_LICENSING_REVIEW.md",
+      "size": 481,
+      "sha256": "fce3f8b75a9eb3bd4f47061bd5f0a7414b75843950fb8ebe47248f67c2be574b",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/PROFILER_SOURCE_REVIEW.md",
+      "size": 528,
+      "sha256": "508eebd2609a6c4f33fc5c6fd463a4f0e3c02f17f344d79427a4188d703a4670",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/RESEARCH_SYNTHESIS.md",
+      "size": 548,
+      "sha256": "246b4ea1a6d1aa72672584355ad81e83f114448c93ed8693f1caaa4fb160fceb",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/RESEARCH_TO_DECISION_MATRIX.md",
+      "size": 888,
+      "sha256": "39a310d51c47bc4efca8f82ff0ac342dba8044346aea62f31e3536e0fb8f3960",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/SOURCE_REGISTER.md",
+      "size": 420,
+      "sha256": "8067761ad04dfcbce6ea8f1045d6c09d9d236b898f866adf19ad7444e421098f",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "research/USER_AND_DECISION_BOUNDARY.md",
+      "size": 492,
+      "sha256": "143d7c1797ea3054d77806f3907ce93e1ae6ea62b8b488888f7d08e8fb32fe81",
+      "category": "research",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "schemas/benchmark_run.schema.json",
+      "size": 468,
+      "sha256": "5768afbf8dfd22cf69b1f26cf0e7002e84e47926f88326a85a3be738a5d4c9e6",
+      "category": "schemas",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "schemas/dataset_manifest.schema.json",
+      "size": 384,
+      "sha256": "92b78e0170ca987adaec37dc62ccbb582b2a18eec9d9aea2108b0acfc7eb0b90",
+      "category": "schemas",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "schemas/evaluation_case.schema.json",
+      "size": 625,
+      "sha256": "f2efbcd636b838cf3f1ac63176630aad076698742ee8277d06c451bf853c7611",
+      "category": "schemas",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "schemas/evaluation_result.schema.json",
+      "size": 537,
+      "sha256": "ed3f8b1685a584544566dcf6a444ec47e72050d19221ff3fdad65985f91a495f",
+      "category": "schemas",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "schemas/model_candidate.schema.json",
+      "size": 420,
+      "sha256": "ed6455a8b922450ea804fea7fe7aeb80daa2869a60ce9e2c566ec0be43f269fb",
+      "category": "schemas",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "schemas/model_release.schema.json",
+      "size": 440,
+      "sha256": "5b5fc62b353a92f214e7c1d6c0ffb9776914d5ff7c0d7673e038703315616cd4",
+      "category": "schemas",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "schemas/profiler_result.schema.json",
+      "size": 523,
+      "sha256": "7e862174a7a202b91c5e021c46d90ae13ad5e1c511157d41bd2031192f020532",
+      "category": "schemas",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "schemas/source_record.schema.json",
+      "size": 510,
+      "sha256": "c370a9089f1d94023da80f714e134fde821eb693e3708e17ed1b760d496b260b",
+      "category": "schemas",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "schemas/submission_readiness.schema.json",
+      "size": 379,
+      "sha256": "e06c49833a891645c3968d953b10fc76c1d2217ebe394e6610e672d88c15a7d1",
+      "category": "schemas",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "schemas/training_example.schema.json",
+      "size": 504,
+      "sha256": "ac56951d6406f9ba264f38c28df3f238c4c63280232a26fab45fbb3c8c55e389",
+      "category": "schemas",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/build_training_dataset.py",
+      "size": 405,
+      "sha256": "5c95d962396bbe8129cb79af396928106f71d2d988ad6ac47da8cb622eff6a0a",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/convert_to_gguf.py",
+      "size": 472,
+      "sha256": "27427a81bd2929a7af6c055ef17d93d34c7e7be4369982e01a44172406f149ff",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/detect_train_eval_leakage.py",
+      "size": 832,
+      "sha256": "c7850606a57dd3af8449bc49213c2eb039e16d9e69dcb56f352a0e68046d8ab0",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/merge_adapter.py",
+      "size": 454,
+      "sha256": "a30344d0dcf824783c5a26b2b9ef294ad4346c67cd2694915ce6f083c457ed73",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/quantize_model.py",
+      "size": 516,
+      "sha256": "e7e1e28dc6fbe4f7f8cb958586d17359df3029e09cf7b1ac7490c62dc5fe944c",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/run_evaluation.py",
+      "size": 752,
+      "sha256": "1197af1534c5435ac8b6303cdfb637b00e2db7a9eea46b9005b42be4b15bd686",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/run_local_inference.py",
+      "size": 450,
+      "sha256": "f9f07ebeae60beb0bd8bba14d9408b7fb6dd8e4c61545352613ef4e5e1014545",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/run_training_smoke.py",
+      "size": 409,
+      "sha256": "0cfef8ed899e88d7d679c30b2e44dc90f7d5885cd3d160668de25fc8160c570c",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/train_adapter.py",
+      "size": 452,
+      "sha256": "02cdbbe47d7664586836ced1811fa04765a78ccfd925eb4cd56339f1e5d2dedd",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/validate_dataset.py",
+      "size": 302,
+      "sha256": "7727bba6c76b6847e587fd2a4500faf4f1c1cd1c1075445bf39e576b0bcc7649",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/validate_gguf.py",
+      "size": 363,
+      "sha256": "1c4fddd0f334e1378512d1181e0aeefc7f9644454e6f9b29f06f1f0b1cf56361",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/validate_repository.py",
+      "size": 1646,
+      "sha256": "2874dbd4a25adfefb6aefb242839877ced4db38d7589e3623b5355329ffb5721",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/validate_sources.py",
+      "size": 318,
+      "sha256": "cff217c46007d53e01124924ed5b9ebfa962644142a52456bb1d3bdaa1de6365",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "scripts/verify_submission_readiness.py",
+      "size": 336,
+      "sha256": "ec2b457ed4504b9bd72ff20ac2ff18a277b113c0ebddec907ba1e2ce0340c41c",
+      "category": "scripts",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/__init__.py",
+      "size": 22,
+      "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/cli.py",
+      "size": 714,
+      "sha256": "d89ad8b1d01282d0311ed798080c1f1be3aa78b3c4a53188729d9c9fd97a3cfe",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/contracts.py",
+      "size": 435,
+      "sha256": "d03f07fd52c685830116a8a655a3669cc08fd95405a286852929188a0970bbfb",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/conversion/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/conversion/gguf.py",
+      "size": 222,
+      "sha256": "557e3e00e2e184b1758887ec712f9f0b20445e321134aa0c28e14508714454be",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/data/__init__.py",
+      "size": 395,
+      "sha256": "6db4690d9b0c675c70972730791bfb77ecc943f93091916bb90415629bb5b3e9",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/data/validator.py",
+      "size": 546,
+      "sha256": "0eacd417ceb1a57c89605b645af0bcedf3124f6c58dde429a7356b5d7ac09aa1",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/data.py",
+      "size": 395,
+      "sha256": "6db4690d9b0c675c70972730791bfb77ecc943f93091916bb90415629bb5b3e9",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/evaluation.py",
+      "size": 636,
+      "sha256": "07089ed1730eae559baa6832eb6f96b9af3ffbeb8c7570eebb5c1b81261729f2",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/governance.py",
+      "size": 345,
+      "sha256": "d5ccbbdd8a7beacc86315883a7b1ec9aa0efc998797f6b3b8380883233f62a9e",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/inference/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/inference/config.py",
+      "size": 164,
+      "sha256": "a505aa4f786e095757da62ce6c84671707105d45896dda3e0bc95f775e3035bc",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/manifest.py",
+      "size": 455,
+      "sha256": "77cf64c9c618d3e7d162e31fc1fd3ac449f8047d943f6496ea7612d78e521557",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/quantization/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/quantization/plan.py",
+      "size": 55,
+      "sha256": "5f3f06af92cc61433ede5c5734ca5f50d75e7605dee1f911e2cb6998ae18704c",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/readiness.py",
+      "size": 1018,
+      "sha256": "67de6f894023f106f75598218aace486d07f3d42117eb8a3c77812d014c549ef",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/training/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "src/methodbridge/training/pipeline.py",
+      "size": 443,
+      "sha256": "850b03633304984628ade6736aeedf8a1d56bade9182261589552acdcd16aacb",
+      "category": "src",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/conftest.py",
+      "size": 120,
+      "sha256": "1fa313674ddd7fc259a027193725f22fd7182934a4cd3aeef720283353351920",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/data/test_dataset_manifest.py",
+      "size": 141,
+      "sha256": "e5bf1c851ff58ddd1cf1a867e78ee94b6bc9284bdd7e8d6687712bcf95d141ec",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/data/test_source_registry.py",
+      "size": 156,
+      "sha256": "91816f391e1527d7bf0616da99b78d3e60364e8dd0b4e42734dbdebffb01e889",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/evaluation/test_case_count.py",
+      "size": 204,
+      "sha256": "3e0b9e6db42751ebf3ee4d340bc39266809bb09e650861a8782f6a9686408c90",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/evaluation/test_public_prompt_exclusion.py",
+      "size": 435,
+      "sha256": "147aef1f8d82388efdc0fb40a7d5d78962966e2d47f695fafa3bf8248d61c6a0",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/fixtures/README.md",
+      "size": 69,
+      "sha256": "d0996e0393dadd4d83bfa5f95d25b9b2f7871cbee837edd86e0ca7c8720464ae",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/governance/test_authority_boundaries.py",
+      "size": 278,
+      "sha256": "ab4170fe566bf8ce17982ffd58d673f3b91de9416afd84695d1cd0ffa12f310e",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/governance/test_toc_status.py",
+      "size": 180,
+      "sha256": "675eb65c054e370e562e06124db5326369bfb721c0f903c31ec69bfc92cd36fd",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/integration/test_evaluation_dry_run.py",
+      "size": 210,
+      "sha256": "1c350004207bf8049b01d79ea10bfb09d7d1163d2e223477af2a332fb30e3396",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/integration/test_repository_validation.py",
+      "size": 204,
+      "sha256": "df6e63b29d8c40219e2209611023133ae80d6901bea8a087c61e97eaf3c68829",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/packaging/test_download_model_fail_closed.py",
+      "size": 259,
+      "sha256": "b14355f19da79b8ab2f6f3d13a0142c98f175d2cff5208f6332ef6ea872c4354",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/packaging/test_manifest.py",
+      "size": 219,
+      "sha256": "a6160fbc3f3720f85c9af67c4126dfdbe311d778fe964b6b5a9fcfca90ecd32c",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/security/test_no_gguf_committed.py",
+      "size": 78,
+      "sha256": "b3a58f00b3de5c1ec676f27bc5620d5b58f8fa4b1f7563171c62952b623566d0",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/security/test_no_secrets.py",
+      "size": 581,
+      "sha256": "e781a7ff86f0e784d41855f602170a5ee5ccae94cea92ab3218f30963ec36a36",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/unit/test_contracts.py",
+      "size": 251,
+      "sha256": "81198c880070437a02921aeed4e70195fbb3dfa6eae6f507cd99ba9c7e430dca",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/unit/test_readiness.py",
+      "size": 272,
+      "sha256": "95b007597d5cc7bc9063a10e62192e343bcee48cd02599b3cb4c22a52b394a1f",
+      "category": "tests",
+      "source_status": "recovered_or_generated",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    }
+  ]
+}

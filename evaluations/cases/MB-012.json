@@ -1,0 +1,22 @@
+{
+  "case_id": "MB-012",
+  "family": "research_questions_estimands",
+  "difficulty": "hard",
+  "prompt": "Explain why outcome definition must precede model choice.",
+  "expected_key_points": [
+    "measurement",
+    "time window",
+    "estimand"
+  ],
+  "prohibited_errors": [
+    "start from preferred model"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source record",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "authority": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "training_use": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "source_id",
+    "title",
+    "authority",
+    "license",
+    "training_use"
+  ]
+}

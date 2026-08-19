@@ -1,0 +1,22 @@
+{
+  "case_id": "MB-035",
+  "family": "research_reporting",
+  "difficulty": "medium",
+  "prompt": "Explain why selective outcome reporting is problematic.",
+  "expected_key_points": [
+    "bias",
+    "pre-specification",
+    "transparency"
+  ],
+  "prohibited_errors": [
+    "endorse outcome switching"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

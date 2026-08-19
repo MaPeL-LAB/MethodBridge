@@ -1,0 +1,98 @@
+version: 0.1.0
+sources:
+- source_id: src_adtc_rules
+  title: ADTC 2026 rules
+  authority: official_contest
+  license: custom_contest_terms
+  training_use: documentation_only
+  status: reverify_before_final_use
+- source_id: src_adtc_challenge
+  title: ADTC challenge page
+  authority: official_contest
+  license: website_terms
+  training_use: documentation_only
+  status: reverify_before_final_use
+- source_id: src_adtc_template
+  title: ADTC submission template
+  authority: official_contest
+  license: repository_licence_requires_recheck
+  training_use: documentation_and_code_reference
+  status: reverify_before_final_use
+- source_id: src_adtc_profiler
+  title: ADTC profiler
+  authority: official_contest
+  license: repository_licence_requires_recheck
+  training_use: documentation_and_code_reference
+  status: reverify_before_final_use
+- source_id: src_llama
+  title: llama.cpp
+  authority: official_tool_model
+  license: MIT
+  training_use: tooling
+  status: reverify_before_final_use
+- source_id: src_toc
+  title: Theory of Change Architect
+  authority: official_tool_model
+  license: repository_licence_requires_recheck
+  training_use: governance_reference
+  status: reverify_before_final_use
+- source_id: src_transformers
+  title: Transformers
+  authority: official_tool_model
+  license: Apache-2.0
+  training_use: tooling
+  status: reverify_before_final_use
+- source_id: src_peft
+  title: PEFT
+  authority: official_tool_model
+  license: Apache-2.0
+  training_use: tooling
+  status: reverify_before_final_use
+- source_id: src_qwen3_17
+  title: Qwen3-1.7B model card
+  authority: official_tool_model
+  license: Apache-2.0
+  training_use: candidate_reference
+  status: reverify_before_final_use
+- source_id: src_qwen35_2
+  title: Qwen3.5-2B model card
+  authority: official_tool_model
+  license: Apache-2.0
+  training_use: candidate_reference
+  status: reverify_before_final_use
+- source_id: src_smollm3
+  title: SmolLM3-3B model card
+  authority: official_tool_model
+  license: Apache-2.0
+  training_use: candidate_reference
+  status: reverify_before_final_use
+- source_id: src_phi4mini
+  title: Phi-4-mini-instruct model card
+  authority: official_tool_model
+  license: MIT
+  training_use: candidate_reference
+  status: reverify_before_final_use
+- source_id: src_qwen3_4
+  title: Qwen3-4B-Instruct-2507 model card
+  authority: official_tool_model
+  license: Apache-2.0
+  training_use: candidate_reference
+  status: reverify_before_final_use
+- source_id: src_cdc_epi
+  title: CDC Principles of Epidemiology
+  authority: public_domain_methods
+  license: public_domain
+  training_use: training_requires_record_review
+  status: reverify_before_final_use
+- source_id: src_ccby
+  title: Creative Commons Attribution 4.0
+  authority: official_standard_guidance
+  license: CC-BY-4.0
+  training_use: licence_reference
+  status: reverify_before_final_use
+- source_id: src_equator
+  title: Reporting-guideline organization materials
+  authority: official_standard_guidance
+  license: varies_by_item
+  training_use: documentation_or_evaluation_only
+  status: reverify_before_final_use

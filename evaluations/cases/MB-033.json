@@ -1,0 +1,22 @@
+{
+  "case_id": "MB-033",
+  "family": "research_reporting",
+  "difficulty": "hard",
+  "prompt": "Explain why a data dictionary supports reproducibility.",
+  "expected_key_points": [
+    "definitions",
+    "coding",
+    "provenance"
+  ],
+  "prohibited_errors": [
+    "claim dictionary alone reproduces analysis"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

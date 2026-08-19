@@ -1,0 +1,11 @@
+levels:
+- official_contest
+- official_tool_model
+- public_domain_methods
+- official_standard_guidance
+- open_access_methods
+- open_educational_resource
+- synthetic_project_authored
+- secondary_reference
+rule: Higher authority governs conflicting factual claims; training permission is
+  evaluated separately.

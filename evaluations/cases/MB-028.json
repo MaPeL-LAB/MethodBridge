@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-028",
+  "family": "statistical_interpretation",
+  "difficulty": "medium",
+  "prompt": "Explain multiple-testing risk.",
+  "expected_key_points": [
+    "false positives",
+    "pre-specification or adjustment"
+  ],
+  "prohibited_errors": [
+    "claim adjustment always solves all bias"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

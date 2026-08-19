@@ -1,0 +1,12 @@
+minimum_cases: 60
+minimum_bootstrap_executable: 40
+critical_error_limit: 0
+public_prompts_in_training: false
+human_semantic_review_required: true
+statuses:
+- pass
+- fail
+- inconclusive
+- not_tested
+- test_error
+- human_review_required

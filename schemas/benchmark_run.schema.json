@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Benchmark run",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "model_revision": {
+      "type": "string"
+    },
+    "gguf_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "results": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "run_id",
+    "model_revision",
+    "results"
+  ]
+}

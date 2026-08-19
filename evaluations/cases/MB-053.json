@@ -1,0 +1,23 @@
+{
+  "case_id": "MB-053",
+  "family": "african_context",
+  "difficulty": "medium",
+  "prompt": "Explain how low-resource hardware changes architecture priorities.",
+  "expected_key_points": [
+    "memory",
+    "throughput",
+    "thermal",
+    "offline"
+  ],
+  "prohibited_errors": [
+    "assume cloud access"
+  ],
+  "bootstrap_executable": false,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

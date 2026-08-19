@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-024",
+  "family": "bias_causal_reasoning",
+  "difficulty": "hard",
+  "prompt": "Explain reverse causation in an observational mental-health example.",
+  "expected_key_points": [
+    "outcome may influence exposure",
+    "temporality"
+  ],
+  "prohibited_errors": [
+    "infer one direction without evidence"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

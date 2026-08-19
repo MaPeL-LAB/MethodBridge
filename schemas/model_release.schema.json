@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Model release",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "model_name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string"
+    },
+    "quantization": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "model_name",
+    "url",
+    "sha256",
+    "quantization"
+  ]
+}

@@ -1,0 +1,10 @@
+name: Bug report
+description: Report a reproducible defect
+title: "[BUG] "
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+    validations:
+      required: true

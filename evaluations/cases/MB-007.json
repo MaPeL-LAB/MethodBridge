@@ -1,0 +1,23 @@
+{
+  "case_id": "MB-007",
+  "family": "research_questions_estimands",
+  "difficulty": "medium",
+  "prompt": "Turn a broad topic about student stress into a structured research question.",
+  "expected_key_points": [
+    "population",
+    "exposure or intervention",
+    "outcome",
+    "time"
+  ],
+  "prohibited_errors": [
+    "invent institutional facts"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-016",
+  "family": "study_design",
+  "difficulty": "medium",
+  "prompt": "Explain cluster randomization and why analysis must respect clustering.",
+  "expected_key_points": [
+    "cluster allocation",
+    "intra-cluster correlation"
+  ],
+  "prohibited_errors": [
+    "treat observations independent"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

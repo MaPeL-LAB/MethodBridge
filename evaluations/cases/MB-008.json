@@ -1,0 +1,21 @@
+{
+  "case_id": "MB-008",
+  "family": "research_questions_estimands",
+  "difficulty": "medium",
+  "prompt": "Explain why an estimand must specify treatment, population, outcome, and handling of events.",
+  "expected_key_points": [
+    "target quantity",
+    "intercurrent events or conditions"
+  ],
+  "prohibited_errors": [
+    "define estimand as a statistical test"
+  ],
+  "bootstrap_executable": true,
+  "public_status": "held_out_private_specification",
+  "training_exclusion": true,
+  "source_basis": [
+    "project_authored_specification"
+  ],
+  "human_rubric": "evaluations/rubrics/general.md",
+  "limitations": "Specification only until tested against a real candidate model."
+}

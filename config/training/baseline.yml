@@ -1,0 +1,4 @@
+experiment: untouched_instruction_model
+seed: 42
+status: requires_empirical_test
+acceptance: establish same-protocol baseline
