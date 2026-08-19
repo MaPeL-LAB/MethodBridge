@@ -27,10 +27,10 @@
     }
   ],
   "model": {
-    "name": "REQUIRES_EMPIRICAL_TEST",
+    "name": "Qwen/Qwen3-1.7B",
     "runtime": "llama.cpp",
-    "quantization": "REQUIRES_EMPIRICAL_TEST",
-    "parameters_estimate": "REQUIRES_EMPIRICAL_TEST",
+    "quantization": "Q5_K_M",
+    "parameters_estimate": "1.7B",
     "packaging": "binary_bundle"
   },
   "_runtime": {

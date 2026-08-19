@@ -2,7 +2,7 @@
   "repository": "methodbridge-local",
   "release": "v0.1.0-bootstrap",
   "provenance_note": "The initial public bootstrap was reconstructed from retained research artifacts. The tracked Git repository is now the authoritative source.",
-  "file_count_excluding_manifest": 319,
+  "file_count_excluding_manifest": 321,
   "manifest_self_excluded": true,
   "files": [
     {
@@ -133,8 +133,8 @@
     },
     {
       "path": "BOOTSTRAP_STATUS.md",
-      "size": 2848,
-      "sha256": "76a3abbc94e5bb088cd1d1d97c20cf69b712bcab6fe3cfc4fc6dd6ec27b9e7a5",
+      "size": 7053,
+      "sha256": "e328547c1ad07048f2b724ad42949a845de3f2544fa9ffdd69e1feb7a4fe28df",
       "category": "root",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -143,7 +143,7 @@
     {
       "path": "BUILD_CHECKLIST.md",
       "size": 3063,
-      "sha256": "469c4cfa884c137578f60b51e8960e86d3769fbf9e52837e1470a48dbde524d8",
+      "sha256": "f6bb964ea193252bdf1c711b187868d66a9d12fd8673101125e1c2ee5f7b5878",
       "category": "root",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2014,8 +2014,8 @@
     },
     {
       "path": "metadata.json",
-      "size": 1747,
-      "sha256": "01ba381985193fb913b02ff9ffec8e6406d396759049f5ff6b5462beeec00fc9",
+      "size": 1703,
+      "sha256": "2ffb562b527b1514f9f9726fa45a8cd11e7d88cbc51c70e13b0da1e7213bb597",
       "category": "root",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2616,9 +2616,18 @@
       "sensitivity": "public_synthetic_or_documentation"
     },
     {
+      "path": "src/methodbridge/inference/router.py",
+      "size": 11468,
+      "sha256": "4649ea3dc37c0ff15073fd9982387f110969242259605ab0415baccd286d6a6f",
+      "category": "src",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
       "path": "src/methodbridge/inference/runner.py",
-      "size": 12595,
-      "sha256": "08eea7d3d675907274564b66cb4c5419f79cb94b8d0d6e4756be3e7fb2510472",
+      "size": 15325,
+      "sha256": "4d2efac5841b8777311b33e83bf38755a345e4f5147bdf7bff361818aacf3066",
       "category": "src",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2790,6 +2799,15 @@
       "path": "tests/hardware/test_reference_run_validation.py",
       "size": 5494,
       "sha256": "e86e2cb783fefffa55f4b83086d857b9602f2e0bccb5c6dc6fe477b6e9a442d5",
+      "category": "tests",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/inference/test_router.py",
+      "size": 2799,
+      "sha256": "aa74d96f3669430052aba4df3fc4b9cc9e646b5322cbfd591ead45e6d7af871b",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
