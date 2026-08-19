@@ -2,7 +2,7 @@
   "repository": "methodbridge-local",
   "release": "v0.1.0-bootstrap",
   "provenance_note": "The initial public bootstrap was reconstructed from retained research artifacts. The tracked Git repository is now the authoritative source.",
-  "file_count_excluding_manifest": 323,
+  "file_count_excluding_manifest": 331,
   "manifest_self_excluded": true,
   "files": [
     {
@@ -81,6 +81,15 @@
       "path": ".github/workflows/hardware-contract.yml",
       "size": 695,
       "sha256": "00a0420033835a7162fae5cc35c40108dc0c76ac0fa07b3e2b64ecf6dfafe964",
+      "category": ".github",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": ".github/workflows/model-evidence-boundary.yml",
+      "size": 2269,
+      "sha256": "526349c4c6f0a3a3963e8a75f8f808a1a113078fee1e724f3d30eafc6266fee2",
       "category": ".github",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -378,6 +387,24 @@
       "path": "config/model_candidate_policy.yml",
       "size": 932,
       "sha256": "2a4bb93ab3fe37457b86d5838f56221691c03c3fdc80c5652b20d9506e4823ec",
+      "category": "config",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/model_evidence_policy.yml",
+      "size": 2772,
+      "sha256": "7be495be48ef893b4a84dbbd16ac1ee6b3292673e75f82c7e7558fee19c42909",
+      "category": "config",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "config/model_selection_state.yml",
+      "size": 1060,
+      "sha256": "4655be4ba8f410ff408757408d553eafdd4fb179a52c7ae7af9179402fce0a0c",
       "category": "config",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -753,6 +780,15 @@
       "sensitivity": "public_synthetic_or_documentation"
     },
     {
+      "path": "docs/MODEL_EVIDENCE_BOUNDARY.md",
+      "size": 3915,
+      "sha256": "5f58cb7da97eb6ce2d012c583540983e32bf822515d6b7e8459b1daba2bb40eb",
+      "category": "docs",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
       "path": "docs/MODEL_RELEASE_AND_HOSTING.md",
       "size": 461,
       "sha256": "29ab7db9ae45b7855d19c82bb9673e7a51de540eaf2b610c8d23e6712ab903cd",
@@ -1116,6 +1152,15 @@
       "path": "docs/adr/ADR-019-reference-hardware-and-simulation-boundary.md",
       "size": 2606,
       "sha256": "f7cebf611e29f37b64423d5acd74fde0478c7779dc8d40816f118ab9ef299506",
+      "category": "docs",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-020-model-evidence-and-simulation-boundary.md",
+      "size": 3663,
+      "sha256": "f74bd0b43ea0f6691e44f08fd25d7712b283cbd955ff4a2cfa6218ce58168275",
       "category": "docs",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2463,6 +2508,15 @@
       "sensitivity": "public_synthetic_or_documentation"
     },
     {
+      "path": "scripts/validate_model_evidence_boundary.py",
+      "size": 7533,
+      "sha256": "3a6c1143a15ea39d6e3f75d4207cb5b5bc8004f26495766b865fb72469e37dd6",
+      "category": "scripts",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
       "path": "scripts/validate_repository.py",
       "size": 3851,
       "sha256": "dd4eb67363cb6162229d69d6dc5d683a8761b307ef0388dd5c195d1c89d03f1b",
@@ -2769,6 +2823,15 @@
       "sensitivity": "public_synthetic_or_documentation"
     },
     {
+      "path": "tests/governance/test_model_evidence_status.py",
+      "size": 1667,
+      "sha256": "1ac0d524bf1d76e2898abae86653e2169deea2647a02d83579b78209b6757a61",
+      "category": "tests",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
       "path": "tests/governance/test_toc_status.py",
       "size": 1777,
       "sha256": "6ecbfe67d35e8d7ce24296ec5dcccc7ebd5a9e54c791ac6db67c06e8205fd32f",
@@ -2817,6 +2880,15 @@
       "path": "tests/inference/__init__.py",
       "size": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "category": "tests",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/inference/test_evidence_boundary.py",
+      "size": 4024,
+      "sha256": "53a73e27c6eb83214f354fa95ad9b6defe8ad7fae8c41749e576cdc3dc228b05",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
