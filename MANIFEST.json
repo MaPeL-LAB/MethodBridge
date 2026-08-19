@@ -142,8 +142,8 @@
     },
     {
       "path": "BOOTSTRAP_STATUS.md",
-      "size": 5204,
-      "sha256": "4616919dc39e1eb869854af986cc88e4ec176f7ff20cf6229bfcfe84b03d5096",
+      "size": 5193,
+      "sha256": "d44115e42c0d1f2dd365bb9a1831a287be8016ac56dcfd768648e5834fa96ed8",
       "category": "root",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
