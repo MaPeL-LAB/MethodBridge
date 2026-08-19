@@ -18,4 +18,5 @@ build/
 credentials/
 private_evaluations/
 training_outputs/
+*.egg-info/
 *.local.md
