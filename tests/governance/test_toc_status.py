@@ -8,6 +8,7 @@ def test_toc_approval_is_attributable_and_bounded(repo_root):
     normalized_toc = " ".join(toc_lower.split())
     log_lower = decision_log.lower()
     boundaries_lower = boundaries.lower()
+    normalized_boundaries = " ".join(boundaries_lower.split())
     status_lower = status.lower()
 
     assert "approved with conditions for adtc 2026 governed development" in normalized_toc
@@ -23,8 +24,8 @@ def test_toc_approval_is_attributable_and_bounded(repo_root):
     assert "acceptance of the challenge participation agreement" in normalized_toc
     assert "submission to devpost" in normalized_toc
 
-    assert "no ci result" in boundaries_lower
-    assert "can substitute for an attributable human decision" in boundaries_lower
+    assert "no ci result" in normalized_boundaries
+    assert "can substitute for an attributable human decision" in normalized_boundaries
     assert "theory of change approved with conditions" in status_lower
     assert "submission status: blocked by design" in status_lower
     assert "human approval not recorded" not in toc_lower
