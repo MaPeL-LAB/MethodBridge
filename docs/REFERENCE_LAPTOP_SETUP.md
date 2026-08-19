@@ -34,14 +34,14 @@ profiling. This is an operational checklist, not proof that a machine qualifies.
 
 ```bash
 python scripts/check_adtc_host.py --require-reference
-scripts/capture_adtc_hardware_evidence.sh
+bash scripts/capture_adtc_hardware_evidence.sh
 ```
 
 ## Profiling
 
 ```bash
 NETWORK_DISABLED_AT_INFERENCE=true \
-  scripts/run_adtc_reference_profile.sh
+  bash scripts/run_adtc_reference_profile.sh
 ```
 
 The wrapper runs one warm-up and three full participant measurements.
