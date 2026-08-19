@@ -30,7 +30,7 @@ if command -v swapon >/dev/null 2>&1 && [[ -n "$(swapon --noheadings --show 2>/d
 fi
 
 mkdir -p "$OUT"
-"$ROOT/scripts/capture_adtc_hardware_evidence.sh" "$OUT/hardware"
+bash "$ROOT/scripts/capture_adtc_hardware_evidence.sh" "$OUT/hardware"
 
 echo "Running one non-scoreable warm-up..."
 adtc-profiler run \
