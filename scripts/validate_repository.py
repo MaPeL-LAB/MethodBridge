@@ -1,99 +1,79 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import json
-import sys
 import yaml
 from jsonschema import Draft202012Validator
 
 ROOT = Path(__file__).resolve().parents[1]
 required = [
-    "README.md",
-    "AGENTS.md",
-    "GOVERNANCE.md",
-    "BOOTSTRAP_STATUS.md",
-    "metadata.json",
-    "download_model.sh",
-    "REPORT.md",
-    "data/source_registry.yml",
-    "evaluations/benchmark_manifest.yml",
-    "governance/PROJECT_THEORY_OF_CHANGE.md",
-    "config/adtc_standard_laptop.yml",
-    "schemas/hardware_attestation.schema.json",
-    "schemas/adtc_reference_run.schema.json",
-    "src/methodbridge/hardware.py",
-    "scripts/check_adtc_host.py",
-    "scripts/verify_adtc_reference_run.py",
-    "scripts/run_adtc_simulated_profile.sh",
-    "scripts/run_adtc_reference_profile.sh",
-    "docs/ADTC_HARDWARE_VALIDATION_PROTOCOL.md",
-    "docs/ADTC_SIMULATION_LIMITATIONS.md",
-    "docs/REFERENCE_LAPTOP_SETUP.md",
-    "docs/MODEL_EVIDENCE_BOUNDARY.md",
-    "config/model_evidence_policy.yml",
-    "config/model_selection_state.yml",
-    "scripts/validate_model_evidence_boundary.py",
+    "README.md", "AGENTS.md", "GOVERNANCE.md", "BOOTSTRAP_STATUS.md",
+    "metadata.json", "download_model.sh", "REPORT.md", "data/source_registry.yml",
+    "evaluations/benchmark_manifest.yml", "governance/PROJECT_THEORY_OF_CHANGE.md",
+    "config/adtc_standard_laptop.yml", "config/model_evidence_policy.yml",
+    "config/model_selection_state.yml", "config/local_model_campaign.yml",
+    "config/release_authorization.yml", "schemas/hardware_attestation.schema.json",
+    "schemas/adtc_reference_run.schema.json", "schemas/local_model_campaign.schema.json",
+    "schemas/model_run_evidence.schema.json", "schemas/semantic_review_record.schema.json",
+    "schemas/release_authorization.schema.json", "src/methodbridge/hardware.py",
+    "scripts/check_adtc_host.py", "scripts/verify_adtc_reference_run.py",
+    "scripts/run_adtc_simulated_profile.sh", "scripts/run_adtc_reference_profile.sh",
+    "scripts/validate_model_evidence_boundary.py", "scripts/validate_local_model_campaign.py",
+    "scripts/validate_public_claims.py", "scripts/verify_local_model_handoff.py",
+    "scripts/create_model_run_evidence.py", "scripts/build_semantic_review_packet.py",
+    "scripts/prepare_model_release.py", "docs/ADTC_HARDWARE_VALIDATION_PROTOCOL.md",
+    "docs/ADTC_SIMULATION_LIMITATIONS.md", "docs/REFERENCE_LAPTOP_SETUP.md",
+    "docs/MODEL_EVIDENCE_BOUNDARY.md", "docs/LOCAL_MODEL_EXECUTION_HANDOFF.md",
+    "docs/SEMANTIC_ADJUDICATION_PROTOCOL.md", "docs/PUBLIC_CLAIMS_POLICY.md",
 ]
 errors = [f"missing:{path}" for path in required if not (ROOT / path).exists()]
 case_files = sorted((ROOT / "evaluations/cases").glob("MB-*.json"))
 adr_files = sorted((ROOT / "docs/adr").glob("ADR-*.md"))
 if len(case_files) != 60:
     errors.append(f"evaluation_count:{len(case_files)}")
-if len(adr_files) != 20:
+if len(adr_files) != 21:
     errors.append(f"adr_count:{len(adr_files)}")
 if list(ROOT.rglob("*.gguf")):
     errors.append("gguf_committed")
 try:
     json.loads((ROOT / "metadata.json").read_text(encoding="utf-8"))
     yaml.safe_load((ROOT / "data/source_registry.yml").read_text(encoding="utf-8"))
-    yaml.safe_load((ROOT / "config/model_evidence_policy.yml").read_text(encoding="utf-8"))
-    yaml.safe_load((ROOT / "config/model_selection_state.yml").read_text(encoding="utf-8"))
-    profile = yaml.safe_load(
-        (ROOT / "config/adtc_standard_laptop.yml").read_text(encoding="utf-8")
-    )
+    for yaml_path in (
+        "config/model_evidence_policy.yml", "config/model_selection_state.yml",
+        "config/local_model_campaign.yml", "config/release_authorization.yml",
+    ):
+        yaml.safe_load((ROOT / yaml_path).read_text(encoding="utf-8"))
+    profile = yaml.safe_load((ROOT / "config/adtc_standard_laptop.yml").read_text(encoding="utf-8"))
     if profile.get("profile_id") != "adtc-standard-laptop-2026":
         errors.append("hardware_profile_id")
     if profile.get("memory", {}).get("official_peak_rss_limit_gib") != 7.0:
         errors.append("hardware_peak_rss_limit")
     if profile.get("thermal", {}).get("official_limit_celsius") != 85.0:
         errors.append("hardware_thermal_limit")
-    for schema_name in (
-        "evaluation_case.schema.json",
-        "hardware_attestation.schema.json",
-        "adtc_reference_run.schema.json",
-    ):
-        schema = json.loads(
-            (ROOT / "schemas" / schema_name).read_text(encoding="utf-8")
-        )
-        Draft202012Validator.check_schema(schema)
-    schema = json.loads(
-        (ROOT / "schemas/evaluation_case.schema.json").read_text(encoding="utf-8")
+    schema_names = (
+        "evaluation_case.schema.json", "hardware_attestation.schema.json",
+        "adtc_reference_run.schema.json", "local_model_campaign.schema.json",
+        "model_run_evidence.schema.json", "semantic_review_record.schema.json",
+        "release_authorization.schema.json",
     )
+    for schema_name in schema_names:
+        schema = json.loads((ROOT / "schemas" / schema_name).read_text(encoding="utf-8"))
+        Draft202012Validator.check_schema(schema)
+    evaluation_schema = json.loads((ROOT / "schemas/evaluation_case.schema.json").read_text(encoding="utf-8"))
     for path in case_files:
         document = json.loads(path.read_text(encoding="utf-8"))
-        schema_errors = sorted(
-            Draft202012Validator(schema).iter_errors(document), key=lambda error: error.path
-        )
+        schema_errors = sorted(Draft202012Validator(evaluation_schema).iter_errors(document), key=lambda error: list(error.path))
         if schema_errors:
             errors.append(f"schema:{path.name}:{schema_errors[0].message}")
 except Exception as exc:
     errors.append(f"parse:{type(exc).__name__}:{exc}")
-print(
-    json.dumps(
-        {
-            "valid": not errors,
-            "errors": errors,
-            "evaluation_count": len(case_files),
-            "adr_count": len(adr_files),
-            "hardware_contract": "present" if not any(
-                error.startswith("hardware_") or error.startswith("missing:config/adtc")
-                for error in errors
-            ) else "invalid",
-            "model_evidence_contract": "present" if not any(
-                "model_evidence" in error or "model_selection_state" in error
-                for error in errors
-            ) else "invalid",
-        },
-        indent=2,
-    )
-)
+print(json.dumps({
+    "valid": not errors,
+    "errors": errors,
+    "evaluation_count": len(case_files),
+    "adr_count": len(adr_files),
+    "hardware_contract": "present" if not any(error.startswith("hardware_") or error.startswith("missing:config/adtc") for error in errors) else "invalid",
+    "model_evidence_contract": "present" if not any("model_evidence" in error or "model_selection_state" in error for error in errors) else "invalid",
+    "local_campaign_contract": "present" if not any("local_model_campaign" in error or "model_run_evidence" in error for error in errors) else "invalid",
+    "release_gate": "present" if not any("release_authorization" in error for error in errors) else "invalid",
+}, indent=2))
 raise SystemExit(0 if not errors else 1)

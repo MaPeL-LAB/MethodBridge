@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MaPeL-LAB/MethodBridge/schemas/local_model_campaign.schema.json",
+  "title": "MethodBridge local model campaign",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "campaign_version",
+    "campaign_id",
+    "status",
+    "authority",
+    "benchmark",
+    "runtime",
+    "evidence",
+    "execution_order",
+    "modes",
+    "stopping_conditions",
+    "selection_rule"
+  ],
+  "properties": {
+    "campaign_version": {"const": 1},
+    "campaign_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$"},
+    "status": {"enum": ["prepared_not_authorized", "authorized_for_local_execution", "in_progress", "completed", "halted"]},
+    "purpose": {"type": "string", "minLength": 20},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eligibility_gate", "human_execution_authorization", "downloads_allowed", "empirical_execution_allowed"],
+      "properties": {
+        "eligibility_gate": {"enum": ["unresolved", "pass", "fail"]},
+        "human_execution_authorization": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "actor", "timestamp", "decision_reference"],
+          "properties": {
+            "status": {"enum": ["not_recorded", "recorded", "revoked"]},
+            "actor": {"type": ["string", "null"]},
+            "timestamp": {"type": ["string", "null"], "format": "date-time"},
+            "decision_reference": {"type": ["string", "null"]}
+          }
+        },
+        "downloads_allowed": {"type": "boolean"},
+        "empirical_execution_allowed": {"type": "boolean"}
+      }
+    },
+    "benchmark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["freeze_id", "aggregate_sha256", "public_case_count", "private_challenger_required", "training_excluded"],
+      "properties": {
+        "freeze_id": {"type": "string", "minLength": 5},
+        "aggregate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "public_case_count": {"const": 60},
+        "private_challenger_required": {"const": true},
+        "training_excluded": {"const": true}
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["executor", "llama_cpp_commit", "prompt_template", "gpu_layers", "context_size", "max_output_tokens", "temperature", "threads", "network_during_inference"],
+      "properties": {
+        "executor": {"const": "llama.cpp"},
+        "llama_cpp_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "prompt_template": {"const": "chatml"},
+        "gpu_layers": {"const": 0},
+        "context_size": {"type": "integer", "minimum": 256},
+        "max_output_tokens": {"type": "integer", "minimum": 1},
+        "temperature": {"type": "number", "minimum": 0},
+        "threads": {"type": "integer", "minimum": 1},
+        "network_during_inference": {"const": "disabled"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw_output_root", "shareable_record_root", "semantic_review_root", "experiment_ledger", "raw_outputs_tracked_by_git", "model_weights_tracked_by_git", "private_cases_tracked_by_git"],
+      "properties": {
+        "raw_output_root": {"type": "string", "pattern": "^artifacts/"},
+        "shareable_record_root": {"type": "string", "pattern": "^artifacts/"},
+        "semantic_review_root": {"type": "string", "pattern": "^private_evaluations/"},
+        "experiment_ledger": {"type": "string", "pattern": "^artifacts/"},
+        "raw_outputs_tracked_by_git": {"const": false},
+        "model_weights_tracked_by_git": {"const": false},
+        "private_cases_tracked_by_git": {"const": false}
+      }
+    },
+    "execution_order": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidate_id", "stage"],
+        "properties": {
+          "candidate_id": {"type": "string", "minLength": 3},
+          "stage": {"enum": ["primary", "conditional", "watch_only"]}
+        }
+      }
+    },
+    "modes": {"type": "array", "minItems": 3, "uniqueItems": true, "contains": {"const": "native"}, "items": {"enum": ["native", "contract", "mode_c"]}},
+    "stopping_conditions": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string", "minLength": 5}},
+    "selection_rule": {"type": "string", "minLength": 50}
+  }
+}

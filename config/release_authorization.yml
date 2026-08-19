@@ -1,0 +1,33 @@
+authorization_version: 1
+status: blocked
+candidate_status_required: human_approved_finalist
+release_authority: accountable_human
+final_artifact:
+  candidate_id: null
+  source_model: null
+  source_revision: null
+  license_identifier: null
+  quantization: null
+  gguf_sha256: null
+  byte_size: null
+  public_https_url: null
+required_evidence:
+  licence_and_redistribution_review: null
+  qualified_semantic_review: null
+  quantization_comparison: null
+  official_reference_profile: null
+  clean_download_and_load_test: null
+  public_claims_review: null
+human_authorization:
+  status: not_recorded
+  actor: null
+  timestamp: null
+  decision_reference: null
+  rationale: null
+prohibited_promotions:
+  - documentary_hypothesis_to_finalist
+  - simulation_proxy_to_empirical_evidence
+  - automated_keyword_proxy_to_accuracy
+  - local_apple_silicon_result_to_official_score
+  - unreviewed_model_url_to_release
+  - ci_success_to_human_authorization

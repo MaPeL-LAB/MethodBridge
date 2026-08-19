@@ -96,24 +96,45 @@ python scripts/validate_sources.py
 python scripts/validate_dataset.py
 python scripts/detect_train_eval_leakage.py
 python scripts/validate_model_evidence_boundary.py
+python scripts/validate_local_model_campaign.py
+python scripts/validate_public_claims.py
+python scripts/verify_local_model_handoff.py
 python scripts/run_evaluation.py --dry-run
 python -m pytest -q
 python scripts/verify_submission_readiness.py
 ```
 
+`verify_local_model_handoff.py` may report that local setup is ready while
+empirical execution is not yet authorized. That is the correct fail-closed state
+until eligibility and an attributable execution decision are recorded.
+
 To exercise only the canned test double, an explicit flag is required:
 
 ```bash
-python scripts/run_local_inference.py \
-  --simulation-proxy \
-  --mode contract \
-  --prompt "Explain why association is not necessarily causation."
+python scripts/run_local_inference.py   --simulation-proxy   --mode contract   --prompt "Explain why association is not necessarily causation."
 ```
 
 That result is not model evidence. Real local inference requires an existing GGUF, its exact SHA-256, and the pinned `llama-cli` path.
+
+## Local empirical campaign
+
+The remote repository now defines the complete weight-free campaign contract,
+shareable run-evidence schema, semantic adjudication record, public claims gate,
+and human-controlled release authorization. See:
+
+```text
+config/local_model_campaign.yml
+config/release_authorization.yml
+docs/LOCAL_MODEL_EXECUTION_HANDOFF.md
+docs/SEMANTIC_ADJUDICATION_PROTOCOL.md
+docs/PUBLIC_CLAIMS_POLICY.md
+```
+
+No model download, real inference, candidate ranking, quantization selection, or
+release is represented as completed by these contracts.
 
 ## Non-negotiable boundaries
 
 MethodBridge may explain and critique research methods. It may not approve protocols, analysis plans, ethics, clinical care, legal compliance, or institutional decisions. It must not fabricate citations or facilitate deceptive assessed work. Real participant data, confidential documents, credentials, model weights, private held-out prompts, and raw private-challenger outputs must not be committed.
 
-Read `BOOTSTRAP_STATUS.md`, `GOVERNANCE.md`, `BUILD_CHECKLIST.md`, `docs/MODEL_EVIDENCE_BOUNDARY.md`, and `docs/SUBMISSION_READINESS_CHECKLIST.md` before implementation.
+Read `BOOTSTRAP_STATUS.md`, `GOVERNANCE.md`, `BUILD_CHECKLIST.md`, `docs/MODEL_EVIDENCE_BOUNDARY.md`, `docs/PUBLIC_CLAIMS_POLICY.md`, and `docs/SUBMISSION_READINESS_CHECKLIST.md` before implementation.

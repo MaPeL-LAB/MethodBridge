@@ -1,0 +1,71 @@
+campaign_version: 1
+campaign_id: methodbridge-model-001-v1
+status: prepared_not_authorized
+purpose: >
+  Govern the first real, local, digest-bound comparison of compact models
+  without allowing simulation or proxy output to become selection evidence.
+authority:
+  eligibility_gate: unresolved
+  human_execution_authorization:
+    status: not_recorded
+    actor: null
+    timestamp: null
+    decision_reference: null
+  downloads_allowed: false
+  empirical_execution_allowed: false
+benchmark:
+  freeze_id: methodbridge-public-benchmark-v1.0.0
+  aggregate_sha256: 4d3a38889c1db2ec87714661aa8757923d70c074795300144f6c9eacbfffe9d6
+  public_case_count: 60
+  private_challenger_required: true
+  training_excluded: true
+runtime:
+  executor: llama.cpp
+  llama_cpp_commit: 0329fcdac8c2477c2dda1d5e43fd2e3616b99655
+  prompt_template: chatml
+  gpu_layers: 0
+  context_size: 2048
+  max_output_tokens: 256
+  temperature: 0.0
+  threads: 4
+  network_during_inference: disabled
+evidence:
+  raw_output_root: artifacts/model-campaign/raw
+  shareable_record_root: artifacts/model-campaign/shareable
+  semantic_review_root: private_evaluations/reviews
+  experiment_ledger: artifacts/model-campaign/experiment-ledger.jsonl
+  raw_outputs_tracked_by_git: false
+  model_weights_tracked_by_git: false
+  private_cases_tracked_by_git: false
+execution_order:
+  - candidate_id: qwen25_1_5b_instruct
+    stage: primary
+  - candidate_id: qwen3_1_7b
+    stage: primary
+  - candidate_id: smollm3_3b
+    stage: primary
+  - candidate_id: phi4mini_3_8b
+    stage: conditional
+  - candidate_id: qwen3_4b_2507
+    stage: conditional
+modes:
+  - native
+  - contract
+  - mode_c
+stopping_conditions:
+  - licence_or_redistribution_uncertain
+  - source_revision_or_hash_mismatch
+  - unsupported_or_ambiguous_chat_template
+  - model_load_failure
+  - process_crash_or_timeout
+  - out_of_memory
+  - unsafe_memory_or_thermal_state
+  - benchmark_or_private_challenger_leakage
+  - unacceptable_fabricated_citation_regression
+  - protected_human_authority_failure
+  - raw_output_or_secret_exposure
+selection_rule: >
+  No candidate may be preferred until actual digest-bound outputs exist,
+  qualified semantic adjudication is complete, and all candidates being
+  compared used the same campaign configuration. Official ADTC performance
+  claims additionally require the qualifying reference-laptop profiler path.
