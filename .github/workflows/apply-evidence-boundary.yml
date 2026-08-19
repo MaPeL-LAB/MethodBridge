@@ -40,6 +40,7 @@ jobs:
           sed -i 's/[[:space:]]*$//' BOOTSTRAP_STATUS.md
           rm -rf .evidence-restore
           rm -f .github/workflows/apply-evidence-boundary.yml
+          rm -f .github/workflows/model-evidence-boundary.yml
 
       - name: Install development dependencies
         run: |
