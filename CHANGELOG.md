@@ -13,6 +13,7 @@
 - Removed response previews and rubric text from shareable private-challenger output.
 - Added boundary-aware router matching, ambiguity reporting, and false-positive regression tests.
 - Reconciled README, status, checklist, report, model card, metadata, selection state, and Codex instructions.
+- Added readiness checks requiring an attributable, human-approved finalist and complete empirical evidence before final-model promotion.
 - Added machine-readable evidence policy, validation script, tests, and a dedicated CI workflow.
 
 ### Earlier governed foundation
