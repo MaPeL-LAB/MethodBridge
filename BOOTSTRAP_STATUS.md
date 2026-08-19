@@ -1,5 +1,7 @@
 # Bootstrap status
 
+**Remote publication:** full repository present on `main`; temporary transport artifacts removed.
+
 ## Implemented and tested in this recovered release
 
 - populated documentation and governance structure;
@@ -11,7 +13,7 @@
 - 60 held-out evaluation specifications, of which 40 are bootstrap-executable structural checks;
 - ten public-prompt candidates;
 - repository, source, dataset, leakage, evaluation, packaging, and readiness validators;
-- seven-plus automated repository tests;
+- 16 automated repository tests after remote hardening;
 - fail-closed `download_model.sh`.
 
 ## Requires empirical execution

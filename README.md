@@ -2,14 +2,18 @@
 
 **Repository:** `MaPeL-LAB/MethodBridge`  
 **Product:** MethodBridge Local  
-**Release status:** recovered implementation bootstrap `v0.1.0-recovered`  
+**Release status:** governed implementation bootstrap `v0.1.0-bootstrap`  
 **ADTC domain:** `math_scientific_reasoning`  
 **Cross-disciplinary pairing:** education  
 **Submission ready:** **No**
 
 MethodBridge Local is a compact, fully offline scientific-reasoning and research-methods model intended for postgraduate students and early-career researchers who need immediate methodological guidance on ordinary laptops. The judged product is the model itself: GGUF weights, `llama.cpp`, CPU-first execution, a public credential-free download, and evidence of quality, throughput, memory use, and thermal stability.
 
-This repository is a **populated engineering foundation**, not a trained model release. It includes governance, a draft Theory of Change, 18 architecture decisions, five candidate model families, three quantization plans, 60 held-out evaluation specifications, four safe synthetic dataset fixtures, source/licensing controls, validation scripts, CI workflows, and a fail-closed submission contract.
+This public repository is the **authoritative populated engineering foundation**, not a trained model release. It includes governance, a draft Theory of Change, 18 architecture decisions, five candidate model families, three quantization plans, 60 held-out evaluation specifications, four safe synthetic dataset fixtures, source/licensing controls, validation scripts, CI workflows, and a fail-closed submission contract.
+
+## Remote baseline
+
+The recovered transport has been removed. The current `main` tree contains the full tracked repository, and temporary `.bootstrap` files are prohibited by automated tests. Future work must use bounded feature branches and pull requests. See `docs/REMOTE_TO_LOCAL_HANDOFF.md`.
 
 ## Current truth
 
