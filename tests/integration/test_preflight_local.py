@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import os
 from pathlib import Path
 import shutil
@@ -77,22 +78,73 @@ def _minimal_checkout(root: Path, source_script: Path) -> None:
     subprocess.run(["git", "init", "-q"], cwd=root, check=True)
 
 
-def test_preflight_accepts_ready_but_unauthorized_state_without_writes(repo_root: Path):
-    before = _workspace_snapshot(repo_root)
-    cache_before = _python_cache_snapshot(repo_root)
-    result = _run_preflight(repo_root)
-    after = _workspace_snapshot(repo_root)
-    cache_after = _python_cache_snapshot(repo_root)
+def _link_current_interpreter(root: Path) -> None:
+    (root / ".venv/bin").mkdir(parents=True)
+    (root / ".venv/bin/python").symlink_to(Path(sys.executable))
+    interpreter_lib = Path(sys.prefix) / "lib"
+    assert interpreter_lib.is_dir()
+    (root / ".venv/lib").symlink_to(interpreter_lib, target_is_directory=True)
+    base_executable = Path(getattr(sys, "_base_executable", sys.executable)).resolve()
+    (root / ".venv/pyvenv.cfg").write_text(
+        "\n".join(
+            (
+                f"home = {base_executable.parent}",
+                "include-system-site-packages = false",
+                f"version = {sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}",
+                "",
+            )
+        ),
+        encoding="utf-8",
+    )
+
+
+def _write_handoff_validator(root: Path, payload: dict, exit_code: int) -> None:
+    (root / "scripts/verify_local_model_handoff.py").write_text(
+        f"print({json.dumps(json.dumps(payload))})\n"
+        f"raise SystemExit({exit_code})\n",
+        encoding="utf-8",
+    )
+
+
+def test_preflight_accepts_ready_but_unauthorized_state_without_writes(
+    repo_root: Path, tmp_path: Path
+):
+    _minimal_checkout(tmp_path, repo_root / "scripts/preflight_local.sh")
+    _link_current_interpreter(tmp_path)
+    _write_handoff_validator(
+        tmp_path,
+        {
+            "valid": True,
+            "local_setup_ready": True,
+            "empirical_execution_authorized": False,
+        },
+        0,
+    )
+    checkout_before = _workspace_snapshot(tmp_path)
+    checkout_cache_before = _python_cache_snapshot(tmp_path)
+    source_before = _workspace_snapshot(repo_root)
+    source_cache_before = _python_cache_snapshot(repo_root)
+
+    result = _run_preflight(tmp_path)
+
+    checkout_after = _workspace_snapshot(tmp_path)
+    checkout_cache_after = _python_cache_snapshot(tmp_path)
+    source_after = _workspace_snapshot(repo_root)
+    source_cache_after = _python_cache_snapshot(repo_root)
 
     assert result.returncode == 0, result.stdout + result.stderr
     assert "local_setup_ready: true" in result.stdout
     assert "empirical_execution_authorized: false" in result.stdout
     assert "No model was downloaded or executed." in result.stdout
     assert "Changes made: none." in result.stdout
+    assert str(tmp_path) not in result.stdout
+    assert str(tmp_path) not in result.stderr
     assert str(repo_root) not in result.stdout
     assert str(repo_root) not in result.stderr
-    assert before == after
-    assert cache_before == cache_after
+    assert checkout_before == checkout_after
+    assert checkout_cache_before == checkout_cache_after
+    assert source_before == source_after
+    assert source_cache_before == source_cache_after
 
 
 def test_preflight_fails_closed_when_repository_venv_is_missing(
@@ -108,8 +160,10 @@ def test_preflight_fails_closed_when_repository_venv_is_missing(
     assert "Changes made: none." in result.stderr
 
 
-def test_preflight_rejects_path_or_option_injection(repo_root: Path):
-    result = _run_preflight(repo_root, "--root", "/tmp/untrusted")
+def test_preflight_rejects_path_or_option_injection(repo_root: Path, tmp_path: Path):
+    _minimal_checkout(tmp_path, repo_root / "scripts/preflight_local.sh")
+
+    result = _run_preflight(tmp_path, "--root", "/tmp/untrusted")
 
     assert result.returncode == 64
     assert "unexpected arguments were supplied" in result.stderr
@@ -120,16 +174,15 @@ def test_preflight_fails_closed_when_handoff_validator_fails(
     repo_root: Path, tmp_path: Path
 ):
     _minimal_checkout(tmp_path, repo_root / "scripts/preflight_local.sh")
-    (tmp_path / ".venv/bin").mkdir(parents=True)
-    shutil.copy2(repo_root / ".venv/pyvenv.cfg", tmp_path / ".venv/pyvenv.cfg")
-    (tmp_path / ".venv/lib").symlink_to(repo_root / ".venv/lib", target_is_directory=True)
-    (tmp_path / ".venv/bin/python").symlink_to(Path(sys.executable))
-    (tmp_path / "scripts/verify_local_model_handoff.py").write_text(
-        "import json\n"
-        'print(json.dumps({"valid": False, "local_setup_ready": False, '
-        '"empirical_execution_authorized": False}))\n'
-        "raise SystemExit(1)\n",
-        encoding="utf-8",
+    _link_current_interpreter(tmp_path)
+    _write_handoff_validator(
+        tmp_path,
+        {
+            "valid": False,
+            "local_setup_ready": False,
+            "empirical_execution_authorized": False,
+        },
+        1,
     )
 
     result = _run_preflight(tmp_path)

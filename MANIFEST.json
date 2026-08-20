@@ -3139,8 +3139,8 @@
     },
     {
       "path": "tests/integration/test_preflight_local.py",
-      "size": 4879,
-      "sha256": "843ed2bf63e69e14b70c216688e96d15d486e072ff045c2b27573eb9e6dc6d7c",
+      "size": 6526,
+      "sha256": "28bcd5d3ddc8cb08baac3cfac8ccb12df85a1d1668be86cc9bf48795dc2352ae",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
