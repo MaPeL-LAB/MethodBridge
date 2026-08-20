@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify that the remote repository is ready for governed local execution."""
+"""Verify readiness for development-only governed local execution."""
 from __future__ import annotations
 
 import json
@@ -10,7 +10,10 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from validate_local_model_campaign import validate_campaign  # noqa: E402
+from validate_local_model_campaign import (  # noqa: E402
+    development_r_and_d_authorized,
+    validate_campaign,
+)
 
 
 def main() -> int:
@@ -35,18 +38,22 @@ def main() -> int:
     except Exception:
         head = "unavailable"
         errors.append("git_head_unavailable")
+    development_authorized = not errors and development_r_and_d_authorized(campaign)
     payload = {
         "valid": not errors,
         "errors": errors,
         "source_commit": head,
         "local_setup_ready": not errors,
+        "authorization_scope": "private_product_r_and_d" if development_authorized else "none",
+        "development_r_and_d_authorized": development_authorized,
         "eligibility_gate": campaign.get("authority", {}).get("eligibility_gate"),
-        "downloads_allowed": campaign.get("authority", {}).get("downloads_allowed"),
-        "empirical_execution_authorized": campaign.get("authority", {}).get("empirical_execution_allowed"),
+        "contest_path_authorized": False,
+        "downloads_allowed": development_authorized,
+        "empirical_execution_authorized": development_authorized,
         "next_action": (
-            "record eligibility and attributable execution authorization"
-            if not campaign.get("authority", {}).get("empirical_execution_allowed")
-            else "begin one exact candidate at a time"
+            "record an attributable development-only execution authorization"
+            if not development_authorized
+            else "acquire one licensed public-no-credential candidate revision at a time"
         ),
     }
     print(json.dumps(payload, indent=2))

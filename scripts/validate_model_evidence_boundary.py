@@ -142,7 +142,8 @@ def main() -> int:
         return 1
     print("Model evidence boundary: PASS")
     print(f"Selection status: {selection_status}")
-    print("Campaign: prepared, empirical execution not authorized")
+    print("Campaign: development-only local R&D authorized by EXEC-001")
+    print("Contest path: eligibility unresolved; release and submission unauthorized")
     print("Release: blocked, human authorization not recorded")
     print("Simulation proxy: measured=false, selection=false, submission=false")
     print("Automated scorer: keyword proxy; semantic review required")

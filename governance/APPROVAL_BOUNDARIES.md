@@ -21,6 +21,19 @@ processing, production or institutional use, final model selection, tuning,
 quantization, public-prompt selection, public hosting, rules acceptance, model
 release, or Devpost submission.
 
+## Private product R&D execution authorization
+
+`EXEC-001`, recorded by Marothi Peter Letsoalo at
+`2026-08-20T12:33:58+02:00`, authorizes only private product R&D: acquire exact
+reviewed candidates with an approved licence and public no-credential access,
+run Docker simulation, and run digest-bound local `llama.cpp` inference under
+the governed campaign. Contest eligibility remains unresolved.
+
+This development authorization is not finalist or quantization selection and
+does not authorize official profiler claims, public claims, hosting, release,
+registration, rules acceptance, or submission. Those gates remain independent
+and fail closed.
+
 ## Model evidence boundary
 
 The simulation proxy, automated keyword proxy, CI, and development agents may

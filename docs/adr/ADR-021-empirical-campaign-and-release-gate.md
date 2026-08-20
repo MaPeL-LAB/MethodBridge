@@ -1,6 +1,7 @@
 # ADR-021: Empirical campaign and release gate
 
-**Status:** accepted for governed local execution preparation.
+**Status:** accepted for governed local execution preparation; development-
+authorization coupling partially superseded by ADR-022.
 
 ## Context
 
@@ -18,8 +19,10 @@ human-controlled release gate.
 
 ## Consequences
 
-- No local model download or empirical campaign is represented as authorized
-  until eligibility and attributable execution authorization are recorded.
+- Local model download and empirical execution require an attributable execution
+  authorization. ADR-022 permits a development-only authorization while contest
+  eligibility remains unresolved; it does not authorize contest participation,
+  public claims, release, or submission.
 - A local real-model output is evidence, but not automatically selection evidence.
 - Official performance claims require the native reference-laptop profiler.
 - Release tooling cannot update metadata or public download defaults until a

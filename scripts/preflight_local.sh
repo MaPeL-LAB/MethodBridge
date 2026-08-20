@@ -259,10 +259,23 @@ if payload.get("valid") is not True:
     raise SystemExit("handoff payload is not valid")
 if payload.get("local_setup_ready") is not True:
     raise SystemExit("local setup is not ready")
-authorized = payload.get("empirical_execution_authorized")
-if not isinstance(authorized, bool):
-    raise SystemExit("empirical authorization is not boolean")
-print(f"true|{str(authorized).lower()}")
+scope = payload.get("authorization_scope")
+development_authorized = payload.get("development_r_and_d_authorized")
+empirical_authorized = payload.get("empirical_execution_authorized")
+downloads_allowed = payload.get("downloads_allowed")
+eligibility_gate = payload.get("eligibility_gate")
+contest_authorized = payload.get("contest_path_authorized")
+if scope != "private_product_r_and_d":
+    raise SystemExit("authorization scope is not development-only")
+if development_authorized is not True:
+    raise SystemExit("development R&D authorization is not recorded")
+if empirical_authorized is not True or downloads_allowed is not True:
+    raise SystemExit("development acquisition or execution is not authorized")
+if eligibility_gate != "unresolved":
+    raise SystemExit("contest eligibility gate changed unexpectedly")
+if contest_authorized is not False:
+    raise SystemExit("contest path must remain unauthorized")
+print("true|private_product_r_and_d|true|true|unresolved|false")
 ' 2>/dev/null
 )"; then
   fail_closed \
@@ -270,20 +283,33 @@ print(f"true|{str(authorized).lower()}")
     "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python scripts/verify_local_model_handoff.py"
 fi
 LOCAL_SETUP_READY="${HANDOFF_STATE%%|*}"
-EMPIRICAL_EXECUTION_AUTHORIZED="${HANDOFF_STATE#*|}"
+HANDOFF_REMAINDER="${HANDOFF_STATE#*|}"
+AUTHORIZATION_SCOPE="${HANDOFF_REMAINDER%%|*}"
+HANDOFF_REMAINDER="${HANDOFF_REMAINDER#*|}"
+DEVELOPMENT_R_AND_D_AUTHORIZED="${HANDOFF_REMAINDER%%|*}"
+HANDOFF_REMAINDER="${HANDOFF_REMAINDER#*|}"
+EMPIRICAL_EXECUTION_AUTHORIZED="${HANDOFF_REMAINDER%%|*}"
+HANDOFF_REMAINDER="${HANDOFF_REMAINDER#*|}"
+ELIGIBILITY_GATE="${HANDOFF_REMAINDER%%|*}"
+CONTEST_PATH_AUTHORIZED="${HANDOFF_REMAINDER#*|}"
 if [[ "$LOCAL_SETUP_READY" != "true" ]]; then
   fail_closed \
     "local setup readiness did not pass" \
     "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python scripts/verify_local_model_handoff.py"
 fi
 printf '  local_setup_ready: %s\n' "$LOCAL_SETUP_READY"
+printf '  authorization_scope: %s\n' "$AUTHORIZATION_SCOPE"
+printf '  development_r_and_d_authorized: %s\n' "$DEVELOPMENT_R_AND_D_AUTHORIZED"
 printf '  empirical_execution_authorized: %s\n' "$EMPIRICAL_EXECUTION_AUTHORIZED"
+printf '  eligibility_gate: %s\n' "$ELIGIBILITY_GATE"
+printf '  contest_path_authorized: %s\n' "$CONTEST_PATH_AUTHORIZED"
 
 printf '[6/6] Confirming authorization and privacy boundaries\n'
 printf '%s\n' \
-  '  No model was downloaded or executed.' \
-  '  No candidate, quantization, public claim, release, or submission was authorized.' \
-  '  Setup readiness is not empirical-execution authorization.'
+  '  No model was downloaded or executed by this preflight.' \
+  '  EXEC-001 permits only licensed public-no-credential acquisition, Docker simulation, and digest-bound local llama.cpp execution for private product R&D.' \
+  '  No finalist, quantization, official profiler claim, public claim, hosting, release, registration, rules acceptance, or submission was authorized.' \
+  '  Development R&D authorization is not contest eligibility, release, or submission authorization.'
 
 printf 'Changes made: none.\n'
 printf 'Next command: PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m pytest -q -p no:cacheprovider\n'

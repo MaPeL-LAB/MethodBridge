@@ -30,7 +30,7 @@ case_files = sorted((ROOT / "evaluations/cases").glob("MB-*.json"))
 adr_files = sorted((ROOT / "docs/adr").glob("ADR-*.md"))
 if len(case_files) != 60:
     errors.append(f"evaluation_count:{len(case_files)}")
-if len(adr_files) != 21:
+if len(adr_files) != 22:
     errors.append(f"adr_count:{len(adr_files)}")
 if list(ROOT.rglob("*.gguf")):
     errors.append("gguf_committed")

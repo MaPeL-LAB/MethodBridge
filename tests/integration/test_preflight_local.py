@@ -106,7 +106,7 @@ def _write_handoff_validator(root: Path, payload: dict, exit_code: int) -> None:
     )
 
 
-def test_preflight_accepts_ready_but_unauthorized_state_without_writes(
+def test_preflight_accepts_development_only_state_without_writes(
     repo_root: Path, tmp_path: Path
 ):
     _minimal_checkout(tmp_path, repo_root / "scripts/preflight_local.sh")
@@ -116,7 +116,12 @@ def test_preflight_accepts_ready_but_unauthorized_state_without_writes(
         {
             "valid": True,
             "local_setup_ready": True,
-            "empirical_execution_authorized": False,
+            "authorization_scope": "private_product_r_and_d",
+            "development_r_and_d_authorized": True,
+            "eligibility_gate": "unresolved",
+            "contest_path_authorized": False,
+            "downloads_allowed": True,
+            "empirical_execution_authorized": True,
         },
         0,
     )
@@ -134,8 +139,13 @@ def test_preflight_accepts_ready_but_unauthorized_state_without_writes(
 
     assert result.returncode == 0, result.stdout + result.stderr
     assert "local_setup_ready: true" in result.stdout
-    assert "empirical_execution_authorized: false" in result.stdout
-    assert "No model was downloaded or executed." in result.stdout
+    assert "authorization_scope: private_product_r_and_d" in result.stdout
+    assert "development_r_and_d_authorized: true" in result.stdout
+    assert "empirical_execution_authorized: true" in result.stdout
+    assert "eligibility_gate: unresolved" in result.stdout
+    assert "contest_path_authorized: false" in result.stdout
+    assert "No model was downloaded or executed by this preflight." in result.stdout
+    assert "Development R&D authorization is not contest eligibility" in result.stdout
     assert "Changes made: none." in result.stdout
     assert str(tmp_path) not in result.stdout
     assert str(tmp_path) not in result.stderr
@@ -180,6 +190,11 @@ def test_preflight_fails_closed_when_handoff_validator_fails(
         {
             "valid": False,
             "local_setup_ready": False,
+            "authorization_scope": "none",
+            "development_r_and_d_authorized": False,
+            "eligibility_gate": "unresolved",
+            "contest_path_authorized": False,
+            "downloads_allowed": False,
             "empirical_execution_authorized": False,
         },
         1,
@@ -189,4 +204,31 @@ def test_preflight_fails_closed_when_handoff_validator_fails(
 
     assert result.returncode != 0
     assert "governed handoff validator reported an invalid" in result.stderr
+    assert "local_setup_ready: true" not in result.stdout
+
+
+def test_preflight_rejects_contest_authorization_in_development_handoff(
+    repo_root: Path, tmp_path: Path
+):
+    _minimal_checkout(tmp_path, repo_root / "scripts/preflight_local.sh")
+    _link_current_interpreter(tmp_path)
+    _write_handoff_validator(
+        tmp_path,
+        {
+            "valid": True,
+            "local_setup_ready": True,
+            "authorization_scope": "private_product_r_and_d",
+            "development_r_and_d_authorized": True,
+            "eligibility_gate": "unresolved",
+            "contest_path_authorized": True,
+            "downloads_allowed": True,
+            "empirical_execution_authorized": True,
+        },
+        0,
+    )
+
+    result = _run_preflight(tmp_path)
+
+    assert result.returncode != 0
+    assert "incomplete or malformed status" in result.stderr
     assert "local_setup_ready: true" not in result.stdout

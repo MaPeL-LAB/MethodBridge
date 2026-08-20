@@ -1,42 +1,53 @@
 # Local model-execution handoff
 
-**Repository phase:** credential-free and weight-free preparation complete.  
+**Repository phase:** development-only local R&D authorized by `EXEC-001`.
 **Empirical status:** no real candidate comparison is currently established.
+**Contest status:** eligibility unresolved; release and submission unauthorized.
 
 ## First local gate
 
 Run:
 
 ```bash
-python scripts/verify_local_model_handoff.py
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python scripts/verify_local_model_handoff.py
 ```
 
 The expected result may be:
 
 ```text
 local_setup_ready: true
-empirical_execution_authorized: false
+authorization_scope: private_product_r_and_d
+development_r_and_d_authorized: true
+eligibility_gate: unresolved
+contest_path_authorized: false
+empirical_execution_authorized: true
 ```
 
-That is correct while eligibility or attributable execution authorization remains
-unresolved. Do not edit the validator or campaign file merely to make the second
-field pass.
+This means development-only acquisition and execution may proceed under
+`EXEC-001`; it does not mean the entrant is eligible, registered, released, or
+authorized to submit. Do not alter these independent fields merely to make a
+contest or release check pass.
 
-## Authorization sequence
+## Development-only sequence
 
-1. Resolve the entrant and eligibility gate.
-2. Record an attributable execution decision in
-   `config/local_model_campaign.yml`.
-3. Re-run the handoff validator.
-4. Acquire one exact candidate revision at a time.
-5. Preserve the revision's licence, model card, file inventory, and hashes.
-6. Convert or acquire a GGUF and compute its exact SHA-256.
-7. Run native, MethodBridge contract, and Mode C through the real
+1. Re-run the handoff validator and confirm `EXEC-001` development scope.
+2. Acquire one exact candidate revision at a time, only when its reviewed
+   licence, admission, and public no-credential access still match policy.
+3. Preserve the revision's licence, model card, file inventory, and hashes.
+4. Convert or acquire a GGUF and compute its exact SHA-256.
+5. Run native, MethodBridge contract, and Mode C through the real
    digest-bound `llama.cpp` executor.
-8. Retain raw prompts and responses only in ignored local storage.
-9. Create a shareable run-evidence record without raw text or local paths.
-10. Complete qualified semantic adjudication.
-11. Compare candidates only under one unchanged campaign configuration.
+6. Retain raw prompts and responses only in ignored local storage.
+7. Create a shareable run-evidence record without raw text or local paths.
+8. Complete qualified semantic adjudication.
+9. Compare candidates only under one unchanged campaign configuration.
+
+## Independent contest and release sequence
+
+Before any contest, public, hosting, release, or submission action: resolve
+entrant eligibility separately; complete real evidence and qualified review;
+record later accountable finalist, quantization, public-claims, release, rules,
+and submission decisions as applicable. `EXEC-001` satisfies none of those gates.
 
 ## First empirical wave
 

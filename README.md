@@ -17,6 +17,7 @@ This repository is the authoritative engineering and governance foundation—not
 |---|---|
 | Product and domain scope | Accepted with conditions |
 | Theory of Change | Approved with conditions for governed ADTC development |
+| Private product R&D execution | Authorized with conditions by `EXEC-001` |
 | Entrant eligibility | Unresolved hard gate |
 | Public benchmark | Engineering-frozen; qualified semantic adjudication still required |
 | Upstream toolchain | Reviewed and pinned for pre-local development |
@@ -60,9 +61,10 @@ It is not accuracy or expert judgment.
 ## Engineering sequence
 
 ```text
-eligibility resolution
+private product R&D lane
+EXEC-001 development-only authorization
         ↓
-exact licensed candidate acquisition and hashing
+exact licensed public-no-credential candidate acquisition and hashing
         ↓
 real untouched llama.cpp outputs
         ↓
@@ -70,13 +72,14 @@ qualified semantic review
         ↓
 native / contract / Mode C comparison
         ↓
-conditional adaptation only if justified
+stop: no finalist, final quantization, adaptation, or public claim
+
+independent contest/release lane (currently blocked)
+eligibility, registration, and rules decisions
         ↓
-GGUF conversion and independent quantization
+later finalist and quantization approval
         ↓
-reference-laptop official profiler
-        ↓
-human model and quantization approval
+reference-laptop official profiler and public-claims review
         ↓
 credential-free hosting
         ↓
@@ -111,11 +114,13 @@ not itself a failure. It reports missing or stale editable-install state and an
 exact remediation command, but never installs packages, downloads weights, or
 runs inference.
 
-`verify_local_model_handoff.py` may report that local setup is ready while
-empirical execution is not yet authorized. That is the correct fail-closed state
-until eligibility and an attributable execution decision are recorded. A
-successful preflight or `local_setup_ready: true` never authorizes downloads,
-empirical execution, candidate selection, release, or submission.
+`verify_local_model_handoff.py` reports the independent gates explicitly.
+`EXEC-001` authorizes only licensed public-no-credential acquisition, Docker
+simulation, and digest-bound local `llama.cpp` execution for private product
+R&D. Eligibility remains unresolved and the contest path remains unauthorized.
+A successful preflight or `local_setup_ready: true` does not expand that scope
+or authorize a finalist, quantization, official profiler claim, public claim,
+hosting, release, registration, rules acceptance, or submission.
 
 To exercise only the canned test double, an explicit flag is required:
 
@@ -140,7 +145,8 @@ docs/PUBLIC_CLAIMS_POLICY.md
 ```
 
 No model download, real inference, candidate ranking, quantization selection, or
-release is represented as completed by these contracts.
+release is represented as completed by these contracts. Authorization to begin
+bounded development work is not evidence that the work occurred.
 
 ## Non-negotiable boundaries
 

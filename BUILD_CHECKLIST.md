@@ -8,7 +8,7 @@ scaffolding exists.
 - [x] **0A. Theory-of-Change approval** — attributable approval recorded with bounded conditions.
 - [x] **0B. Hardware evidence contract** — reference profile, simulation boundary, attestation, strict-run validation, scripts, tests, and CI implemented.
 - [x] **0C. Model-evidence correction** — simulation and real execution separated; unsupported claims withdrawn.
-- [x] **0D. Local empirical campaign contract** — campaign schema, execution authorization fields, shareable run evidence, semantic review, stopping rules, and local handoff implemented.
+- [x] **0D. Local empirical campaign contract** — campaign schema, development-only `EXEC-001` authorization, shareable run evidence, semantic review, stopping rules, and local handoff implemented; contest authority remains separate.
 - [x] **0E. Public claims and release gate** — model card, demo, Devpost, metadata, and release tooling remain blocked until immutable evidence and human authorization agree.
 - [ ] **1. Eligibility gate** — resolve entrant identity, team age, funding, product stage, and Participation Agreement.
 - [x] **2. Upstream freeze** — official template, profiler, `llama.cpp`, governance, and conditional adaptation toolchain pinned to reviewed commits.
@@ -33,15 +33,17 @@ make prelocal
 python scripts/prepare_model_release.py --check
 ```
 
-The release check is expected to remain blocked. The empirical authorization
-field is also expected to remain false until eligibility and a named human
-decision are recorded.
+The release check is expected to remain blocked. The handoff should report
+development-only R&D authorization from `EXEC-001` while eligibility remains
+`unresolved` and `contest_path_authorized` remains `false`.
 
 ## Evidence rules
 
 - A simulation proxy can validate plumbing only.
 - `automated_keyword_proxy_pass_rate` is not accuracy or expert judgment.
 - Local real model output requires an exact GGUF digest and pinned runtime.
+- `EXEC-001` authorizes only licensed public-no-credential acquisition, Docker simulation, and digest-bound local `llama.cpp` execution for private product R&D.
+- Development authorization is not eligibility, finalist selection, official evidence, public claims, hosting, release, registration, rules acceptance, or submission authorization.
 - Qualified semantic review is mandatory before candidate comparison.
 - Official performance and thermal claims require the official profiler on a qualifying native reference host.
 - An unresolved or failed eligibility, licence, load, memory, crash, thermal, leakage, toolchain, evidence, or critical-quality gate stops the candidate.
