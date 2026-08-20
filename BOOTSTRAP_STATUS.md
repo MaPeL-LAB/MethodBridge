@@ -1,12 +1,12 @@
 # Bootstrap status
 
 **Remote publication:** full repository present on `main`; temporary transport artifacts removed.  
-**Submission status:** blocked by design.  
+Submission status: blocked by design.  
 **Evidence status:** fail-closed boundary active.
 
 ## Governance status
 
-- The Project Theory of Change is approved with conditions for governed ADTC 2026 development.
+- The Project Theory of Change approved with conditions for governed ADTC 2026 development.
 - The approval does not resolve eligibility, authorize confidential-data processing, select a final model, authorize public release, accept competition terms, or authorize submission.
 - Final model, quantization, public prompts, release, and submission remain protected human decisions.
 

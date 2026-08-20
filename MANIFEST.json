@@ -2,7 +2,7 @@
   "repository": "methodbridge-local",
   "release": "v0.1.0-bootstrap",
   "provenance_note": "The initial public bootstrap was reconstructed from retained research artifacts. The tracked Git repository is now the authoritative source.",
-  "file_count_excluding_manifest": 358,
+  "file_count_excluding_manifest": 357,
   "manifest_self_excluded": true,
   "files": [
     {
@@ -142,8 +142,8 @@
     },
     {
       "path": "BOOTSTRAP_STATUS.md",
-      "size": 4270,
-      "sha256": "3d3b0dd1bf3d3e19bdf98d9146331aea9f00f7842f40871d079184ac685e0984",
+      "size": 4263,
+      "sha256": "89de5fa217ae1203babe4ec6bc423628a6f2257fd40d5b09c636a7b4d0ce0d96",
       "category": "root",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2743,8 +2743,8 @@
     },
     {
       "path": "scripts/verify_local_model_handoff.py",
-      "size": 2077,
-      "sha256": "ef10f06b9e69f5be350154f3a3b6c6e2db8c372fb766dd1a99746c30a5d34fae",
+      "size": 2066,
+      "sha256": "4e9db4f2fa8d9f8135f0a67270126d52ad800706007067fbb5d8a6514c58e85f",
       "category": "scripts",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -3168,15 +3168,6 @@
       "path": "tests/packaging/test_manifest.py",
       "size": 219,
       "sha256": "a6160fbc3f3720f85c9af67c4126dfdbe311d778fe964b6b5a9fcfca90ecd32c",
-      "category": "tests",
-      "source_status": "tracked_repository",
-      "implementation_status": "bootstrap",
-      "sensitivity": "public_synthetic_or_documentation"
-    },
-    {
-      "path": "tests/packaging/test_prepare_model_release.py",
-      "size": 1879,
-      "sha256": "930d3181df2f6ddf6b9ca3a457d7dbb16e38d8d10fba5cdae39da9c9b1fc1c4b",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",

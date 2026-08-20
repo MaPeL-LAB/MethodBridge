@@ -17,7 +17,7 @@ def main() -> int:
     campaign, errors = validate_campaign(ROOT)
     required = [
         "governance/upstream.lock.json",
-        "evaluations/reviews/benchmark_freeze_v1.json",
+        "evaluations/BENCHMARK_FREEZE.json",
         "config/model_evidence_policy.yml",
         "config/model_selection_state.yml",
         "config/adtc_standard_laptop.yml",
