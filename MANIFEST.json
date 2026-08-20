@@ -808,8 +808,8 @@
     },
     {
       "path": "docs/MAIN_BRANCH_GOVERNANCE.md",
-      "size": 884,
-      "sha256": "c88946fe518e3b4459fad2a4d9da372cbbabef0ec180aa3a74bd2c38a45f040e",
+      "size": 1799,
+      "sha256": "3b381546b773b38278100c9379ae9159d53555da9e59d5a91554175a0c9f3e62",
       "category": "docs",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
