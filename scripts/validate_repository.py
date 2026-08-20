@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import json
+import subprocess
 import yaml
 from jsonschema import Draft202012Validator
 
@@ -30,9 +31,15 @@ case_files = sorted((ROOT / "evaluations/cases").glob("MB-*.json"))
 adr_files = sorted((ROOT / "docs/adr").glob("ADR-*.md"))
 if len(case_files) != 60:
     errors.append(f"evaluation_count:{len(case_files)}")
-if len(adr_files) != 21:
+if len(adr_files) != 22:
     errors.append(f"adr_count:{len(adr_files)}")
-if list(ROOT.rglob("*.gguf")):
+tracked_ggufs = subprocess.run(
+    ["git", "ls-files", "-z", "--", "*.gguf"],
+    cwd=ROOT,
+    check=True,
+    capture_output=True,
+).stdout.split(b"\0")
+if any(tracked_ggufs):
     errors.append("gguf_committed")
 try:
     json.loads((ROOT / "metadata.json").read_text(encoding="utf-8"))

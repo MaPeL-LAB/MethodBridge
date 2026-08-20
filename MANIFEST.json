@@ -2,7 +2,7 @@
   "repository": "methodbridge-local",
   "release": "v0.1.0-bootstrap",
   "provenance_note": "The initial public bootstrap was reconstructed from retained research artifacts. The tracked Git repository is now the authoritative source.",
-  "file_count_excluding_manifest": 357,
+  "file_count_excluding_manifest": 363,
   "manifest_self_excluded": true,
   "files": [
     {
@@ -61,8 +61,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "size": 343,
-      "sha256": "2bcf121eb90b0e87e62571c675e84e8c2cbb3a593132d5474395ce5bab67513d",
+      "size": 356,
+      "sha256": "e71586034e737d5e7d219c5706f2ae0c33d43be847732f21519c81a21e99ca18",
       "category": ".github",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -70,8 +70,8 @@
     },
     {
       "path": ".github/workflows/data-governance.yml",
-      "size": 456,
-      "sha256": "73f2e450c77f8d8d2b932a711a93feef2f18dec713e53a837fd40b78b2bcb4fc",
+      "size": 482,
+      "sha256": "84460d705c49991eb7a53df853718a75fceaa66ed6c7fcc0266dd8b2bb8cac3d",
       "category": ".github",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -97,8 +97,8 @@
     },
     {
       "path": ".github/workflows/repository-integrity.yml",
-      "size": 715,
-      "sha256": "b921dc83b0f2c0e85d5b7b4bc77b898ee15fdfc99f3e80fd1a1bd005e6753747",
+      "size": 746,
+      "sha256": "1a149c643428999180b4a6cbd9ebd44db65622a3bbc4a35e9b57bb7a17fd6eeb",
       "category": ".github",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -106,8 +106,8 @@
     },
     {
       "path": ".github/workflows/schema-validation.yml",
-      "size": 376,
-      "sha256": "3d0ac54f09ffb95af0a0c06b69949820ec701cff0a289c9bf9381019cebf837b",
+      "size": 404,
+      "sha256": "f09b18cfbc86cd91d847515daa8b7b427135fa91d9f05e60f88d06870984fe77",
       "category": ".github",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -115,8 +115,8 @@
     },
     {
       "path": ".github/workflows/submission-readiness.yml",
-      "size": 404,
-      "sha256": "3c0196a64e11a05280eda4030f9ccaa59bd3ce0ab2804597862ac6a8cb200862",
+      "size": 435,
+      "sha256": "29601b370f2762eb8d2b7eeba1b46031644d59e5a7d6cc1c4f11a5705ac73c7f",
       "category": ".github",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -124,8 +124,8 @@
     },
     {
       "path": ".gitignore",
-      "size": 251,
-      "sha256": "486923ee91533cf26ec6f18388e68218dec3e9c8795a9811f38fb09594179033",
+      "size": 269,
+      "sha256": "939b452be6f8f3d08f6ad67f611f97f762bf38fb9585392edf19181536527c03",
       "category": "root",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -142,8 +142,8 @@
     },
     {
       "path": "BOOTSTRAP_STATUS.md",
-      "size": 4263,
-      "sha256": "89de5fa217ae1203babe4ec6bc423628a6f2257fd40d5b09c636a7b4d0ce0d96",
+      "size": 5067,
+      "sha256": "197edf70b3254279c1d9214517500a6a99771683877a068d12c3d78c950e0e3a",
       "category": "root",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -151,8 +151,8 @@
     },
     {
       "path": "BUILD_CHECKLIST.md",
-      "size": 4124,
-      "sha256": "1d0eaa29a6ecbb48dfd042c3de6329c4c05b219f38aee75699c9d01b3900fad8",
+      "size": 4727,
+      "sha256": "ef759581f52cf29de3e9d8c7bd6254a438311bcef9a286b679b5a3f4290bafcc",
       "category": "root",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -259,8 +259,8 @@
     },
     {
       "path": "README.md",
-      "size": 5843,
-      "sha256": "50df81eed14d5f12f0d486d049c717d29cc7e03a9992fdd171113454d5eedafa",
+      "size": 7275,
+      "sha256": "08a2e81c9689fbbfae14329508d9e5a53f2878e81ebd12eeca81914854fe2e68",
       "category": "root",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -385,8 +385,8 @@
     },
     {
       "path": "config/local_model_campaign.yml",
-      "size": 2362,
-      "sha256": "7542ddb258fd90f3983a62d48f97d8597cf61d2e04dec84ad853ebbbbd2683b7",
+      "size": 2496,
+      "sha256": "3d3337ea31aaec864f68fae72f6c901d282d6dae4fdebfb15aa9b1ab75028745",
       "category": "config",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -790,8 +790,8 @@
     },
     {
       "path": "docs/LOCAL_MODEL_EXECUTION_HANDOFF.md",
-      "size": 2116,
-      "sha256": "afc0540eca3ca548877bb487a7ee0c3458db8fc962ef5454ae23c6d1ff6af68d",
+      "size": 3997,
+      "sha256": "5528dbcbe3bc99ef8b57d3a13d8080b96b3eb626097875f2a1830315baa71c93",
       "category": "docs",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -808,8 +808,8 @@
     },
     {
       "path": "docs/MAIN_BRANCH_GOVERNANCE.md",
-      "size": 884,
-      "sha256": "c88946fe518e3b4459fad2a4d9da372cbbabef0ec180aa3a74bd2c38a45f040e",
+      "size": 1799,
+      "sha256": "3b381546b773b38278100c9379ae9159d53555da9e59d5a91554175a0c9f3e62",
       "category": "docs",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -1267,8 +1267,17 @@
     },
     {
       "path": "docs/adr/ADR-021-empirical-campaign-and-release-gate.md",
-      "size": 1273,
-      "sha256": "2e2ce4554a7e622b79b460e83bc2c1570bbcfe01a94bc343c9529337e3ce8bb0",
+      "size": 1471,
+      "sha256": "408942bbe735933e02ded8565cc072820bbd87bb77da502cdc947285aa912299",
+      "category": "docs",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "docs/adr/ADR-022-private-product-r-and-d-authorization-boundary.md",
+      "size": 2293,
+      "sha256": "30805761a43e8d50c26671e69294e8cb233ec867ee32a52a5d18c079d62fd7e3",
       "category": "docs",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2014,8 +2023,8 @@
     },
     {
       "path": "governance/APPROVAL_BOUNDARIES.md",
-      "size": 2864,
-      "sha256": "5a69af0056a6ef90ca16ca3d2d454bda4d78b714e6b2200a77d193181a46f108",
+      "size": 3513,
+      "sha256": "5c1cfc60207e76684462961ca85840235026646fe2e6810b8f40127f318ef14d",
       "category": "governance",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2050,8 +2059,8 @@
     },
     {
       "path": "governance/DECISION_LOG.md",
-      "size": 4480,
-      "sha256": "cef839292642447f640c8fbb65111a838c8c9fa8e9564af8969ef4d62c868b45",
+      "size": 6502,
+      "sha256": "6ee6965d046d81d181e4a83e51efc9782d547366716f33939d55f81680639a69",
       "category": "governance",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2140,8 +2149,8 @@
     },
     {
       "path": "infra/container/Dockerfile",
-      "size": 1835,
-      "sha256": "68cc3010f99906bf57457f1b1dcc2cbb33d4b3f4b3c96f4518571a14443fa39e",
+      "size": 2050,
+      "sha256": "48507de79251c7eed2bdec3fb0f26e050cd501923a174cc66f4506038d70d3a2",
       "category": "infra",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2302,8 +2311,8 @@
     },
     {
       "path": "research/RESEARCH_TO_DECISION_MATRIX.md",
-      "size": 888,
-      "sha256": "39a310d51c47bc4efca8f82ff0ac342dba8044346aea62f31e3536e0fb8f3960",
+      "size": 2977,
+      "sha256": "2decc58f7d8b6848337af97b29c2513e411cfee5f582530b0b9cb0a057e3be04",
       "category": "research",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2562,6 +2571,15 @@
       "sensitivity": "public_synthetic_or_documentation"
     },
     {
+      "path": "scripts/preflight_local.sh",
+      "size": 11879,
+      "sha256": "82543fe2a3f6f08654d984f4b83b37067714e7ba9db1b3bfa39524b909a5ed74",
+      "category": "scripts",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
       "path": "scripts/prepare_model_release.py",
       "size": 6888,
       "sha256": "6db7ec9f5a3df1b8ce094e42ab493d011ea00afa4d318d9abb3ce511188fdef5",
@@ -2608,8 +2626,8 @@
     },
     {
       "path": "scripts/run_local_inference.py",
-      "size": 4161,
-      "sha256": "f7c75649adc5629a0528a25063e9c3586bdc3eb185ce36f23af2a5b320710e1d",
+      "size": 4309,
+      "sha256": "693e184b06aeb59508a2de57c18ffc544fa97227166f70dc82f9052ac584ecfd",
       "category": "scripts",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2671,8 +2689,8 @@
     },
     {
       "path": "scripts/validate_local_model_campaign.py",
-      "size": 3097,
-      "sha256": "71d842d4e5e231556ecfc2bcd2877d7b030deadb235458311a0b774f0c772c35",
+      "size": 6504,
+      "sha256": "18463608f3d0138ed3804bca4ab0d54c104f7ab8e61c326f669efb95465308fb",
       "category": "scripts",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2680,8 +2698,8 @@
     },
     {
       "path": "scripts/validate_markdown_links.py",
-      "size": 1264,
-      "sha256": "5ced3c4dacf0e6b050aa3d42a90c01315361fc4a5cb7b6cd8c99ff440d441223",
+      "size": 1878,
+      "sha256": "c7779dab9c4215e3bab18188c6f483dff0eae5fc7b227daea13db765fae6fd32",
       "category": "scripts",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2689,8 +2707,8 @@
     },
     {
       "path": "scripts/validate_model_evidence_boundary.py",
-      "size": 7896,
-      "sha256": "7618b17daa4ee9a98a7f9df79a57529f0b8b55bbf4815d1b035701bd7ebfc15a",
+      "size": 7988,
+      "sha256": "3d9a5c0715817ca80259849ef7c7c4b3cb67073088ed26f8bb787d03540fadc9",
       "category": "scripts",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2707,8 +2725,8 @@
     },
     {
       "path": "scripts/validate_repository.py",
-      "size": 4721,
-      "sha256": "c946786f49f76bc7fe6a32f2e3736d72161404f558cf69e0362a8a3982f60fd2",
+      "size": 4887,
+      "sha256": "a74b303c054e9c50b0fcc4e4eaf1fbba927f8a61dbe7405a681f652d6e6df7fa",
       "category": "scripts",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2743,8 +2761,8 @@
     },
     {
       "path": "scripts/verify_local_model_handoff.py",
-      "size": 2066,
-      "sha256": "4e9db4f2fa8d9f8135f0a67270126d52ad800706007067fbb5d8a6514c58e85f",
+      "size": 2314,
+      "sha256": "15e3c9e4e84958dc63c19be0ffce499afd4bbdcc756c91478dab5871c70523d2",
       "category": "scripts",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2887,8 +2905,8 @@
     },
     {
       "path": "src/methodbridge/inference/runner.py",
-      "size": 15949,
-      "sha256": "1de99a8c4905c53a1b21f3a5655edf400caa38cefa7109d79a32d0903f3981b3",
+      "size": 16208,
+      "sha256": "3e92a200857629220f9fa52d7b6c70a74c9b0fad92ba6655faa97d9637a1b72a",
       "category": "src",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -2923,8 +2941,8 @@
     },
     {
       "path": "src/methodbridge/readiness.py",
-      "size": 2752,
-      "sha256": "40ac666c7f6de13c96c3d8f3aac6289a252e7922682380e9b24bd58036391113",
+      "size": 3649,
+      "sha256": "004f6f781d276cf1dd1289f286a6bc8a6eac84b161ff918d71f820c81dac7cc0",
       "category": "src",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -3039,6 +3057,15 @@
       "sensitivity": "public_synthetic_or_documentation"
     },
     {
+      "path": "tests/governance/test_required_workflow_contexts.py",
+      "size": 1518,
+      "sha256": "b9fd274213dbcff2e5486f5755696d67b14b5a17ad8ffd40c6459f31a9b07e5e",
+      "category": "tests",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
       "path": "tests/governance/test_toc_status.py",
       "size": 1777,
       "sha256": "6ecbfe67d35e8d7ce24296ec5dcccc7ebd5a9e54c791ac6db67c06e8205fd32f",
@@ -3120,9 +3147,36 @@
       "sensitivity": "public_synthetic_or_documentation"
     },
     {
+      "path": "tests/integration/test_local_inference_cli.py",
+      "size": 1629,
+      "sha256": "ec82325ea5dd9bb93a85eb762e3518c810ddef1c0184c8f19a45406953dd8f6c",
+      "category": "tests",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/integration/test_preflight_local.py",
+      "size": 8227,
+      "sha256": "c1a0de80b9b886024c3281aa6b5be969f2840d3618b5d56a28c82343b1eac5e4",
+      "category": "tests",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
+      "path": "tests/integration/test_profiler_container.py",
+      "size": 762,
+      "sha256": "b0b8144237310461bd6558bb650d25fbcb256c47185cba786e48315506bde15e",
+      "category": "tests",
+      "source_status": "tracked_repository",
+      "implementation_status": "bootstrap",
+      "sensitivity": "public_synthetic_or_documentation"
+    },
+    {
       "path": "tests/integration/test_repository_validation.py",
-      "size": 204,
-      "sha256": "df6e63b29d8c40219e2209611023133ae80d6901bea8a087c61e97eaf3c68829",
+      "size": 836,
+      "sha256": "679986b61c962d877165e94b4dfa919ab14783d769c74226e39445fac2fb65c1",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -3130,8 +3184,8 @@
     },
     {
       "path": "tests/model_engineering/test_local_model_campaign.py",
-      "size": 1533,
-      "sha256": "be8cf464ff0409f6d4449bb6f7d2754bbb579eded95a59ed4cfbe9f192411a4c",
+      "size": 3931,
+      "sha256": "7f713984ecab36ea6b3d86785c5341e26b271dd7af2a69534cbbbf097e6c8868",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -3175,8 +3229,8 @@
     },
     {
       "path": "tests/packaging/test_repository_integrity.py",
-      "size": 645,
-      "sha256": "088976929aa13fd777f1d5f1c21975baf59bdcbbf6ddf844bbf86aa5a9c374bd",
+      "size": 1313,
+      "sha256": "eb86da4f877f1f7101ee698b5598c18ff11f1747db6fddea1f3dea7e87a0afee",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -3184,8 +3238,8 @@
     },
     {
       "path": "tests/security/test_no_gguf_committed.py",
-      "size": 78,
-      "sha256": "b3a58f00b3de5c1ec676f27bc5620d5b58f8fa4b1f7563171c62952b623566d0",
+      "size": 242,
+      "sha256": "6d60b71bfff545c1a78ab735e651b7a5efd374b207eaf6ba7c7c10bff612b20a",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -3193,8 +3247,8 @@
     },
     {
       "path": "tests/security/test_no_secrets.py",
-      "size": 581,
-      "sha256": "e781a7ff86f0e784d41855f602170a5ee5ccae94cea92ab3218f30963ec36a36",
+      "size": 1494,
+      "sha256": "fa66f2f14b8a011475d7ca588681603939f74ff9385e32e6fcbdb019218c4a89",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",
@@ -3211,8 +3265,8 @@
     },
     {
       "path": "tests/unit/test_readiness.py",
-      "size": 829,
-      "sha256": "de2ea71093ef24025611268b8a97b75f6bc7ae51d7b8831d70e64568a0983907",
+      "size": 3725,
+      "sha256": "6ade7fe818ee8b8080cc8f5a78257e1cc92fad22cc89e99cb25f016c42a5853f",
       "category": "tests",
       "source_status": "tracked_repository",
       "implementation_status": "bootstrap",

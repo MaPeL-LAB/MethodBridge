@@ -1,6 +1,30 @@
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from .contracts import ReadinessResult
 from .data import load_json, load_yaml
+
+
+MODEL_SELECTION_STATE_ARTIFACT = "config/model_selection_state.yml"
+UNRESOLVED_MODEL_ARTIFACT = "metadata.json#/_runtime/model_path"
+PROFILER_ARTIFACT = "artifacts/profiler/final.json"
+
+
+def _repository_relative_identifier(value: object) -> str | None:
+    """Return a safe portable artifact identifier, never a local path."""
+    if not isinstance(value, str) or not value:
+        return None
+    path = Path(value)
+    windows_path = PureWindowsPath(value)
+    if (
+        path.is_absolute()
+        or windows_path.drive
+        or ".." in path.parts
+        or value.startswith("~")
+        or "://" in value
+        or "\\" in value
+        or "\x00" in value
+    ):
+        return None
+    return path.as_posix()
 
 
 def evaluate_readiness(root: Path) -> ReadinessResult:
@@ -20,13 +44,13 @@ def evaluate_readiness(root: Path) -> ReadinessResult:
     if "REQUIRES_" in metadata_raw:
         blockers.append("metadata/download placeholders remain")
 
-    selection_path = root / "config/model_selection_state.yml"
+    selection_path = root / MODEL_SELECTION_STATE_ARTIFACT
     if not selection_path.is_file():
         blockers.append("model selection state missing")
         selection: dict = {}
     else:
         selection = load_yaml(selection_path) or {}
-        evidence["model_selection_state"] = str(selection_path)
+        evidence["model_selection_state"] = MODEL_SELECTION_STATE_ARTIFACT
 
     if selection.get("status") != "human_approved_finalist":
         blockers.append("final model not human-approved")
@@ -49,13 +73,16 @@ def evaluate_readiness(root: Path) -> ReadinessResult:
     ):
         blockers.append("final model approval record incomplete")
 
-    model_path = root / metadata.get("_runtime", {}).get("model_path", "")
-    evidence["model_path"] = str(model_path)
-    if not model_path.is_file():
+    model_identifier = _repository_relative_identifier(
+        metadata.get("_runtime", {}).get("model_path")
+    )
+    evidence["model_path"] = model_identifier or UNRESOLVED_MODEL_ARTIFACT
+    model_path = root / model_identifier if model_identifier else None
+    if model_path is None or not model_path.is_file():
         blockers.append("final GGUF missing")
 
-    profiler_path = root / "artifacts/profiler/final.json"
-    evidence["profiler_path"] = str(profiler_path)
+    profiler_path = root / PROFILER_ARTIFACT
+    evidence["profiler_path"] = PROFILER_ARTIFACT
     if not profiler_path.is_file():
         blockers.append("official participant profiler output missing")
 

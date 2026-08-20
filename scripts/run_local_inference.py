@@ -43,6 +43,7 @@ def main() -> int:
     parser.add_argument("--llama-cpp-commit", default=_locked_llama_commit())
     parser.add_argument("--context-size", type=int, default=2048)
     parser.add_argument("--max-tokens", type=int, default=256)
+    parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--timeout-seconds", type=int, default=180)
     args = parser.parse_args()
@@ -92,9 +93,11 @@ def main() -> int:
             "expected_model_sha256": args.expected_model_sha256,
             "llama_cpp_commit": args.llama_cpp_commit,
             "llama_cli": args.llama_cli,
+            "prompt_template": args.prompt_template,
             "context_size": args.context_size,
             "temperature": args.temperature,
             "max_tokens": args.max_tokens,
+            "threads": args.threads,
             "timeout_seconds": args.timeout_seconds,
         }
         result = (

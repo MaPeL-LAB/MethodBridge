@@ -8,6 +8,7 @@
 | 2026-08-18 | Run empirical bake-off before tuning | bootstrap accepted | technical evidence required |
 | 2026-08-19 | Approve the current MethodBridge Theory of Change for governed ADTC development | approved with conditions | Marothi Peter Letsoalo |
 | 2026-08-19 | Restore the fail-closed model evidence boundary and withdraw unsupported model claims | approved correction | Marothi Peter Letsoalo |
+| 2026-08-20 | Authorize narrowly scoped private product R&D while contest eligibility remains unresolved | approved with conditions | Marothi Peter Letsoalo |
 
 ## GOV-001 — Theory of Change approval
 
@@ -69,3 +70,33 @@
   `config/model_evidence_policy.yml`, and the model-evidence CI tests.
 - **Review trigger:** any attempt to use simulation, documentary estimates, or
   automated proxy results as model-selection or submission evidence.
+
+## EXEC-001 — Private product R&D execution authorization
+
+- **Decision:** `approved_with_conditions`
+- **Actor:** Marothi Peter Letsoalo
+- **Recorded at:** `2026-08-20T12:33:58+02:00`
+- **Scope:** continue MethodBridge as private product R&D by acquiring only exact
+  reviewed candidate revisions whose licence is approved and whose public access
+  requires no credentials; run Docker simulation; and run digest-bound local
+  `llama.cpp` inference under the pinned campaign and evidence controls.
+- **Rationale:** private product development is independent of contest entry.
+  It can generate governed local engineering evidence without representing the
+  entrant as eligible or registered and without creating release authority.
+- **Conditions:** retain `eligibility_gate: unresolved`; preserve candidate
+  licence, access, revision, and admission checks; run network-disabled
+  inference; keep weights, raw outputs, private cases, credentials, and local
+  paths out of source control; preserve evidence classifications; and stop on
+  any campaign stopping condition.
+- **Not authorized:** organizer approval; entrant eligibility; finalist or final
+  quantization selection; adaptation; official profiler claims; public claims;
+  hosting; release; registration; rules or Participation Agreement acceptance;
+  submission; confidential-data processing; or production/institutional use.
+- **Evidence:** ADR-022, `config/local_model_campaign.yml`,
+  `config/model_candidate_policy.yml`, `config/base_model_candidates.yml`,
+  `config/model_evidence_policy.yml`, and
+  `docs/LOCAL_MODEL_EXECUTION_HANDOFF.md`.
+- **Review trigger:** any expansion beyond private local R&D, change to the
+  candidate/data/evidence boundary, proposed finalist or quantization decision,
+  official claim, public use, hosting, release, registration, rules acceptance,
+  or submission.

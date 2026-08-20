@@ -1,18 +1,19 @@
 campaign_version: 1
 campaign_id: methodbridge-model-001-v1
-status: prepared_not_authorized
+status: authorized_for_local_execution
 purpose: >
-  Govern the first real, local, digest-bound comparison of compact models
-  without allowing simulation or proxy output to become selection evidence.
+  Govern development-only acquisition, Docker simulation, and the first real,
+  local, digest-bound comparison of compact models without allowing simulation
+  or proxy output to become selection, contest, release, or submission evidence.
 authority:
   eligibility_gate: unresolved
   human_execution_authorization:
-    status: not_recorded
-    actor: null
-    timestamp: null
-    decision_reference: null
-  downloads_allowed: false
-  empirical_execution_allowed: false
+    status: recorded
+    actor: Marothi Peter Letsoalo
+    timestamp: '2026-08-20T12:33:58+02:00'
+    decision_reference: EXEC-001
+  downloads_allowed: true
+  empirical_execution_allowed: true
 benchmark:
   freeze_id: methodbridge-public-benchmark-v1.0.0
   aggregate_sha256: 4d3a38889c1db2ec87714661aa8757923d70c074795300144f6c9eacbfffe9d6

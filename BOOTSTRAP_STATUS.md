@@ -7,6 +7,7 @@ Submission status: blocked by design.
 ## Governance status
 
 - The Project Theory of Change approved with conditions for governed ADTC 2026 development.
+- `EXEC-001` authorizes narrowly scoped private product R&D independently of contest eligibility.
 - The approval does not resolve eligibility, authorize confidential-data processing, select a final model, authorize public release, accept competition terms, or authorize submission.
 - Final model, quantization, public prompts, release, and submission remain protected human decisions.
 
@@ -30,18 +31,18 @@ release packaging scaffolding. None establishes a real winner.
 | 0A. Theory-of-Change approval | Complete with conditions |
 | 0B. Hardware evidence contract | Complete |
 | 0C. Fail-closed model evidence boundary | Complete |
-| 0D. Local empirical campaign contract | Complete; execution not authorized |
+| 0D. Local empirical campaign contract | Complete; development-only execution authorized by `EXEC-001` |
 | 0E. Public claims and release gate | Complete; release blocked |
 | 1. Eligibility gate | Unresolved hard gate |
 | 2. Upstream freeze | Complete for pre-local development |
 | 3. Benchmark engineering freeze | Complete; semantic human adjudication still required |
-| 4. Candidate acquisition | Exact revisions documented; no reviewed local acquisition evidence |
-| 5. Untouched bake-off | Not established; rerun through real digest-bound `llama.cpp` |
+| 4. Candidate acquisition | First exact Qwen revision acquired without credentials; licence, card, inventory, and hashes retained locally; wave incomplete |
+| 5. Untouched bake-off | Not established; Docker smoke stopped on confirmed OOM and the bounded native CPU diagnostic stopped on timeout, both before output |
 | 6. Upper-bound bake-off | Not established |
 | 7. Prompt-only contract and Mode C | Plumbing implemented; real model effect unestablished |
 | 8. Conditional adaptation | Not authorized |
-| 9. GGUF conversion | Pipeline implemented; finalist evidence absent |
-| 10. Quantization comparison | Configurations implemented; empirical comparison absent |
+| 9. GGUF conversion | First candidate converted to F16 through pinned `llama.cpp`; finalist evidence absent |
+| 10. Quantization comparison | Exploratory Q5_K_M derived and hashed; Docker OOM and native timeout retained; no comparison or selection |
 | 11. Local evaluation | Real outputs and qualified adjudication absent |
 | 12. Official profiling | Not run on a qualifying reference laptop |
 | 13. Hosting | No final public GGUF URL or SHA-256 |
@@ -70,11 +71,18 @@ It is not a finalist, winner, optimized choice, or approved submission artifact.
 - release tooling that cannot update metadata before all gates agree;
 - local handoff validator and regression tests.
 
+`EXEC-001` permits only licensed public-no-credential acquisition, Docker
+simulation, and digest-bound local `llama.cpp` execution for private product
+R&D. It is not evidence of eligibility or organizer approval and does not
+authorize finalist selection, quantization selection, official claims, public
+claims, hosting, release, registration, rules acceptance, or submission.
+
 ## Work still required
 
 - resolve entrant eligibility and review the Participation Agreement;
-- record attributable local execution authorization;
 - acquire exact candidate files and preserve licences, notices, and hashes;
+- review the first candidate's retained Docker OOM and native diagnostic
+  timeout before any retry or subsequent-candidate execution;
 - run real candidate outputs through pinned `llama.cpp`;
 - perform qualified semantic adjudication;
 - compare quantizations generated from the same exact source model;

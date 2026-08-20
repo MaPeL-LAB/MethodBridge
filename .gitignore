@@ -9,6 +9,7 @@ __pycache__/
 .vscode/
 *.code-workspace
 model/*.gguf
+model/candidates/
 *.gguf
 adapters/
 checkpoints/

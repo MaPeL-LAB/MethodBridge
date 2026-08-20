@@ -252,6 +252,7 @@ def run_llama_cpp_inference(
     context_size: int = 2048,
     temperature: float = 0.0,
     max_tokens: int = 256,
+    threads: int = 4,
     timeout_seconds: int = 180,
     system_prompt: str | None = None,
     extra_args: Sequence[str] = (),
@@ -283,6 +284,8 @@ def run_llama_cpp_inference(
         raise InferenceConfigurationError(
             "unsupported or unverified prompt template; currently only explicit chatml is allowed"
         )
+    if threads < 1:
+        raise InferenceConfigurationError("threads must be a positive integer")
     formatted = format_chatml_prompt(prompt, mode=mode, system_prompt=system_prompt)
     command = [
         binary,
@@ -298,6 +301,8 @@ def run_llama_cpp_inference(
         str(max_tokens),
         "--gpu-layers",
         "0",
+        "--threads",
+        str(threads),
         "--no-display-prompt",
         "--log-disable",
         *extra_args,
@@ -368,6 +373,7 @@ def run_candidate_inference(
     context_size: int = 2048,
     temperature: float = 0.0,
     max_tokens: int = 256,
+    threads: int = 4,
     timeout_seconds: int = 180,
     system_prompt: str | None = None,
 ) -> InferenceResult:
@@ -384,6 +390,7 @@ def run_candidate_inference(
         context_size=context_size,
         temperature=temperature,
         max_tokens=max_tokens,
+        threads=threads,
         timeout_seconds=timeout_seconds,
         system_prompt=system_prompt,
     )
@@ -401,6 +408,7 @@ def run_candidate_inference_mode_c(
     context_size: int = 2048,
     temperature: float = 0.0,
     max_tokens: int = 256,
+    threads: int = 4,
     timeout_seconds: int = 180,
 ) -> InferenceResult:
     """Run real GGUF inference with the deterministic Mode C prompt router."""
@@ -417,6 +425,7 @@ def run_candidate_inference_mode_c(
         context_size=context_size,
         temperature=temperature,
         max_tokens=max_tokens,
+        threads=threads,
         timeout_seconds=timeout_seconds,
         system_prompt=routed.system_prompt,
     )

@@ -11,6 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     cmake \
+    ninja-build \
     git \
     python3 \
     python3-pip \
@@ -39,6 +40,10 @@ RUN git clone https://github.com/Africa-Deep-Tech-Foundation/adtc-profiler.git /
     && cd /opt/adtc/adtc-profiler \
     && git checkout ac2e137dca65ea3b09d997774f17dd8907b489fb \
     && pip3 install --no-cache-dir .
+
+# Install the conversion dependencies declared by the same pinned llama.cpp checkout.
+RUN pip3 install --no-cache-dir \
+    -r /opt/adtc/llama.cpp/requirements/requirements-convert_hf_to_gguf.txt
 
 # Create non-root runner user and directories
 RUN useradd -m -u 1000 adtc-runner \

@@ -17,11 +17,12 @@ This repository is the authoritative engineering and governance foundation—not
 |---|---|
 | Product and domain scope | Accepted with conditions |
 | Theory of Change | Approved with conditions for governed ADTC development |
+| Private product R&D execution | Authorized with conditions by `EXEC-001` |
 | Entrant eligibility | Unresolved hard gate |
 | Public benchmark | Engineering-frozen; qualified semantic adjudication still required |
 | Upstream toolchain | Reviewed and pinned for pre-local development |
 | Simulation proxy | Explicit test double; `measured: false` |
-| Real model outputs | Not established in the remote evidence record |
+| Real model outputs | None established; Docker OOM and bounded native timeout both occurred before response |
 | Final base model | None selected |
 | Fine-tuning | Conditional; not authorized |
 | Final GGUF | Not built or approved |
@@ -60,9 +61,10 @@ It is not accuracy or expert judgment.
 ## Engineering sequence
 
 ```text
-eligibility resolution
+private product R&D lane
+EXEC-001 development-only authorization
         ↓
-exact licensed candidate acquisition and hashing
+exact licensed public-no-credential candidate acquisition and hashing
         ↓
 real untouched llama.cpp outputs
         ↓
@@ -70,13 +72,14 @@ qualified semantic review
         ↓
 native / contract / Mode C comparison
         ↓
-conditional adaptation only if justified
+stop: no finalist, final quantization, adaptation, or public claim
+
+independent contest/release lane (currently blocked)
+eligibility, registration, and rules decisions
         ↓
-GGUF conversion and independent quantization
+later finalist and quantization approval
         ↓
-reference-laptop official profiler
-        ↓
-human model and quantization approval
+reference-laptop official profiler and public-claims review
         ↓
 credential-free hosting
         ↓
@@ -87,26 +90,37 @@ final report, prompts, video, and submission authorization
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e '.[dev]'
+.venv/bin/python -m pip install --upgrade pip
+.venv/bin/python -m pip install -e '.[dev]'
 
-python scripts/validate_repository.py
-python scripts/validate_sources.py
-python scripts/validate_dataset.py
-python scripts/detect_train_eval_leakage.py
-python scripts/validate_model_evidence_boundary.py
-python scripts/validate_local_model_campaign.py
-python scripts/validate_public_claims.py
-python scripts/verify_local_model_handoff.py
-python scripts/run_evaluation.py --dry-run
-python -m pytest -q
-python scripts/verify_submission_readiness.py
+bash scripts/preflight_local.sh
+
+PYTHONPATH=src .venv/bin/python scripts/validate_repository.py
+PYTHONPATH=src .venv/bin/python scripts/validate_sources.py
+PYTHONPATH=src .venv/bin/python scripts/validate_dataset.py
+PYTHONPATH=src .venv/bin/python scripts/detect_train_eval_leakage.py
+PYTHONPATH=src .venv/bin/python scripts/validate_model_evidence_boundary.py
+PYTHONPATH=src .venv/bin/python scripts/validate_local_model_campaign.py
+PYTHONPATH=src .venv/bin/python scripts/validate_public_claims.py
+PYTHONPATH=src .venv/bin/python scripts/verify_local_model_handoff.py
+PYTHONPATH=src .venv/bin/python scripts/run_evaluation.py --dry-run
+PYTHONPATH=src .venv/bin/python -m pytest -q
+PYTHONPATH=src .venv/bin/python scripts/verify_submission_readiness.py
 ```
 
-`verify_local_model_handoff.py` may report that local setup is ready while
-empirical execution is not yet authorized. That is the correct fail-closed state
-until eligibility and an attributable execution decision are recorded.
+The preflight is read-only and network-free. It selects the repository
+`.venv/bin/python` directly, so an unavailable unqualified `python` command is
+not itself a failure. It reports missing or stale editable-install state and an
+exact remediation command, but never installs packages, downloads weights, or
+runs inference.
+
+`verify_local_model_handoff.py` reports the independent gates explicitly.
+`EXEC-001` authorizes only licensed public-no-credential acquisition, Docker
+simulation, and digest-bound local `llama.cpp` execution for private product
+R&D. Eligibility remains unresolved and the contest path remains unauthorized.
+A successful preflight or `local_setup_ready: true` does not expand that scope
+or authorize a finalist, quantization, official profiler claim, public claim,
+hosting, release, registration, rules acceptance, or submission.
 
 To exercise only the canned test double, an explicit flag is required:
 
@@ -130,8 +144,11 @@ docs/SEMANTIC_ADJUDICATION_PROTOCOL.md
 docs/PUBLIC_CLAIMS_POLICY.md
 ```
 
-No model download, real inference, candidate ranking, quantization selection, or
-release is represented as completed by these contracts.
+The first candidate was downloaded, converted, quantized, and invoked through
+digest-bound `llama.cpp`, but the Docker and native diagnostic attempts both
+stopped before a response. No candidate ranking, quantization selection, or
+release is represented as completed. Authorization to begin bounded
+development work is not evidence of a successful model result.
 
 ## Non-negotiable boundaries
 
