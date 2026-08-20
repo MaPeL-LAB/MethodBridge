@@ -22,7 +22,7 @@ This repository is the authoritative engineering and governance foundation—not
 | Public benchmark | Engineering-frozen; qualified semantic adjudication still required |
 | Upstream toolchain | Reviewed and pinned for pre-local development |
 | Simulation proxy | Explicit test double; `measured: false` |
-| Real model outputs | Not established in the remote evidence record |
+| Real model outputs | None established; Docker OOM and bounded native timeout both occurred before response |
 | Final base model | None selected |
 | Fine-tuning | Conditional; not authorized |
 | Final GGUF | Not built or approved |
@@ -144,9 +144,11 @@ docs/SEMANTIC_ADJUDICATION_PROTOCOL.md
 docs/PUBLIC_CLAIMS_POLICY.md
 ```
 
-No model download, real inference, candidate ranking, quantization selection, or
-release is represented as completed by these contracts. Authorization to begin
-bounded development work is not evidence that the work occurred.
+The first candidate was downloaded, converted, quantized, and invoked through
+digest-bound `llama.cpp`, but the Docker and native diagnostic attempts both
+stopped before a response. No candidate ranking, quantization selection, or
+release is represented as completed. Authorization to begin bounded
+development work is not evidence of a successful model result.
 
 ## Non-negotiable boundaries
 

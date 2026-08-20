@@ -13,8 +13,8 @@ scaffolding exists.
 - [ ] **1. Eligibility gate** — resolve entrant identity, team age, funding, product stage, and Participation Agreement.
 - [x] **2. Upstream freeze** — official template, profiler, `llama.cpp`, governance, and conditional adaptation toolchain pinned to reviewed commits.
 - [x] **3. Benchmark engineering freeze** — 60 public training-excluded cases reviewed and hashed; qualified semantic adjudication remains required.
-- [ ] **4. Candidate acquisition** — acquire exact licensed revisions locally; archive licence/model-card evidence; record complete file hashes.
-- [ ] **5. Untouched bake-off** — run real candidate GGUFs through digest-bound `llama.cpp`; retain raw outputs locally; create shareable run evidence; obtain qualified semantic review.
+- [ ] **4. Candidate acquisition** — first exact Qwen revision acquired without credentials with local licence/model-card inventory and hashes; remaining primary candidates not acquired.
+- [ ] **5. Untouched bake-off** — first digest-bound Q5_K_M contract smoke stopped on a confirmed 7.5 GiB Docker OOM; an approved native CPU diagnostic then stopped on the fixed timeout with a non-reference footprint above that container limit. Neither produced output; review both failures before retrying or advancing.
 - [ ] **6. Upper-bound bake-off** — admit larger candidates only after licence, compatibility, memory, and thermal smoke gates pass.
 - [ ] **7. Prompt-only comparison** — compare native, MethodBridge contract, and Mode C using actual model output under one campaign configuration.
 - [ ] **8. Conditional adaptation** — authorize LoRA/QLoRA only after repeated learnable gaps remain under real prompt-only comparison.

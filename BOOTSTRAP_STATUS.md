@@ -36,13 +36,13 @@ release packaging scaffolding. None establishes a real winner.
 | 1. Eligibility gate | Unresolved hard gate |
 | 2. Upstream freeze | Complete for pre-local development |
 | 3. Benchmark engineering freeze | Complete; semantic human adjudication still required |
-| 4. Candidate acquisition | Exact revisions documented; no reviewed local acquisition evidence |
-| 5. Untouched bake-off | Not established; rerun through real digest-bound `llama.cpp` |
+| 4. Candidate acquisition | First exact Qwen revision acquired without credentials; licence, card, inventory, and hashes retained locally; wave incomplete |
+| 5. Untouched bake-off | Not established; Docker smoke stopped on confirmed OOM and the bounded native CPU diagnostic stopped on timeout, both before output |
 | 6. Upper-bound bake-off | Not established |
 | 7. Prompt-only contract and Mode C | Plumbing implemented; real model effect unestablished |
 | 8. Conditional adaptation | Not authorized |
-| 9. GGUF conversion | Pipeline implemented; finalist evidence absent |
-| 10. Quantization comparison | Configurations implemented; empirical comparison absent |
+| 9. GGUF conversion | First candidate converted to F16 through pinned `llama.cpp`; finalist evidence absent |
+| 10. Quantization comparison | Exploratory Q5_K_M derived and hashed; Docker OOM and native timeout retained; no comparison or selection |
 | 11. Local evaluation | Real outputs and qualified adjudication absent |
 | 12. Official profiling | Not run on a qualifying reference laptop |
 | 13. Hosting | No final public GGUF URL or SHA-256 |
@@ -81,6 +81,8 @@ claims, hosting, release, registration, rules acceptance, or submission.
 
 - resolve entrant eligibility and review the Participation Agreement;
 - acquire exact candidate files and preserve licences, notices, and hashes;
+- review the first candidate's retained Docker OOM and native diagnostic
+  timeout before any retry or subsequent-candidate execution;
 - run real candidate outputs through pinned `llama.cpp`;
 - perform qualified semantic adjudication;
 - compare quantizations generated from the same exact source model;

@@ -1,7 +1,10 @@
 # Local model-execution handoff
 
 **Repository phase:** development-only local R&D authorized by `EXEC-001`.
-**Empirical status:** no real candidate comparison is currently established.
+**Empirical status:** the first candidate was acquired and converted locally.
+Its digest-bound constrained-container smoke stopped on confirmed OOM, and the
+approved native CPU diagnostic stopped on the fixed timeout; neither produced
+a response, and no comparison is established.
 **Contest status:** eligibility unresolved; release and submission unauthorized.
 
 ## First local gate
@@ -78,3 +81,18 @@ Stop on licence uncertainty, revision or digest mismatch, ambiguous chat templat
 load failure, crash, timeout, OOM, unsafe memory or thermal state, evaluation
 leakage, unacceptable fabricated-citation behavior, protected-authority failure,
 or accidental export of secrets, raw private cases, or machine-specific paths.
+
+The first `qwen25_1_5b_instruct` Q5_K_M contract smoke reached the pinned
+`llama.cpp` process under the 7.5 GiB `linux/amd64` container, then Docker
+reported an OOM kill (exit 137). The raw response file was empty. Treat this as
+a development failure record only.
+
+The subsequently approved native arm64 CPU-only diagnostic used the same GGUF
+digest, prompt mode, context, output bound, temperature, four-thread limit, and
+pinned `llama.cpp` commit. External network was denied while localhost IPC was
+allowed for this revision's internal client/server path. It reached the fixed
+180-second timeout without a response; the OS diagnostic also showed a
+non-reference footprint above the Docker limit. This explains why the 7.5 GiB
+container could not complete, but it is not official memory or performance
+evidence. Do not infer model quality, weaken the campaign configuration, or
+proceed to another candidate until both retained failures are reviewed.
